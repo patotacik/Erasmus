@@ -12,7 +12,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Material Tasarım Giriş ve Kayıt Formu</title>
+    <title>Material Tasarlkmlkklmkmmkım Giriş ve Kayıt Formu</title>
 
     <!-- Dışarıdan Çağırılan Dosyalar Font we Materyal İkonlar -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
