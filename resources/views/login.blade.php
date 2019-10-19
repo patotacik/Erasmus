@@ -60,7 +60,7 @@
         font-family: roboto!important;
     }
     .login-card:after {
-        background: linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+        background: linear-gradient(-135deg, rgb(181, 141, 98), rgb(233, 30, 99));
         /* Login Card Arkaplan Rengi */
 
         background: -webkit-linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
@@ -257,7 +257,7 @@
         text-decoration: none;
         display: block;
     }
-    
+
 </style>
 
 </head>
