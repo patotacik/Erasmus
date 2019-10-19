@@ -15,8 +15,9 @@
                 <li class="nav-item"><a href="erasmus" class="nav-link">Erasmus+</a></li>
                 <li class="nav-item"><a href="agent.html" class="nav-link">Stáž</a></li>
                 <li class="nav-item"><a href="kontakt" class="nav-link">Informacie</a></li>
-
+                <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
             </ul>
+
         </div>
     </div>
 </nav>

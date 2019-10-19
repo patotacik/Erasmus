@@ -15,4 +15,7 @@ class PagesController extends Controller
     public function getErasmus() {
         return view('erasmus');
     }
+    public function getLogin() {
+        return view('login');
+    }
 }
