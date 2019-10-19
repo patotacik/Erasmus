@@ -23,5 +23,7 @@ Route::get('index', [
 Route::get('erasmus', [
     'as' => 'show', 'uses' =>'PagesController@getErasmus'
 ]);
-
+Route::get('login', [
+    'as' => 'show', 'uses' =>'PagesController@getLogin'
+]);
 
