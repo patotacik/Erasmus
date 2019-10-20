@@ -11,11 +11,11 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="index" class="nav-link">Domov</a></li>
-                <li class="nav-item"><a href="erasmus" class="nav-link">Erasmus+</a></li>
-                <li class="nav-item"><a href="agent.html" class="nav-link">Stáž</a></li>
-                <li class="nav-item"><a href="kontakt" class="nav-link">Informacie</a></li>
-                <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="/index" class="nav-link">Domov</a></li>
+                <li class="nav-item"><a href="/erasmus" class="nav-link">Erasmus+</a></li>
+                <li class="nav-item"><a href="/staz" class="nav-link">Stáž</a></li>
+                <li class="nav-item"><a href="/kontakt" class="nav-link">Informacie</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
             </ul>
 
         </div>
