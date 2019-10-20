@@ -1,12 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<!-- Selim Doyranlı Tarafından Hazırlanmıştır : 08.10.2016 | Material Form -->
-<!-- https://selimdoyranli.com -->
-<!-- http://www.radkod.com -->
-<!-- https://www.sanalyer.com -->
 
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -344,14 +339,6 @@
             <label><i class="material-icons input-sifre-ikon">lock</i><span class="span-input">Şifre</span></label>
         </div>
         <!-- #Kayıt Form Şifre İnput Bitiş -->
-
-        <!-- Kayıt Form Şifre-Tekrarı İnput -->
-        <div class="group">
-            <input type="password" required>
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label><i class="material-icons input-sifre-ikon">lock</i><span class="span-input">Şifre Tekrarı</span></label>
-        </div>
         <!-- #Kayıt Form Şifre-Tekrarı İnput Bitiş -->
 
         <!-- Kayıt Ol Buton -->
