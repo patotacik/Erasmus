@@ -7,7 +7,6 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Domoc <i class="ion-ios-arrow-forward"></i></a></span> <span>Kontakt <i class="ion-ios-arrow-forward"></i></span></p>
                     <h1 class="mb-3 bread">Kontaktné informacie</h1>
                 </div>
             </div>
@@ -63,11 +62,7 @@
 
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div id="map" class="bg-white"></div>
-                </div>
-            </div>
+
         </div>
     </section>
 

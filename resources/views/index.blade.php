@@ -35,8 +35,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">Our Services</span>
-                    <h2 class="mb-2">The smartest way to buy a home</h2>
+                    <span class="subheading">Naša ponuka</span>
+                    <h2 class="mb-2">Najlepší spôsob ako vycestovať</h2>
                 </div>
             </div>
             <div class="row d-flex">
@@ -84,8 +84,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">What we offer</span>
-                    <h2 class="mb-2">Exclusive Offer For You</h2>
+                    <span class="subheading">Ponuka erazmus+</span>
+                    <h2 class="mb-2">najžiadanejšie ponuky</h2>
                 </div>
             </div>
             <div class="row">
@@ -152,8 +152,8 @@
         <div class="container">
             <div class="row justify-content-start mb-5">
                 <div class="col-md-6 text-center heading-section heading-section-white ftco-animate">
-                    <span class="subheading">Work flow</span>
-                    <h2 class="mb-3">How it works</h2>
+                    <span class="subheading">Vyber, dohodni, vycestuj !</span>
+                    <h2 class="mb-3">Ako to funguje</h2>
                 </div>
             </div>
             <div class="row">
@@ -261,8 +261,8 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Testimonial</span>
-                    <h2 class="mb-3">Happy Clients</h2>
+                    <span class="subheading">BLOG</span>
+                    <h2 class="mb-3">osobné skúsenosti</h2>
                 </div>
             </div>
             <div class="row ftco-animate">
@@ -400,80 +400,4 @@
             </div>
         </div>
     </section>
-
-
-    <section class="ftco-section ftco-no-pt">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Blog</span>
-                    <h2>Recent Blog</h2>
-                </div>
-            </div>
-            <div class="row d-flex">
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                            <div class="meta mb-3">
-                                <div><a href="#">July. 24, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_1.jpg');">
-                            </a>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                            <div class="meta mb-3">
-                                <div><a href="#">July. 24, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_2.jpg');">
-                            </a>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                            <div class="meta mb-3">
-                                <div><a href="#">July. 24, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-                            </a>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                            <div class="meta mb-3">
-                                <div><a href="#">July. 24, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
-                            </a>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 @endsection
