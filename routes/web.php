@@ -26,6 +26,9 @@ Route::get('erasmus', [
 Route::get('login', [
     'as' => 'show', 'uses' =>'PagesController@getLogin'
 ]);
+Route::get('staz', [
+    'as' => 'show', 'uses' =>'PagesController@getStaz'
+]);
 
 
 Auth::routes();
