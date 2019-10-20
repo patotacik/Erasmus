@@ -27,3 +27,11 @@ Route::get('login', [
     'as' => 'show', 'uses' =>'PagesController@getLogin'
 ]);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
