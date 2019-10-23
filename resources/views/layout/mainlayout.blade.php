@@ -11,7 +11,7 @@
 
 <body>
 
-@include('layout.partials.head')
+
 @include('layout.partials.nav')
 
 

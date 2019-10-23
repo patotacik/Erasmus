@@ -2,39 +2,71 @@
 
 @section('content')
 
-    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/uvod.jpg');" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread">Prihlásiť sa</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Prihlásenie</div>
+
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">ID</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Heslo</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Prihlásiť
+                                    </button>
+
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        Forgot Your Password?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="ftco-section contact-section">
-        <div class="container">
-
-            <div class="row block-9 justify-content-center mb-5">
-                <div class="col-md-8 mb-md-5">
-                    <h2 class="text-center">Vyplňte prosím požadované údaje</h2>
-                    <form action="#" class="bg-light p-5 contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Prihlasovacie meno / číslo">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Heslo">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Prihlásiť sa" class="btn btn-primary py-3 px-5">
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
 
 @endsection
