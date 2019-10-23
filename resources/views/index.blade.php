@@ -1,26 +1,11 @@
 @extends('layout.mainlayout')
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.jpg');" data-stellar-background-ratio="0.5">
+<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.jpg');"
+     data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text justify-content-center align-items-center">
-            <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
-                <div class="text text-center">
-                    <h1 class="display-1">Erasmus+</h1>
-                    <p style= "font-size: 20px; background-color:hsla(0, 0%, 100%, 0.68);">Európsky program Erasmus má dlhoročnú tradíciu. Od akademického roka 2014/2015 existuje ako integrovaný program Erasmus+ pre obdobie rokov 2014 – 2021, ktorý poskytuje široké možnosti mobilít študentov a zamestnancov.</p>
-                    <form action="#" class="search-location mt-md-5">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10 align-items-end">
-                                <div class="form-group">
-                                    <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Search location">
-                                        <button><span class="ion-ios-search"></span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+
         </div>
     </div>
     <div class="mouse">
