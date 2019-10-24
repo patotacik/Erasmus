@@ -14,6 +14,16 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+    Route::get('admin', [
+        'as' => 'show', 'uses' =>'PagesController@getAdmin'
+    ]);
+
+
+
+
+
 Route::get('kontakt', [
    'as' => 'show', 'uses' =>'PagesController@getKontakt'
 ]);
