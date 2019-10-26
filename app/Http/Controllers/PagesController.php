@@ -21,4 +21,8 @@ class PagesController extends Controller
     public function getStaz() {
         return view('staz');
     }
+
+    public function getAdmin() {
+        return view('master');
+    }
 }

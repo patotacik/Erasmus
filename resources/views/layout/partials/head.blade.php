@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="css/flaticon.css">
 <link rel="stylesheet" href="css/icomoon.css">
 <link rel="stylesheet" href="css/style.css">
+
 <style type="text/css">
     body {
         font-family: 'Varela Round', sans-serif;

@@ -1,5 +1,5 @@
 @extends('layout.mainlayout')
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.jpg');"
+<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
      data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     <div class="overlay"></div>
     <div class="container">
