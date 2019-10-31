@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand"href="#">
-            <img src="images/ukf.png" alt="Logo" style="width:100px;">
+            <img src="images/ukf.png" alt="Logo" style="width:80px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +22,7 @@
                 </button></a>
                 @else
                 <a class="navbar-brand"  role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+
                          {{ Auth::user()->name }} <span class="caret"></span></a>
                 <a class="navbar-brand" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();">
                             <button type="button" class="btn btn-danger">Odhlásiť</button></a>

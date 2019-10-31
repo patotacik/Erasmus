@@ -29,8 +29,8 @@
                     <div class="media block-6 services d-block text-center">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-piggy-bank"></span></div>
                         <div class="media-body py-md-4">
-                            <h3>No Downpayment</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <h3>Získaš zaujímavý grant </h3>
+                            <p>Výška grantu môže dosiahnúť aj 520€ na mesiac.</p>
                         </div>
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                     <div class="media block-6 services d-block text-center">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-wallet"></span></div>
                         <div class="media-body py-md-4">
-                            <h3>All Cash Offer</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <h3>Naučíš sa cudzie jazyky</h3>
+                            <p>Najväčšiou výhodou Erasmus pobytov sú jednoznačne cudzie jazyky. Ći to už je angličtina, alebo nejaký iný jazyk.</p>
                         </div>
                     </div>
                 </div>
@@ -47,8 +47,8 @@
                     <div class="media block-6 services d-block text-center">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-file"></span></div>
                         <div class="media-body py-md-4">
-                            <h3>Experts in Your Corner</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <h3>Zistíš, kto si</h3>
+                            <p>Na Erasme chodia študenti väčšinou sami.Práve nový začiatok v cudzej krajine človeku pomôže zistiť kto vlastne je, zistiť svoje silné a slabé stránky, objastniť si svoje priority.</p>
                         </div>
                     </div>
                 </div>
@@ -56,8 +56,8 @@
                     <div class="media block-6 services d-block text-center">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-locked"></span></div>
                         <div class="media-body py-md-4">
-                            <h3>Lokced in Pricing</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <h3>Spoznáš nových ľudí</h3>
+                            <p>Na erasme nebudete sami, ale s množstvo ľudí pochadzajúcimi zo všetkých kútov Európy s rovnakou chuťou socializovať sa.</p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                     <span class="subheading">Ponuka erazmus+</span>
-                    <h2 class="mb-2">najžiadanejšie ponuky</h2>
+                    <h2 class="mb-2">Najžiadanejšie ponuky</h2>
                 </div>
             </div>
             <div class="row">
@@ -148,7 +148,7 @@
                             <div class="media block-6 services services-2">
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>01</span></div>
-                                    <h3>Evaluate Property</h3>
+                                    <h3>Podaj si žiadosť</h3>
                                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                             <div class="media block-6 services services-2">
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>02</span></div>
-                                    <h3>Meet Your Agent</h3>
+                                    <h3>Vyplň dotazník</h3>
                                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                             <div class="media block-6 services services-2">
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>03</span></div>
-                                    <h3>Close the Deal</h3>
+                                    <h3>Zúčasní sa pohovoru</h3>
                                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                             <div class="media block-6 services services-2">
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>04</span></div>
-                                    <h3>Have Your Property</h3>
+                                    <h3>A môžeš cestovať</h3>
                                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
@@ -206,38 +206,39 @@
     <section class="ftco-counter img" id="section-counter">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-4 mb-4">
+                <div class="col-md-1 col-lg-10 justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 py-4 mb-1">
                         <div class="text text-border d-flex align-items-center">
                             <strong class="number" data-number="305">0</strong>
-                            <span>Area <br>Population</span>
+                            <span>Počet zapojených<br>krajin </span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-4 mb-4">
+                <div class="col-md-1 col-lg-10 justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 py-4 mb-1">
                         <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="1090">0</strong>
-                            <span>Total <br>Properties</span>
+                            <strong class="number" data-number="3">0</strong>
+                            <span>Aktuálni počet <br>ponuk</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-4 mb-4">
+                <div class="col-md-1 col-lg-10 justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 py-4 mb-1">
                         <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="209">0</strong>
-                            <span>Average <br>House</span>
+                            <strong class="number" data-number="19090">0</strong>
+                            <span>Aktuálni počet <br>študentov na Erasme</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-4 mb-4">
-                        <div class="text d-flex align-items-center">
-                            <strong class="number" data-number="67">0</strong>
-                            <span>Total <br>Branches</span>
-                        </div>
+                <div class="col-md-6 col-lg-10 justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 py-4 mb-1">
+                    <div class="text text-border d-flex align-items-center">
+                        <strong class="number" data-number="1098540">0</strong>
+                        <span>Celkový počet <br>študentov na Erasme</span>
                     </div>
                 </div>
+            </div>
+
             </div>
         </div>
     </section>
@@ -247,7 +248,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <span class="subheading">BLOG</span>
-                    <h2 class="mb-3">osobné skúsenosti</h2>
+                    <h2 class="mb-3">Osobné skúsenosti študentov a profesorov</h2>
                 </div>
             </div>
             <div class="row ftco-animate">
@@ -322,63 +323,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section ftco-agent ftco-no-pt">
-        <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Agents</span>
-                    <h2 class="mb-4">Our Agents</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-1.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">James Stallon</a></h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10 Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">James Stallon</a></h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10 Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-3.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">James Stallon</a></h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10 Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-4.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">James Stallon</a></h3>
-                            <p class="h-info"><span class="position">Listing</span> <span class="details">&mdash; 10 Properties</span></p>
                         </div>
                     </div>
                 </div>

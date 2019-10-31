@@ -1,12 +1,6 @@
 @extends('layout.mainlayout')
-
-@section('content')
-
-        <div class="overlay"></div>
-
-
-        <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/uvod.png');" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
+<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
+     data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">            <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate pb-5 text-center">
@@ -16,8 +10,7 @@
             </div>
         </section>
 
-
-
+@section('content')
 
         <section class="ftco-section">
             <div class="container">
