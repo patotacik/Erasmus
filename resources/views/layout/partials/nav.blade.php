@@ -21,6 +21,9 @@
                     Prihlásenie
                 </button></a>
                 @else
+
+
+
                 <a class="navbar-brand"  role="button" aria-expanded="false" aria-haspopup="true" v-pre>
 
                          {{ Auth::user()->name }} <span class="caret"></span></a>
@@ -29,6 +32,11 @@
               <form id="logout-form" class="navbar-brand" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                     </form>
+                    @if(Auth::user()->isAdmin())
+                        <a class="navbar-brand">
+                            <a class="btn btn-primary" href="{{route('admin')}}" role="button">Admin rozhranie</a>
+                        </a>
+                    @endif
             @endguest
 
 

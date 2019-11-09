@@ -15,14 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-    Route::get('admin', [
-        'as' => 'show', 'uses' =>'PagesController@getAdmin'
-    ]);
-
-
-
-
+Route::get('/admin', 'AdminController@admin')
+    ->middleware('is_admin')
+    ->name('admin');
 
 Route::get('kontakt', [
    'as' => 'show', 'uses' =>'PagesController@getKontakt'
@@ -39,15 +34,8 @@ Route::get('login', [
 Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
 Route::get('/uploadfile', 'UploadfileController@index');
 Route::post('/uploadfile', 'UploadfileController@upload');
 Route::get('/main', 'MainController@index');

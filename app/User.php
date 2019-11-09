@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
     /**
@@ -26,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    const ADMIN_TYPE = '3';
+    const DEFAULT_TYPE = 'default';
+    public function isAdmin()    {
+        return $this->roly_id == self::ADMIN_TYPE;
+    }
 }
