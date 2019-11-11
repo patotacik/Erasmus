@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread">Erasmus+ <br>Ponuka pobytov v zahraničí</h1>
+                    <h1 class="mb-3 bread"><br><br>Ponuka pobytov v zahraničí</h1>
                 </div>
             </div>
         </div>
