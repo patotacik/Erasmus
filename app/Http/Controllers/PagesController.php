@@ -22,6 +22,10 @@ class PagesController extends Controller
         return view('staz');
     }
 
+    public function getDetails() {
+        return view('details');
+    }
+
     public function getAdmin() {
         return view('master');
     }

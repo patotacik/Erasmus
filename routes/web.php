@@ -34,6 +34,10 @@ Route::get('login', [
 Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
+Route::get('details', [
+    'as' => 'show', 'uses' =>'PagesController@getDetails'
+]);
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');

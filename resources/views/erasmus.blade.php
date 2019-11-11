@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
         </section>
 
         <section class="ftco-section">
@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="property-wrap ftco-animate">
-                            <a href="properties-single.html" class="img" style="background-image: url(images/work-1.jpg);"></a>
+                            <a href="/details" class="img" style="background-image: url(images/work-1.jpg);"></a>
                             <div class="text">
                                 <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
                                 <ul class="property_list">
