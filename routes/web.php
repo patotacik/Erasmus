@@ -18,6 +18,17 @@ Route::get('/', function () {
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
+Route::get('/referent', 'AdminController@referent')
+    ->middleware('is_admin')
+    ->name('referent');
+Route::get('/ucasnik', 'AdminController@ucasnik')
+    ->middleware('is_ucasnik')
+    ->name('ucasnik');
+Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
+    ->middleware('is_ucasnik')
+    ->name('ucasnik');
+
+
 
 Route::get('kontakt', [
    'as' => 'show', 'uses' =>'PagesController@getKontakt'

@@ -15,5 +15,16 @@ class AdminController extends Controller
     {
         return view('admin');
     }
-
+    public function referent()
+    {
+        return view('referent');
+    }
+    public function ucasnik()
+    {
+        return view('blog');
+    }
+    public function ucasnik_inf_sem()
+    {
+        return view('info_seminare');
+    }
 }

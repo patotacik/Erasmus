@@ -28,8 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     const ADMIN_TYPE = '3';
+    const REFERENT_TYPE = '2';
+    const UCASNIK_TYPE = '1';
+
     const DEFAULT_TYPE = 'default';
     public function isAdmin()    {
         return $this->roly_id == self::ADMIN_TYPE;
+    }
+    public function isReferent()    {
+        return $this->roly_id == self::REFERENT_TYPE;
+    }
+    public function isUcasnik()    {
+        return $this->roly_id == self::UCASNIK_TYPE;
     }
 }

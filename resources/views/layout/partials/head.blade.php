@@ -1,5 +1,6 @@
 <meta charset="utf-8">
-
+<link rel="apple-touch-icon" sizes="76x76" href="images/ukf.png">
+<link rel="icon" type="image/png" href="images/ukf.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta name="description" content="">

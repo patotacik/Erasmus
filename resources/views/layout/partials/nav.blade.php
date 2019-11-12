@@ -1,8 +1,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand"href="#">
-            <img src="images/ukf.png" alt="Logo" style="width:80px;">
+        <a class="navbar-brand"href="index">
+            <img src="images/ukf.png" alt="Logo"  style="width:80px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,12 +11,19 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index" class="nav-link">Domov</a></li>
                 <li class="nav-item"><a href="erasmus" class="nav-link">Erasmus+</a></li>
           <li class="nav-item"><a href="staz" class="nav-link">Stáž</a></li>
                 <li class="nav-item"><a href="kontakt" class="nav-link">Informacie</a></li>
+            @guest
+                @else
+                @if(Auth::user()->isUcasnik())
+                    <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Informačné semináre</a></li>
             </ul>
-                @guest
+            @endif
+            @endguest
+        @guest
+
                 <a class="navbar-brand"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
                     Prihlásenie
                 </button></a>
