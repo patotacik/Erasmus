@@ -7,7 +7,7 @@
                     <p>Far far away, behind the word mountains, far from the countries.</p>
                     <ul class="ftco-footer-social list-unstyled mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/explore/tags/erasmus/"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>
