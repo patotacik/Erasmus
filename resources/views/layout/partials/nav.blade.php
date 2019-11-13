@@ -18,9 +18,20 @@
                     @if(Auth::user()->isUcasnik())
                         <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Informačné semináre</a></li>
-            </ul>
+
             @endif
             @endguest
+                @guest
+                @else
+                    @if(Auth::user()->isReferent())
+                        <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Uprava Výzvy</a></li>
+                        <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Pridať partnerské univerzity</a></li>
+                        <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Správy účastníkov</a></li>
+
+                    @endif
+                @endguest
+
+            </ul>
             @guest
 
 
