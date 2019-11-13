@@ -28,6 +28,11 @@
 <link rel="stylesheet" href="css/jquery.timepicker.css">
 
 
+
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
 <link rel="stylesheet" href="css/flaticon.css">
 <link rel="stylesheet" href="css/icomoon.css">
 <link rel="stylesheet" href="css/style.css">

@@ -26,7 +26,7 @@ Route::get('/ucasnik', 'AdminController@ucasnik')
     ->name('ucasnik');
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
-    ->name('ucasnik');
+    ->name('seminar');
 
 
 

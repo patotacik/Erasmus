@@ -4,8 +4,6 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text justify-content-center align-items-center">
-
-
         </div>
     </div>
     <div class="mouse">
@@ -132,7 +130,7 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-degree-bg services-section img mx-md-5" style="background-image: url(images/bg_2.jpg);">
+    <section class="ftco-section ftco-degree-bg services-section img mx-md-5" style="background-image: url(images/mes.jpg);">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-start mb-5">
@@ -189,7 +187,7 @@
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+                <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/lud.jpg);">
                 </div>
                 <div class="col-md-6 wrap-about py-md-5 ftco-animate">
                     <div class="heading-section p-md-5">
