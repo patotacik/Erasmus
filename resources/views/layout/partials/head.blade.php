@@ -1,6 +1,5 @@
 <meta charset="utf-8">
-<link rel="apple-touch-icon" sizes="76x76" href="images/ukf.png">
-<link rel="icon" type="image/png" href="images/ukf.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta name="description" content="">
@@ -27,11 +26,6 @@
 <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
-
-<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 
 <link rel="stylesheet" href="css/flaticon.css">
 <link rel="stylesheet" href="css/icomoon.css">
