@@ -12,7 +12,16 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="erasmus" class="nav-link">Erasmus+</a></li>
                 <li class="nav-item"><a href="staz" class="nav-link">Stáž</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Iné pobyti
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Prednáškový pobyt</a>
+                        <a class="dropdown-item" href="#">Školenia</a>
+                       </div>
                 <li class="nav-item"><a href="kontakt" class="nav-link">Informacie</a></li>
+
                 @guest
                 @else
                     @if(Auth::user()->isUcasnik())
@@ -74,9 +83,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <div class="avatar">
-                    <img src="images/ukf.png" alt="Avatar" >
-                </div>
+
                 <h4 class="modal-title">Prihlásenie</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
@@ -114,9 +121,6 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <div class="avatar">
-                    <img src="images/ukf.png" alt="Avatar" >
-                </div>
                 <h4 class="modal-title">Registrácia</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>

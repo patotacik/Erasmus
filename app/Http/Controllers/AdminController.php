@@ -14,10 +14,13 @@ class AdminController extends Controller
 
     public function admin()
     {
-        return view('admin');
+        return view('admin/admin');
     }
 
-
+    public function table()
+    {
+        return view('admin/admin_table');
+    }
 
     public function showAction($id)
     {
@@ -38,13 +41,13 @@ class AdminController extends Controller
 
     public function getAddUserForm()
     {
-        return view('adduser');
+        return view('admin/admin_table');
     }
 
     public function AllUsersAction()
     {
         $users = User::all();
-        return view("AllUsers", ['users' => $users]);
+        return view("admin/admin_table", ['users' => $users]);
     }
 
     public function insertAction(Request $request)
@@ -61,7 +64,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        return response()->view('adduser');
+        return response()->view('admin/admin_table');
     }
 
     public function referent()

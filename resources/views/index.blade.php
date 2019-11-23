@@ -2,16 +2,13 @@
 <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
      data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text justify-content-center align-items-center">
-        </div>
-    </div>
     <div class="mouse">
         <a href="#" class="mouse-icon">
             <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
         </a>
     </div>
 </div>
+
 @section('content')
 
     <section class="ftco-section ftco-no-pb">
@@ -147,7 +144,6 @@
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>01</span></div>
                                     <h3>Podaj si žiadosť</h3>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +152,6 @@
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>02</span></div>
                                     <h3>Vyplň dotazník</h3>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +160,6 @@
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>03</span></div>
                                     <h3>Zúčasní sa pohovoru</h3>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +168,6 @@
                                 <div class="media-body py-md-4 text-center">
                                     <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>04</span></div>
                                     <h3>A môžeš cestovať</h3>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                 </div>
                             </div>
                         </div>
@@ -191,16 +184,19 @@
                 </div>
                 <div class="col-md-6 wrap-about py-md-5 ftco-animate">
                     <div class="heading-section p-md-5">
-                        <h2 class="mb-4">We Put People First.</h2>
+                        <h2 class="mb-4">Štúdium v zahraničí</h2>
 
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-                    </div>
+                        <video width="400" controls>
+                            <source src="https://ec.europa.eu/programmes/erasmus-plus/sites/erasmusplus2/files/videos/original/era-ka1-study-mobility_en.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+
+         </div>
                 </div>
             </div>
         </div>
-    </section>
 
+    </section>
     <section class="ftco-counter img" id="section-counter">
         <div class="container">
             <div class="row">

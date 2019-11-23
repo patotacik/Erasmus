@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
+Route::get('/edit', 'AdminController@table')
+    ->middleware('is_admin')
+    ->name('edit');
+
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
