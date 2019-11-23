@@ -28,6 +28,25 @@ Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
     ->name('seminar');
 
+Route::get('/show/{id}', [
+    'as' => 'show', 'uses' => 'AdminController@ShowAction'
+]);
+
+Route::get('/add', [
+    'as' => 'add', 'uses' => 'AdminController@getAddUserForm'
+]);
+
+Route::post('/insert', [
+    'as' => 'insert', 'uses' => 'AdminController@insertAction'
+]);
+
+Route::get('/AllUsers', [
+    'as' => 'AllUsers', 'uses' => 'AdminController@AllUsersAction'
+]);
+
+Route::post('/update/{id}', [
+    'as' => 'update', 'uses' => 'AdminController@updateAction'
+]);
 
 
 Route::get('kontakt', [

@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Http\Request;
+
 class PagesController extends Controller
 {
     public function getKontakt() {
@@ -29,4 +31,5 @@ class PagesController extends Controller
     public function getAdmin() {
         return view('master');
     }
+
 }
