@@ -22,21 +22,12 @@
                         <div class="property-wrap ftco-animate">
                             <a href="details" class="img" style="background-image: url(images/work-1.jpg);"></a>
                             <div class="text">
-                                <thead>
-
-                                <tr>
-
-                                    <th>nazov</th>
-                                    <th>datum</th>
-                                    <th>miesto</th>
-                                </tr>
-                                </thead>
                                 <tbody>
-                                @foreach($podujatias as $podujatias)
+                                @foreach($podujatia as $podujatia)
                                     <tr>
-                                        <td>{{$podujatias->nazov}}</td>
-                                        <td>{{$podujatias->datum}}</td>
-                                        <td>{{$podujatias->miesto}}</td>
+                                        <td><p>Nazov: {{$podujatia->nazov}}</p></td>
+                                        <td><p>Dátum: {{$podujatia->datum}}</p></td>
+                                        <td><p>Miesto: {{$podujatia->miesto}}</p></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

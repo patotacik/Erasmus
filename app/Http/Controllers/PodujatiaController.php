@@ -11,6 +11,6 @@ class PodujatiaController extends Controller
     public function getPodujatia(){
         $podujatias = Podujatia::all();
 
-        return view('erasmus',compact('podujatias'));
+        return view('erasmus', ['podujatia' => $podujatias]);
     }
 }
