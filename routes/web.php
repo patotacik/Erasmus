@@ -15,6 +15,31 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/users/create', 'AdminController@create')->name('users.create');
+
+Route::get('/showa/{id}', [
+    'as' => 'showa', 'uses' => 'AdminController@show']);
+
+Route::delete('/users/{id}', 'AdminController@destroy')->name('users.destroy');
+
+Route::post('/users', 'AdminController@store')->name('users.store');
+
+Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
+
+Route::put('users/{id}', 'AdminController@update')->name('users.update');
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
@@ -45,7 +70,7 @@ Route::post('/insert', [
 ]);
 
 Route::get('/AllUsers', [
-    'as' => 'AllUsers', 'uses' => 'AdminController@AllUsersAction'
+    'as' => 'AllUsers', 'uses' => 'AdminController@table'
 ]);
 
 Route::post('/update/{id}', [

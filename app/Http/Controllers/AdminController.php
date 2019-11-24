@@ -19,13 +19,63 @@ class AdminController extends Controller
 
     public function table()
     {
-        return view('admin/admin_table');
+        $users = User::latest()->paginate(5);
+        return view('admin/admin_table', ['users' => $users])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
+    public function create()
+    {
+        //
+        return view('users.create');
+    }
+    public function store(Request $request)
+    {
+        //
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+
+        return redirect()->route('AllUsers');
+    }
+    public function show($id)
+    {
+        //
+        $user = User::find($id);
+        return view('admin/users/show', ['user' => $user]);
+
+    }
+    public function edit($id)
+    {
+        //
+        $user = User::find($id);
+        return view('admin/users/edit', ['user' => $user]);
+    }
+    public function update(Request $request, $id)
+    {
+        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->roly_id = $request->roly_id;
+        $user->save();
+        return redirect()->route('AllUsers');
+    }
+    public function destroy($id)
+    {
+        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('AllUsers');
+    }
+/*
     public function showAction($id)
     {
-        $user = User::find($id);
-        return view("update", ['user' => $user]);
+        $users = User::find($id);
+        return view("admin/edit", ['user' => $users]);
     }
 
     public function updateAction($id, Request $request)
@@ -66,6 +116,24 @@ class AdminController extends Controller
 
         return response()->view('admin/admin_table');
     }
+*/
+
+    public function insertAction(Request $request)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = new User();
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = $password;
+        $user->roly_id = 3;
+
+        $user->save();
+
+        return response()->view('admin/admin_table');
+    }
 
     public function referent()
     {
@@ -79,4 +147,5 @@ class AdminController extends Controller
     {
         return view('info_seminare');
     }
+
 }

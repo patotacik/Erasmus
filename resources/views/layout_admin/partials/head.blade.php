@@ -16,6 +16,6 @@ Admin UKF
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
     <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
