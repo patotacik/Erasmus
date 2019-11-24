@@ -34,7 +34,7 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 
 
 
-
+Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 
 
 
