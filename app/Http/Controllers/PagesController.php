@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Podujatia;
 
 class PagesController extends Controller
 {
@@ -12,7 +13,8 @@ class PagesController extends Controller
         return view('kontakt');
     }
     public function getIndex() {
-        return view('index');
+        $podujatia = Podujatia::all();
+        return view('index') -> with('podujatia', $podujatia);
     }
     public function getErasmus() {
         return view('erasmus');

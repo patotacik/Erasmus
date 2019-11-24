@@ -81,7 +81,7 @@ Route::get('kontakt', [
    'as' => 'show', 'uses' =>'PagesController@getKontakt'
 ]);
 Route::get('index', [
-    'as' => 'show', 'uses' =>'PagesController@getIndex'
+    'as' => 'show', 'uses' =>'PagesController@getIndex',
 ]);
 
 Route::get('login', [
