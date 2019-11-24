@@ -76,6 +76,10 @@
                                     <input type="password" class="form-control rounded-0" id="password" placeholder="Password" name="password">
                                 </div>
                                 <div class="form-group ">
+                                    <label class="text-uppercase font-weight-bold" for="roly_id">roly_id</label>
+                                    <input type="number" class="form-control rounded-0" id="roly_id" placeholder="roly_id" name="roly_id">
+                                </div>
+                                <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
                                         confirm
                                     </button>

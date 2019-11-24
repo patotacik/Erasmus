@@ -37,6 +37,7 @@ class AdminController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
+        $user->roly_id = $request->roly_id;
         $user->save();
 
         return redirect()->route('AllUsers');
