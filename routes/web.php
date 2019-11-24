@@ -39,7 +39,6 @@ Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 
 
 
-
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
@@ -84,9 +83,7 @@ Route::get('kontakt', [
 Route::get('index', [
     'as' => 'show', 'uses' =>'PagesController@getIndex'
 ]);
-Route::get('erasmus', [
-    'as' => 'show', 'uses' =>'PagesController@getErasmus'
-]);
+
 Route::get('login', [
     'as' => 'show', 'uses' =>'PagesController@getLogin'
 ]);

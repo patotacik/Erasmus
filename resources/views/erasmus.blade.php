@@ -7,49 +7,47 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 style="font-size:5vw;"><br><br>Ponuka pobytov v zahraničí</h1>
+                    <h1 class="mb-3 bread"><br><br>Ponuka pobytov v zahraničí</h1>
                 </div>
             </div>
         </div>
     </div>
-        </section>
-
-        <section class="ftco-section">
-
+    </section>
+    <section class="ftco-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
+                <div class="row align-items-start">
+                    @foreach($podujatia as $row)
+                    <div class="col">
                         <div class="property-wrap ftco-animate">
                             <a href="details" class="img" style="background-image: url(images/work-1.jpg);"></a>
                             <div class="text">
-                                <tbody>
-                                @foreach($podujatia as $podujatia)
-                                    <tr>
-                                        <td><p>Nazov: {{$podujatia->nazov}}</p></td>
-                                        <td><p>Dátum: {{$podujatia->datum}}</p></td>
-                                        <td><p>Miesto: {{$podujatia->miesto}}</p></td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
+                                <h3>{{$row->Nazov}}</h3>
+                                <h3>Dátum: {{$row->datum}}</h3>
+                                <h3 class="location">Miesto: {{$row->Miesto}}</h3>
+                                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="ion-ios-link"></span></a>
                             </div>
                         </div>
                     </div>
-
-                <div class="row mt-5">
-                    <div class="col text-center">
-                        <div class="block-27">
-                            <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                @endforeach
                 </div>
             </div>
-        </section>
+    </section>
+
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 @endsection
