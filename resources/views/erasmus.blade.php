@@ -10,12 +10,12 @@
                 <div class="row align-items-start">
                     <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                         <span class="subheading">Ponuka erazmus+</span>
-                        <h2 class="mb-2">Aktuálne ponuky</h2>
+                        <h2 class="mb-2">Najžiadanejšie ponuky</h2>
                     </div>
                     @foreach($podujatia as $row)
                     <div class="col">
                         <div class="property-wrap ftco-animate">
-                            <a href="details" class="img" style="background-image: url(images/work-1.jpg);"></a>
+                            <a href='details' class="img" style="background-image: url(images/work-1.jpg);"></a>
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>

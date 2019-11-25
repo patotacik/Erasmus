@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [
+    'as' => 'show', 'uses' =>'PagesController@getIndex',
+]);
 
 Route::get('/users/create', 'AdminController@create')->name('users.create');
 
@@ -35,6 +35,7 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 
 
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
+Route::get('/details/{id}', 'detailsController@getErasmusId');
 
 
 
@@ -90,12 +91,9 @@ Route::get('login', [
 Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
-Route::get('details', [
-    'as' => 'show', 'uses' =>'PagesController@getDetails'
-]);
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PagesController@getIndex')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');
 Route::post('/uploadfile', 'UploadfileController@upload');
 Route::get('/main', 'MainController@index');
