@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand"href="index">
-            <img src="images/ukf.png" alt="Logo"  style="width:80px;">
+        <a class="navbar-brand"href="{{ URL::asset('index')}}">
+            <img src="{{ URL::asset('images/ukf.png')}}" alt="Logo"  style="width:80px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,8 +10,8 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="erasmus" class="nav-link">Erasmus+</a></li>
-                <li class="nav-item"><a href="staz" class="nav-link">Stáž</a></li>
+                <li class="nav-item"><a href="{{ URL::asset('erasmus')}}" class="nav-link">Erasmus+</a></li>
+                <li class="nav-item"><a href="{{ URL::asset('staz')}}" class="nav-link">Stáž</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Iné pobyti

@@ -1,5 +1,5 @@
 @extends('layout.mainlayout')
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
+<div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/uvod.png')}});"
      data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     <div class="overlay"></div>
     <div class="mouse">
@@ -70,12 +70,12 @@
                 @foreach($podujatia as $row)
                     <div class="col">
                         <div class="property-wrap ftco-animate">
-                            <a href="details" class="img" style="background-image: url(images/work-1.jpg);"></a>
+                            <a href='{{route('erasmus.details',$row->id)}}' method="post" class="img" style="background-image: url(images/work-1.jpg);"></a>
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>
                                 <h3 class="location">Miesto: {{$row->Miesto}}</h3>
-                                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
+                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
                                     <span class="ion-ios-link"></span></a>
                             </div>
                         </div>

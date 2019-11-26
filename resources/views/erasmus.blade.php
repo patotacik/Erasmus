@@ -1,7 +1,7 @@
 @extends('layout.mainlayout')
 
 @section('content')
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/uvod.png')}});"
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
     </section>
@@ -21,7 +21,7 @@
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>
                                 <h3 class="location">Miesto: {{$row->Miesto}}</h3>
-                                <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
+                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
                                     <span class="ion-ios-link"></span></a>
                             </div>
                         </div>

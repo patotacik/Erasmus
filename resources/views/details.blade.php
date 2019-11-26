@@ -1,17 +1,9 @@
 @extends('layout.mainlayout')
-<link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
 @section('content')
-
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
-     data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">            <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-            <div class="col-md-9 ftco-animate pb-5 text-center">
-            </div>
-        </div>
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/uvod.png')}});"
+         data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
-</div>
-
+    </section>
         <section class="ftco-section">
                 <div style="color:black;padding-left:15%;padding-right: 15%">
                     <h3>{{$details->Nazov}}</h3>
@@ -23,7 +15,7 @@
 
                 </div>
                 <div class="center" style="padding-left:15%; padding-right: 15%">
-                    <img src="images/work-1.jpg" alt="nananana">
+                    <img src="{{ URL::asset('images/work-1.jpg')}}"alt="nananana">
                 </div>
 
         </section>
