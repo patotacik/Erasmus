@@ -35,7 +35,7 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 
 
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
-Route::get('/details/{id}', 'detailsController@getErasmusId');
+Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 
 
 

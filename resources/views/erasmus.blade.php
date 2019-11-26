@@ -15,7 +15,8 @@
                     @foreach($podujatia as $row)
                     <div class="col">
                         <div class="property-wrap ftco-animate">
-                            <a href='details' class="img" style="background-image: url(images/work-1.jpg);"></a>
+                            <a href='{{route('erasmus.details',$row->id)}}' method="post" class="img" style="background-image: url(images/work-1.jpg);"></a>
+
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>

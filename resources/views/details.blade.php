@@ -1,4 +1,7 @@
 @extends('layout.mainlayout')
+<link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+@section('content')
+
 <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
      data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">            <div class="overlay"></div>
     <div class="container">
@@ -8,9 +11,6 @@
         </div>
     </div>
 </div>
-    </section>
-
-    @section('content')
 
         <section class="ftco-section">
                 <div style="color:black;padding-left:15%;padding-right: 15%">
