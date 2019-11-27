@@ -29,7 +29,12 @@ class PagesController extends Controller
     public function getDetails() {
         return view('details');
     }
-
+    public function getfaktkoord() {
+        return view('fakult_koord');
+    }
+    public function getodd_medzin_vzt() {
+        return view('odd_medzin_vzt');
+    }
     public function getAdmin() {
         return view('master');
     }

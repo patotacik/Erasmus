@@ -25,6 +25,22 @@ class AdminController extends Controller
 
     }
 
+
+    public function mySearch(Request $request)
+    {
+        if($request->has('search')){
+            $users = User::search($request->get('search'))->get();
+        }else{
+            $users = User::get();
+        }
+
+
+        return view('admin/admin_table', compact('users'));
+    }
+
+
+
+
     public function create()
     {
         //

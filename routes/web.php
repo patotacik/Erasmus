@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [
     'as' => 'show', 'uses' =>'PagesController@getIndex',
 ]);
@@ -91,7 +90,12 @@ Route::get('login', [
 Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
-
+Route::get('faktultný_koordinatori', [
+    'as' => 'show', 'uses' =>'PagesController@getfaktkoord'
+]);
+Route::get('odd_medzin_vzt', [
+    'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
+]);
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');

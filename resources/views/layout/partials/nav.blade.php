@@ -14,13 +14,23 @@
                 <li class="nav-item"><a href="{{ URL::asset('staz')}}" class="nav-link">Stáž</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Iné pobyti
+                        Iné pobyty
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Prednáškový pobyt</a>
                         <a class="dropdown-item" href="#">Školenia</a>
                        </div>
-                <li class="nav-item"><a href="kontakt" class="nav-link">Informacie</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Kontakty                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="odd_medzin_vzt">Oddelenie medzinárodných vzťahov a jeho pracovníci</a>
+                        <a class="dropdown-item" href="kontakt">Katedroví koordinátori</a>
+                        <a class="dropdown-item" href="faktultný_koordinatori">Fakultní koordinátori</a>
+                        <a class="dropdown-item" href="kontakt">Študentskí ambasádori programu</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="kontakt">Kde nás najdete</a>
+                    </div>
 
                 @guest
                 @else

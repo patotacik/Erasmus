@@ -1,36 +1,36 @@
 @extends('layout.mainlayout')
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
-     data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
-    <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread">Kontaktné informacie</h1>
-                </div>
-            </div>
-        </div>
-    </section>
 @section('content')
 
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/inf.jpg')}});"
+         data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
+    </div>
+    </section>
     <section class="ftco-section contact-section">
         <div class="container">
+            <div class="row align-items-start">
+                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+                    <span class="subheading">Ponuka erazmus+</span>
+                    <h2 class="mb-2">Najžiadanejšie ponuky</h2>
+                </div>
+            </div>
+
             <div class="row d-flex mb-5 contact-info justify-content-center">
                 <div class="col-md-8">
                     <div class="row mb-5">
                         <div class="col-md-4 text-center py-4">
-                            <div class="icon">
+                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
                                 <span class="icon-map-o"></span>
                             </div>
                             <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
                         </div>
                         <div class="col-md-4 text-center border-height py-4">
-                            <div class="icon">
+                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
                                 <span class="icon-mobile-phone"></span>
                             </div>
                             <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
                         </div>
                         <div class="col-md-4 text-center py-4">
-                            <div class="icon">
+                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
                                 <span class="icon-envelope-o"></span>
                             </div>
                             <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>

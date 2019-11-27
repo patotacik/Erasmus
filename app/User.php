@@ -4,12 +4,20 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Authenticatable
 {
 
     use Notifiable;
-
+    use SearchableTrait;
+    protected $searchable = [
+        'columns' => [
+            'users.name' => 10,
+            'users.email' => 5,
+            'users.id' => 3,
+        ]
+    ];
     /**
      * The attributes that are mass assignable.
      *
