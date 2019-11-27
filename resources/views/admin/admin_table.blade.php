@@ -75,9 +75,28 @@
                                     <label class="text-uppercase font-weight-bold" for="password">password</label>
                                     <input type="password" class="form-control rounded-0" id="password" placeholder="Password" name="password">
                                 </div>
-                                <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="roly_id">roly_id</label>
-                                    <input type="number" class="form-control rounded-0" id="roly_id" placeholder="roly_id" name="roly_id">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <legend class="col-form-label col-sm-2 pt-0">Typ uživateľa</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" checked>
+                                                <label class="form-check-label" for="roly_id">
+                                                    Účasník
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="2">
+                                                <label class="form-check-label" for="roly_id">
+Referent                                                </label>
+                                            </div>
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" >
+                                                <label class="form-check-label" for="roly_id" >
+Admin                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
