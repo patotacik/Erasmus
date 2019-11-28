@@ -35,6 +35,7 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
+Route::get('/potvrdene/{id}', 'detailsController@getPatvdeneId')->name('potvrdenie.details');
 
 
 
@@ -49,12 +50,18 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
+
+
 Route::get('/ucasnik', 'AdminController@ucasnik')
     ->middleware('is_ucasnik')
     ->name('ucasnik');
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
     ->name('seminar');
+Route::get('/ziadosti', 'AdminController@ziadosti')
+    ->middleware('is_ucasnik')
+    ->name('ziadosti');
+
 
 Route::get('/show/{id}', [
     'as' => 'show', 'uses' => 'AdminController@ShowAction'

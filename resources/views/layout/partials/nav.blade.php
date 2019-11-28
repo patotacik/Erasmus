@@ -37,8 +37,10 @@ Kontakty                    </a>
                     @if(Auth::user()->isUcasnik())
                         <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Informačné semináre</a></li>
+                        <li class="nav-item"><a href="{{route('potvrdenie.details', Auth::user()->id)}}" class="nav-link">Potrvrené žiadosti</a></li>
 
-            @endif
+
+                    @endif
             @endguest
                 @guest
                 @else
