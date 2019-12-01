@@ -52,7 +52,7 @@ class AdminController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request['password']);
         $user->roly_id = $request->roly_id;
         $user->save();
 
@@ -139,7 +139,7 @@ class AdminController extends Controller
     {
         $name = $request->input('name');
         $email = $request->input('email');
-        $password = $request->input('password');
+        $password = bcrypt($request->input['password']);
 
         $user = new User();
         $user->name = $name;
@@ -164,5 +164,8 @@ class AdminController extends Controller
     {
         return view('info_seminare');
     }
-
+    public function ziadosti()
+    {
+        return view('u_ziadosti');
+    }
 }
