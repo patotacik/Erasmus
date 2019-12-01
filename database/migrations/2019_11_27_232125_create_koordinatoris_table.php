@@ -1,8 +1,10 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-class CreateTypvyzvyTable extends Migration
+
+class CreateKoordinatorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -11,12 +13,17 @@ class CreateTypvyzvyTable extends Migration
      */
     public function up()
     {
-        Schema::create('typvyzvy', function (Blueprint $table) {
+        Schema::create('koordinatoris', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('fakulta');
+            $table->string('katedra');
+            $table->string('telefonne cislo');
+            $table->string('email')->unique();
             $table->timestamps();
-            $table->string('Typ',45);
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -24,6 +31,6 @@ class CreateTypvyzvyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('typvyzvy');
+        Schema::dropIfExists('koordinatoris');
     }
 }

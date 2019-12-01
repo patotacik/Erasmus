@@ -17,9 +17,8 @@ class CreateVyzvyTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('Nazov',45);
-            $table->integer('typvyzvy_id')->unsigned();
-            $table->foreign('typvyzvy_id') ->references('id')->on('typvyzvy');
-        });
+            $table->string('Typ',45);
+            });
     }
 
     /**
