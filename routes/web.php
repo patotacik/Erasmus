@@ -28,14 +28,8 @@ Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
 Route::put('users/{id}', 'AdminController@update')->name('users.update');
 
 
-
-
-
-
-
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
-Route::get('/potvrdene/{id}', 'detailsController@getPatvdeneId')->name('potvrdenie.details');
 
 
 
@@ -61,6 +55,17 @@ Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
 Route::get('/ziadosti', 'AdminController@ziadosti')
     ->middleware('is_ucasnik')
     ->name('ziadosti');
+Route::get('/formular/{id}', 'AdminController@formular')
+    ->middleware('is_ucasnik')
+    ->name('potvrdene.formular');
+
+Route::post('/pridat', 'AdminController@pridat')->name('formular.pridat');
+
+
+
+Route::get('/potvrdene/{users_id}', 'AdminController@getPatvdeneId')
+    ->middleware('is_ucasnik')
+    ->name('potvrdenie.details');
 
 
 Route::get('/show/{id}', [
@@ -111,3 +116,4 @@ Route::get('/main', 'MainController@index');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
+

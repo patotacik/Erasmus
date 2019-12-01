@@ -19,7 +19,7 @@ class CreateKoordinatorisTable extends Migration
             $table->string('fakulta');
             $table->string('katedra');
             $table->string('telefonne cislo');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamps();
         });
     }

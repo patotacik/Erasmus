@@ -14,12 +14,23 @@ class UsersTablesSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name'    => 'John Smith',
-            'email'    => 'john_smith@gmail.com',
+            'name'    => 'Admin Smith',
+            'email'    => 'admin@gmail.com',
             'password'   =>  Hash::make('password'),
             'remember_token' =>  str_random(10),
-            'roly_id'    => '2'
         ]);
+        User::create([
+            'name'    => 'Referent Smith',
+            'email'    => 'referent@gmail.com',
+            'password'   =>  Hash::make('password'),
+            'remember_token' =>  str_random(10),
 
+        ]);
+        User::create([
+            'name'    => 'Ucasnik Smith',
+            'email'    => 'ucasnik@gmail.com',
+            'password'   =>  Hash::make('password'),
+            'remember_token' =>  str_random(10),
+        ]);
         }
 }

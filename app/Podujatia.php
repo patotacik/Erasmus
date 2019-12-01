@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Podujatia extends Model
 {
     protected $fillable = [
-        'datum', 'Nazov', 'Miesto','users_id',
+        'datum', 'Nazov', 'Miesto','users_id','confirmed',
     ];
 }

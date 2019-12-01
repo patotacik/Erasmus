@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand"href="{{ URL::asset('index')}}">
-            <img src="{{ URL::asset('images/ukf2.jpg')}}" alt="Logo"  style="width:80px;">
+            <img src="{{ URL::asset('images/ukf.png')}}" alt="Logo"  style="width:80px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Prednáškový pobyt</a>
                         <a class="dropdown-item" href="#">Školenia</a>
-                    </div></li>
+                       </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Kontakty                    </a>
@@ -30,11 +30,29 @@ Kontakty                    </a>
                         <a class="dropdown-item" href="kontakt">Študentskí ambasádori programu</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="kontakt">Kde nás najdete</a>
-                    </div></li>
+                    </div>
+
+                @guest
+                @else
+                    @if(Auth::user()->isUcasnik())
+                        <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Informačné semináre</a></li>
+                        <li class="nav-item"><a href="{{route('potvrdenie.details', Auth::user()->id)}}" class="nav-link">Potrvrené žiadosti</a></li>
 
 
+                    @endif
+                @endguest
+                @guest
+                @else
+                    @if(Auth::user()->isReferent())
+                        <li class="nav-item"><a href="{{route('ucasnik')}}" class="nav-link">Uprava Výzvy</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Pridať partnerské univerzity</a></li>
+                        <li class="nav-item"><a href="{{route('seminar')}}" class="nav-link">Správy účastníkov</a></li>
 
+                    @endif
+                @endguest
 
+            </ul>
             @guest
 
 
@@ -47,45 +65,20 @@ Kontakty                    </a>
                     </button></a>
                 @else
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }}                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @guest
-                    @else
-                        @if(Auth::user()->isReferent())
-                            <a class="dropdown-item"href="{{route('ucasnik')}}">Uprava Výzvy</a>
-                            <a class="dropdown-item" href="" >Pridať partnerské univerzity</a>
-                            <a class="dropdown-item" href="{{route('seminar')}}">Správy účastníkov</a>
 
-                        @endif
-                    @endguest
+                <p class="navbar-text" >
+                    {{ Auth::user()->name }}</p>
 
-
-                    @guest
-                    @else
-                        @if(Auth::user()->isUcasnik())
-                            <a class="dropdown-item" href="{{route('ucasnik')}}">Blog</a>
-                            <a class="dropdown-item" href="{{route('seminar')}}" >Informačné semináre</a>
-                            <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potrvrené žiadosti</a>
-
-
-                        @endif
-                    @endguest
+                <a class="navbar-brand" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();">
+                            <button type="button" class="btn btn-danger">Odhlásiť</button></a>
+              <form id="logout-form" class="navbar-brand" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                    </form>
                     @if(Auth::user()->isAdmin())
-                        <a class="dropdown-item"  href="{{route('admin')}}">Admin</a>
+                        <a class="navbar-brand">
+                            <a class="btn btn-primary" href="{{route('admin')}}" role="button">Admin rozhranie</a>
+                        </a>
                     @endif
-                            <div class="dropdown-divider" ></div>
-
-
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();">Odlásiť</a>
-                            <form id="logout-form" class="navbar-brand" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-
-
-                        </div></li>
-
             @endguest
 
 

@@ -43,4 +43,6 @@ class User extends Authenticatable
     public function isUcasnik()    {
         return $this->roly_id == self::UCASNIK_TYPE;
     }
+
+
 }

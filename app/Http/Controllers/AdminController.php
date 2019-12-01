@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Formular;
+use App\Hodnotenies;
+use App\Podujatia;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -58,6 +61,34 @@ class AdminController extends Controller
 
         return redirect()->route('AllUsers');
     }
+
+    public function pridat(Request $request)
+    {
+
+        //potvrdenie  users_id  podujatia_id
+        $hodnotenies = new Hodnotenies();
+        $hodnotenies->Otazka_1 = $request->Otazka_1;
+        $hodnotenies->Otazka_2 = $request->Otazka_2;
+        $hodnotenies->Otazka_3 = $request->Otazka_3;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->hodnotenie = $request->hodnotenie;
+        $hodnotenies->potvrdenie = $request->potvrdenie;
+        $hodnotenies->users_id = $request->users_id;
+        $hodnotenies->podujatia_id = $request->podujatia_id;
+        $hodnotenies->save();
+
+
+        $zmena = Podujatia::find($request->podujatia_id);
+        $zmena->confirmed = 1;
+        $zmena->save();
+
+        return redirect()->route('ucasnik');
+    }
+
+
+
     public function show($id)
     {
         //
@@ -167,5 +198,20 @@ class AdminController extends Controller
     public function ziadosti()
     {
         return view('u_ziadosti');
+    }
+    public function formular($id)
+    {
+        $user = Podujatia::find($id);
+        return view('formular', ['details' => $user]);
+    }
+
+    public function getPatvdeneId($id)
+    {
+        $data = Podujatia::where('users_id', 'like', '%' . $id . '%')
+           ->where('confirmed',0)->get();
+            return view('u_ziadosti', ['details' => $data]);
+
+
+
     }
 }
