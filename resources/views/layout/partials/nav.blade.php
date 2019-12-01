@@ -54,7 +54,7 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isReferent())
-                            <a class="dropdown-item"href="{{route('ucasnik')}}">Uprava Výzvy</a>
+                            <a class="dropdown-item"href="{{route('ucasnik')}}">Úprava Výzvy</a>
                             <a class="dropdown-item" href="" >Pridať partnerské univerzity</a>
                             <a class="dropdown-item" href="{{route('seminar')}}">Správy účastníkov</a>
 
@@ -67,7 +67,7 @@ Kontakty                    </a>
                         @if(Auth::user()->isUcasnik())
                             <a class="dropdown-item" href="{{route('ucasnik')}}">Blog</a>
                             <a class="dropdown-item" href="{{route('seminar')}}" >Informačné semináre</a>
-                            <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potrvrené žiadosti</a>
+                            <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potvrdené žiadosti</a>
 
 
                         @endif
@@ -193,7 +193,7 @@ Kontakty                    </a>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
-                                Registácia
+                                Registrácia
                             </button>
                         </div>
                     </div>

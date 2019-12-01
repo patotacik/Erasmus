@@ -37,7 +37,7 @@
                     <section>
                         <div class="inner">
                             <div class="wizard-header">
-                                <h3 class="heading">Ake si ma prvotné pocity s pobytu ?</h3>
+                                <h3 class="heading">Aké si mal prvotné pocity z pobytu ?</h3>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" name="Otazka_2"rows="3"></textarea>
@@ -77,7 +77,7 @@
                     <section>
                         <div class="inner">
                             <div class="wizard-header">
-                                <h3 class="heading">Napíš s akými problénmy si sa stretol.</h3>
+                                <h3 class="heading">Napíš s akými problémami si sa stretol.</h3>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" name="Otazka_4" rows="3"></textarea>
@@ -95,7 +95,7 @@
                     <section>
                         <div class="inner">
                             <div class="wizard-header">
-                                <h3 class="heading">Aké je tvoje celková</h3>
+                                <h3 class="heading">Aké je tvoje celkové hodnotenie pobytu?</h3>
                             </div>
                             <div class="form-row">
                                 <fieldset id='demo1' class="rating">
