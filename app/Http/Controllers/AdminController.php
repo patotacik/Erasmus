@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Formular;
+use App\Hodnotenies;
+use App\Podujatia;
 use Illuminate\Http\Request;
 use App\User;
-use App\Podujatia;
 
 class AdminController extends Controller
 {
@@ -26,13 +28,21 @@ class AdminController extends Controller
 
     }
 
-    public function Eventstable()
-    {
-        $podujatia = podujatia::latest()->paginate(5);
-        return view('admin/admin_EventsTable', ['podujatia' => $podujatia])
-            ->with('i', (request()->input('page', 1) - 1) * 5);
 
+    public function mySearch(Request $request)
+    {
+        if($request->has('search')){
+            $users = User::search($request->get('search'))->get();
+        }else{
+            $users = User::get();
+        }
+
+
+        return view('admin/admin_table', compact('users'));
     }
+
+
+
 
     public function create()
     {
@@ -45,25 +55,40 @@ class AdminController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request['password']);
         $user->roly_id = $request->roly_id;
         $user->save();
 
         return redirect()->route('AllUsers');
     }
-    public function EventStore(Request $request)
-    {
-        //
-        $podujatia = new Podujatia();
-        $podujatia->Nazov = $request->Nazov;
-        $podujatia->datum = $request->datum;
-        $podujatia->Miesto = $request->Miesto;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
-        $podujatia->users_id = $request->users_id;
-        $podujatia->save();
 
-        return redirect()->route('AllEvents');
+    public function pridat(Request $request)
+    {
+
+        //potvrdenie  users_id  podujatia_id
+        $hodnotenies = new Hodnotenies();
+        $hodnotenies->Otazka_1 = $request->Otazka_1;
+        $hodnotenies->Otazka_2 = $request->Otazka_2;
+        $hodnotenies->Otazka_3 = $request->Otazka_3;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->hodnotenie = $request->hodnotenie;
+        $hodnotenies->potvrdenie = $request->potvrdenie;
+        $hodnotenies->users_id = $request->users_id;
+        $hodnotenies->podujatia_id = $request->podujatia_id;
+        $hodnotenies->save();
+
+
+        $zmena = Podujatia::find($request->podujatia_id);
+        $zmena->confirmed = 1;
+        $zmena->save();
+
+        return redirect()->route('ucasnik');
     }
+
+
+
     public function show($id)
     {
         //
@@ -71,24 +96,11 @@ class AdminController extends Controller
         return view('admin/users/show', ['user' => $user]);
 
     }
-    public function EventShow($id)
-    {
-        //
-        $podujatia = podujatia::find($id);
-        return view('admin/podujatia/show', ['podujatie' => $podujatia]);
-
-    }
     public function edit($id)
     {
         //
         $user = User::find($id);
         return view('admin/users/edit', ['user' => $user]);
-    }
-    public function EventEdit($id)
-    {
-        //
-        $podujatia = podujatia::find($id);
-        return view('admin/podujatia/edit', ['podujatie' => $podujatia]);
     }
     public function update(Request $request, $id)
     {
@@ -100,31 +112,12 @@ class AdminController extends Controller
         $user->save();
         return redirect()->route('AllUsers');
     }
-    public function EventUpdate(Request $request, $id)
-    {
-        $podujatia = podujatia::find($id);
-        $podujatia->Nazov = $request->Nazov;
-        $podujatia->datum = $request->datum;
-        $podujatia->Miesto = $request->Miesto;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
-        $podujatia->users_id = $request->users_id;
-        $podujatia->save();
-
-        return redirect()->route('AllEvents');
-    }
     public function destroy($id)
     {
         //
         $user = User::find($id);
         $user->delete();
         return redirect()->route('AllUsers');
-    }
-    public function EventDestroy($id)
-    {
-        //
-        $podujatia = podujatia::find($id);
-        $podujatia->delete();
-        return redirect()->route('AllEvents');
     }
 /*
     public function showAction($id)
@@ -177,7 +170,7 @@ class AdminController extends Controller
     {
         $name = $request->input('name');
         $email = $request->input('email');
-        $password = $request->input('password');
+        $password = bcrypt($request->input['password']);
 
         $user = new User();
         $user->name = $name;
@@ -202,5 +195,23 @@ class AdminController extends Controller
     {
         return view('info_seminare');
     }
+    public function ziadosti()
+    {
+        return view('u_ziadosti');
+    }
+    public function formular($id)
+    {
+        $user = Podujatia::find($id);
+        return view('formular', ['details' => $user]);
+    }
 
+    public function getPatvdeneId($id)
+    {
+        $data = Podujatia::where('users_id', 'like', '%' . $id . '%')
+           ->where('confirmed',0)->get();
+            return view('u_ziadosti', ['details' => $data]);
+
+
+
+    }
 }
