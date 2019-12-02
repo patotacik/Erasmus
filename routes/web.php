@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [
     'as' => 'show', 'uses' =>'PagesController@getIndex',
 ]);
@@ -20,12 +21,22 @@ Route::get('/showa/{id}', [
     'as' => 'showa', 'uses' => 'AdminController@show']);
 
 Route::delete('/users/{id}', 'AdminController@destroy')->name('users.destroy');
+Route::delete('/events/{id}', 'AdminController@EventDestroy')->name('events.destroy');
 
 Route::post('/users', 'AdminController@store')->name('users.store');
+Route::post('/events', 'AdminController@EventStore')->name('events.store');
 
 Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
+Route::get('/events/{id}/edit', 'AdminController@EventEdit')->name('events.edit');
+
 
 Route::put('users/{id}', 'AdminController@update')->name('users.update');
+Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
+
+
+
+
+
 
 
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
@@ -44,29 +55,12 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
-
-
 Route::get('/ucasnik', 'AdminController@ucasnik')
     ->middleware('is_ucasnik')
     ->name('ucasnik');
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
     ->name('seminar');
-Route::get('/ziadosti', 'AdminController@ziadosti')
-    ->middleware('is_ucasnik')
-    ->name('ziadosti');
-Route::get('/formular/{id}', 'AdminController@formular')
-    ->middleware('is_ucasnik')
-    ->name('potvrdene.formular');
-
-Route::post('/pridat', 'AdminController@pridat')->name('formular.pridat');
-
-
-
-Route::get('/potvrdene/{users_id}', 'AdminController@getPatvdeneId')
-    ->middleware('is_ucasnik')
-    ->name('potvrdenie.details');
-
 
 Route::get('/show/{id}', [
     'as' => 'show', 'uses' => 'AdminController@ShowAction'
@@ -82,6 +76,10 @@ Route::post('/insert', [
 
 Route::get('/AllUsers', [
     'as' => 'AllUsers', 'uses' => 'AdminController@table'
+]);
+
+Route::get('/AllEvents', [
+    'as' => 'AllEvents', 'uses' => 'AdminController@EventsTable'
 ]);
 
 Route::post('/update/{id}', [
@@ -102,12 +100,7 @@ Route::get('login', [
 Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
-Route::get('faktultný_koordinatori', [
-    'as' => 'show', 'uses' =>'PagesController@getfaktkoord'
-]);
-Route::get('odd_medzin_vzt', [
-    'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
-]);
+
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');
