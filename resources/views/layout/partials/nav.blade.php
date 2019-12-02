@@ -102,7 +102,7 @@ Kontakty                    </a>
 
             <div class="modal-header">
 
-                <h4 class="modal-title"> <span class="glyphicon glyphicon-log-out">Prihlásenie</h4>
+                <h4 class="modal-title">Prihlásenie</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
