@@ -30,7 +30,7 @@
                                             <th scope="row">{{$user->id}}</th>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
-                                            <td>{{$user->roly_id}}</td>
+                                            <td>{{$user->rola_nazov->rola}}</td>
 
                                             <td class="d-flex align-items-center justify-content-around">
                                                 <form action="{{route('users.edit',$user->id)}}" method="get">
@@ -80,7 +80,7 @@
                                         <legend class="col-form-label col-sm-2 pt-0">Typ uživateľa</legend>
                                         <div class="col-sm-10">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" checked>
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" checked>
                                                 <label class="form-check-label" for="roly_id">
                                                     Účasník
                                                 </label>
@@ -91,7 +91,7 @@
 Referent                                                </label>
                                             </div>
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" >
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" >
                                                 <label class="form-check-label" for="roly_id" >
 Admin                                                </label>
                                             </div>

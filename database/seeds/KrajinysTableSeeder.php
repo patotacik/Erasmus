@@ -1,8 +1,9 @@
 <?php
 
+
 use Illuminate\Database\Seeder;
 
-class KrajinySeeder extends Seeder
+class KrajinysTableSeeder extends Seeder
 {
     public function run()
     {

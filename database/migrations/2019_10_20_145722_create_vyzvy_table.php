@@ -16,7 +16,6 @@ class CreateVyzvyTable extends Migration
         Schema::create('vyzvy', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('Nazov',45);
             $table->string('Typ',45);
             });
     }

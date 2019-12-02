@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
-class UsersTablesSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,12 +18,16 @@ class UsersTablesSeeder extends Seeder
             'email'    => 'admin@gmail.com',
             'password'   =>  Hash::make('password'),
             'remember_token' =>  str_random(10),
+            'roly_id'    => '1',
+
         ]);
         User::create([
             'name'    => 'Referent Smith',
             'email'    => 'referent@gmail.com',
             'password'   =>  Hash::make('password'),
             'remember_token' =>  str_random(10),
+            'roly_id'    => '2',
+
 
         ]);
         User::create([
@@ -31,6 +35,8 @@ class UsersTablesSeeder extends Seeder
             'email'    => 'ucasnik@gmail.com',
             'password'   =>  Hash::make('password'),
             'remember_token' =>  str_random(10),
+            'roly_id'    => '3',
+
         ]);
         }
 }

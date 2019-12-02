@@ -30,7 +30,7 @@
                                     <legend class="col-form-label col-sm-2 pt-0">Typ uživateľa</legend>
                                     <div class="col-sm-10">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" value="{{$user->roly_id}}">
+                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" value="{{$user->roly_id}}">
                                             <label class="form-check-label" for="roly_id">
                                                 Účasník
                                             </label>
@@ -41,7 +41,7 @@
                                                 Referent                                                </label>
                                         </div>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" value="{{$user->roly_id}}">
+                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" value="{{$user->roly_id}}">
                                             <label class="form-check-label" for="roly_id" >
                                                 Admin                                                </label>
                                         </div>
