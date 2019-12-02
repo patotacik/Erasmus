@@ -70,3 +70,8 @@
     .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
     /* Downloaded from http://devzone.co.in/ */
 </style>
+
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">

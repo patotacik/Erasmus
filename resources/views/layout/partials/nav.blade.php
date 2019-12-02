@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand"href="{{ URL::asset('index')}}">
-            <img src="{{ URL::asset('images/ukf2.jpg')}}" alt="Logo"  style="width:80px;">
+            <img src="{{ URL::asset('images/pok.png')}}" alt="Logo"  style="width:150px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,16 +40,16 @@ Kontakty                    </a>
 
             <a class="navbar-brand">
                 <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#myModal"data-color="blue">
-                    Prihlásenie
+                    <span class="glyphicon glyphicon-log-out"></span>  Prihlásenie
                 </button>
                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">
-                        Registracia
+                   <span class="glyphicon glyphicon-registration-mark"></span>      Registracia
                     </button></a>
                 @else
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }}                        </a>
+                            <i class="glyphicon glyphicon-user"></i>                            {{ Auth::user()->name }}                        </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @guest
                     @else
@@ -78,7 +78,7 @@ Kontakty                    </a>
                             <div class="dropdown-divider" ></div>
 
 
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();">Odlásiť</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span>  Odhlásiť</a>
                             <form id="logout-form" class="navbar-brand" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
@@ -102,7 +102,7 @@ Kontakty                    </a>
 
             <div class="modal-header">
 
-                <h4 class="modal-title">Prihlásenie</h4>
+                <h4 class="modal-title"> <span class="glyphicon glyphicon-log-out">Prihlásenie</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
@@ -188,7 +188,6 @@ Kontakty                    </a>
 
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
-
 
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
