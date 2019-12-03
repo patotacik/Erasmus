@@ -9,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [
     'as' => 'show', 'uses' =>'PagesController@getIndex',
 ]);
@@ -19,6 +20,7 @@ Route::get('/showa/{id}', [
 
 Route::delete('/users/{id}', 'AdminController@destroy')->name('users.destroy');
 Route::delete('/events/{id}', 'AdminController@EventDestroy')->name('events.destroy');
+<<<<<<< HEAD
 Route::delete('/univerzity/{id}', 'AdminController@UniverzityDestroy')->name('univerzity.destroy');
 
 Route::post('/users', 'AdminController@store')->name('users.store');
@@ -32,6 +34,40 @@ Route::get('/univerzity/{id}/edit', 'AdminController@UniverzityEdit')->name('uni
 Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
+=======
+<<<<<<< HEAD
+Route::delete('/univerzity/{id}', 'AdminController@UniverzityDestroy')->name('univerzity.destroy');
+
+Route::post('/users', 'AdminController@store')->name('users.store');
+Route::post('/events', 'AdminController@EventStore')->name('events.store');
+Route::post('/univerzity', 'AdminController@UniverzityStore')->name('univerzity.store');
+
+Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
+Route::get('/events/{id}/edit', 'AdminController@EventEdit')->name('events.edit');
+Route::get('/univerzity/{id}/edit', 'AdminController@UniverzityEdit')->name('univerzity.edit');
+
+Route::put('users/{id}', 'AdminController@update')->name('users.update');
+Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
+Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
+=======
+
+Route::post('/users', 'AdminController@store')->name('users.store');
+Route::post('/events', 'AdminController@EventStore')->name('events.store');
+
+Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
+Route::get('/events/{id}/edit', 'AdminController@EventEdit')->name('events.edit');
+
+
+Route::put('users/{id}', 'AdminController@update')->name('users.update');
+Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
+>>>>>>> 3ddf8d0e5524e3bc31e5d258f41cceb4fccb89d1
+
+
+
+
+
+
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 
@@ -48,7 +84,10 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 Route::get('/ucasnik', 'AdminController@ucasnik')
     ->middleware('is_ucasnik')
     ->name('ucasnik');
@@ -57,6 +96,7 @@ Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
     ->name('seminar');
 
+<<<<<<< HEAD
 Route::get('/ziadosti', 'AdminController@ziadosti')
     ->middleware('is_ucasnik')
     ->name('ziadosti');
@@ -71,6 +111,8 @@ Route::get('/potvrdene/{users_id}', 'AdminController@getPatvdeneId')
     ->middleware('is_ucasnik')
     ->name('potvrdenie.details');
 
+=======
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 Route::get('/show/{id}', [
     'as' => 'show', 'uses' => 'AdminController@ShowAction'
 ]);
@@ -91,10 +133,19 @@ Route::get('/AllEvents', [
     'as' => 'AllEvents', 'uses' => 'AdminController@EventsTable'
 ]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 Route::get('/AllUniverzity', [
     'as' => 'AllUniverzity', 'uses' => 'AdminController@UniverzityTable'
 ]);
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ddf8d0e5524e3bc31e5d258f41cceb4fccb89d1
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 Route::post('/update/{id}', [
     'as' => 'update', 'uses' => 'AdminController@updateAction'
 ]);
@@ -115,6 +166,7 @@ Route::get('staz', [
     'as' => 'show', 'uses' =>'PagesController@getStaz'
 ]);
 
+<<<<<<< HEAD
 Route::get('faktultný_koordinatori', [
     'as' => 'show', 'uses' =>'PagesController@getfaktkoord'
 ]);
@@ -123,6 +175,8 @@ Route::get('odd_medzin_vzt', [
     'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
 ]);
 
+=======
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');
@@ -131,5 +185,8 @@ Route::get('/main', 'MainController@index');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
+<<<<<<< HEAD
 Route::get('contactus', 'ContactUsController@getContactus');
 Route::post('contactus', 'ContactUsController@postContactus')->name('contactus');
+=======
+>>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
