@@ -9,22 +9,28 @@
         <thead class="">
           <tr class="text-center">
             <th scope="col" class="">#</th>
-            <th scope="col" class="">Name</th>
-            <th scope="col" class="">Email</th>
-            <th scope="col" class="">Password</th>
-            <th scope="col" class="">Created Date</th>
-            <th scope="col" class="">Updated Date</th>
+            <th scope="col" class="">Nazov</th>
+            <th scope="col" class="">datum</th>
+            <th scope="col" class="">mesto_id</th>
+            <th scope="col" class="">univerzity_id</th>
+            <th scope="col" class="">krajiny_id</th>
+            <th scope="col" class="">vyzvy_id</th>
+            <th scope="col" class="">users_id</th>
+            <th scope="col" class="">confirmed</th>
             <th scope="col" class="">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr class="text-center">
             <th scope="row">{{$podujatie->id}}</th>
-            <td>{{$podujatie->name}}</td>
-            <td>{{$podujatie->email}}</td>
-            <td>{{$podujatie->password}}</td>
-            <td>{{$podujatie->created_at}}</td>
-            <td>{{$podujatie->updated_at}}</td>
+            <td>{{$podujatie->Nazov}}</td>
+            <td>{{$podujatie->datum}}</td>
+            <td>{{$podujatie->mesto_id}}</td>
+            <td>{{$podujatie->univerzity_id}}</td>
+            <td>{{$podujatie->krajiny_id}}</td>
+            <td>{{$podujatie->vyzvy_id}}</td>
+            <td>{{$podujatie->users_id}}</td>
+            <td>{{$podujatie->confirmed}}</td>
             <td class="d-flex border-0 align-items-center">
               <form action="{{route('events.edit',$podujatie->id)}}" method="get">
                 <button class="btn btn-sm btn-warning mx-2 rounded-0">
