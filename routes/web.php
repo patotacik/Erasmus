@@ -22,6 +22,7 @@ Route::get('/showa/{id}', [
 
 Route::delete('/users/{id}', 'AdminController@destroy')->name('users.destroy');
 Route::delete('/events/{id}', 'AdminController@EventDestroy')->name('events.destroy');
+<<<<<<< HEAD
 Route::delete('/univerzity/{id}', 'AdminController@UniverzityDestroy')->name('univerzity.destroy');
 
 Route::post('/users', 'AdminController@store')->name('users.store');
@@ -35,6 +36,18 @@ Route::get('/univerzity/{id}/edit', 'AdminController@UniverzityEdit')->name('uni
 Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
+=======
+
+Route::post('/users', 'AdminController@store')->name('users.store');
+Route::post('/events', 'AdminController@EventStore')->name('events.store');
+
+Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
+Route::get('/events/{id}/edit', 'AdminController@EventEdit')->name('events.edit');
+
+
+Route::put('users/{id}', 'AdminController@update')->name('users.update');
+Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
+>>>>>>> 3ddf8d0e5524e3bc31e5d258f41cceb4fccb89d1
 
 
 
@@ -85,10 +98,13 @@ Route::get('/AllEvents', [
     'as' => 'AllEvents', 'uses' => 'AdminController@EventsTable'
 ]);
 
+<<<<<<< HEAD
 Route::get('/AllUniverzity', [
     'as' => 'AllUniverzity', 'uses' => 'AdminController@UniverzityTable'
 ]);
 
+=======
+>>>>>>> 3ddf8d0e5524e3bc31e5d258f41cceb4fccb89d1
 Route::post('/update/{id}', [
     'as' => 'update', 'uses' => 'AdminController@updateAction'
 ]);
