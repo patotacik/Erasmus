@@ -19,25 +19,18 @@
                     </a>
                 </li>
                 <li>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
                     <a href="{{route('AllEvents')}}">
                         <i class="now-ui-icons users_single-02"></i>
                         <p>Podujatia</p>
                     </a>
                 </li>
                 <li>
-<<<<<<< HEAD
                     <a href="{{route('AllUniverzity')}}">
                         <i class="now-ui-icons users_single-02"></i>
                         <p>Univerzity</p>
                     </a>
                 </li>
                 <li>
-=======
->>>>>>> 9e60e9e3e78b670925703aabb2b8d502101b3c4e
                     <a href="./dashboard.html">
                         <i class="now-ui-icons design_app"></i>
                         <p>Dashboard</p>
