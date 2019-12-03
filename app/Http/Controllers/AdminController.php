@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Formular;
+use App\Hodnotenies;
+use App\univerzity;
 use Illuminate\Http\Request;
 use App\User;
 use App\Podujatia;
@@ -16,6 +19,39 @@ class AdminController extends Controller
     public function admin()
     {
         return view('admin/admin');
+    }
+
+
+
+    public function mySearch(Request $request)
+    {
+        if($request->has('search')){
+            $users = User::search($request->get('search'))->get();
+        }else{
+            $users = User::get();
+        }
+        return view('admin/admin_table', compact('users'));
+    }
+
+    public function pridat(Request $request)
+    {
+        //potvrdenie  users_id  podujatia_id
+        $hodnotenies = new Hodnotenies();
+        $hodnotenies->Otazka_1 = $request->Otazka_1;
+        $hodnotenies->Otazka_2 = $request->Otazka_2;
+        $hodnotenies->Otazka_3 = $request->Otazka_3;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->Otazka_4 = $request->Otazka_4;
+        $hodnotenies->hodnotenie = $request->hodnotenie;
+        $hodnotenies->potvrdenie = $request->potvrdenie;
+        $hodnotenies->users_id = $request->users_id;
+        $hodnotenies->podujatia_id = $request->podujatia_id;
+        $hodnotenies->save();
+        $zmena = Podujatia::find($request->podujatia_id);
+        $zmena->confirmed = 1;
+        $zmena->save();
+        return redirect()->route('ucasnik');
     }
 
     public function table()
@@ -34,6 +70,14 @@ class AdminController extends Controller
 
     }
 
+    public function Univerzitytable()
+    {
+        $univerzity = univerzity::latest()->paginate(5);
+        return view('admin/admin_UniverzityTable', ['univerzity' => $univerzity])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+
     public function create()
     {
         //
@@ -45,7 +89,7 @@ class AdminController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request['password']);
         $user->roly_id = $request->roly_id;
         $user->save();
 
@@ -57,13 +101,30 @@ class AdminController extends Controller
         $podujatia = new Podujatia();
         $podujatia->Nazov = $request->Nazov;
         $podujatia->datum = $request->datum;
-        $podujatia->Miesto = $request->Miesto;
+        $podujatia->mesto_id = $request->mesto_id;
+        $podujatia->univerzity_id = $request->univerzity_id;
+        $podujatia->krajiny_id = $request->krajiny_id;
         $podujatia->vyzvy_id = $request->vyzvy_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->confirmed = $request->confirmed;
         $podujatia->save();
 
         return redirect()->route('AllEvents');
     }
+
+    public function UniverzityStore(Request $request)
+    {
+        //
+        $univerzity = new univerzity();
+        $univerzity->Nazov = $request->Nazov;
+        $univerzity->zaciatok = $request->zaciatok;
+        $univerzity->konec = $request->konec;
+        $univerzity->krajiny_id = $request->krajiny_id;
+        $univerzity->save();
+
+        return redirect()->route('AllUniverzity');
+    }
+
     public function show($id)
     {
         //
@@ -78,6 +139,13 @@ class AdminController extends Controller
         return view('admin/podujatia/show', ['podujatie' => $podujatia]);
 
     }
+    public function UniverzityShow($id)
+    {
+        //
+        $univerzity = univerzity::find($id);
+        return view('admin/univerzity/show', ['univerzity' => $univerzity]);
+
+    }
     public function edit($id)
     {
         //
@@ -89,6 +157,12 @@ class AdminController extends Controller
         //
         $podujatia = podujatia::find($id);
         return view('admin/podujatia/edit', ['podujatie' => $podujatia]);
+    }
+    public function UniverzityEdit($id)
+    {
+        //
+        $univerzity = univerzity::find($id);
+        return view('admin/univerzity/edit', ['univerzity' => $univerzity]);
     }
     public function update(Request $request, $id)
     {
@@ -105,12 +179,28 @@ class AdminController extends Controller
         $podujatia = podujatia::find($id);
         $podujatia->Nazov = $request->Nazov;
         $podujatia->datum = $request->datum;
-        $podujatia->Miesto = $request->Miesto;
+        $podujatia->mesto_id = $request->mesto_id;
+        $podujatia->univerzity_id = $request->univerzity_id;
+        $podujatia->krajiny_id = $request->krajiny_id;
         $podujatia->vyzvy_id = $request->vyzvy_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->confirmed = $request->confirmed;
+
         $podujatia->save();
 
         return redirect()->route('AllEvents');
+    }
+    public function UniverzityUpdate(Request $request, $id)
+    {
+        $univerzity = univerzity::find($id);
+        $univerzity->Nazov = $request->Nazov;
+        $univerzity->zaciatok = $request->zaciatok;
+        $univerzity->konec = $request->konec;
+        $univerzity->krajiny_id = $request->krajiny_id;
+
+        $univerzity->save();
+
+        return redirect()->route('AllUniverzity');
     }
     public function destroy($id)
     {
@@ -125,6 +215,13 @@ class AdminController extends Controller
         $podujatia = podujatia::find($id);
         $podujatia->delete();
         return redirect()->route('AllEvents');
+    }
+    public function UniverzityDestroy($id)
+    {
+        //
+        $univerzity = univerzity::find($id);
+        $univerzity->delete();
+        return redirect()->route('AllUniverzity');
     }
 /*
     public function showAction($id)
@@ -172,6 +269,19 @@ class AdminController extends Controller
         return response()->view('admin/admin_table');
     }
 */
+
+    public function formular($id)
+    {
+        $user = Podujatia::find($id);
+        return view('formular', ['details' => $user]);
+    }
+
+    public function getPatvdeneId($id)
+    {
+        $data = Podujatia::where('users_id', 'like', '%' . $id . '%')
+            ->where('confirmed',0)->get();
+        return view('u_ziadosti', ['details' => $data]);
+    }
 
     public function insertAction(Request $request)
     {
