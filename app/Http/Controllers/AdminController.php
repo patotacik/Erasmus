@@ -19,7 +19,18 @@ class AdminController extends Controller
     {
         return view('admin/admin');
     }
-
+    public function vyzva()
+    {
+        return view('vyzva');
+    }
+    public function spravy_ucasnikov()
+    {
+        return view('spravy_ucasnikov');
+    }
+    public function prid_unv()
+    {
+        return view('pridanie_unv');
+    }
     public function table()
     {
         $users = User::latest()->paginate(5);

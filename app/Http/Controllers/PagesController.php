@@ -13,8 +13,12 @@ class PagesController extends Controller
         return view('kontakt');
     }
     public function getIndex() {
-        $podujatia = Podujatia::all();
+       /* $podujatia = Podujatia::all()->random(4);
         return view('index') -> with('podujatia', $podujatia);
+   */
+        $podujatia = Podujatia::orderBy('pocitadlo', 'DESC')->limit(4)->get();
+        return view('index') -> with('podujatia', $podujatia);
+
     }
     public function getErasmus() {
         return view('erasmus');

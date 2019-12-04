@@ -54,9 +54,9 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isReferent())
-                            <a class="dropdown-item"href="{{route('ucasnik')}}">Úprava Výzvy</a>
-                            <a class="dropdown-item" href="" >Pridať partnerské univerzity</a>
-                            <a class="dropdown-item" href="{{route('seminar')}}">Správy účastníkov</a>
+                            <a class="dropdown-item"href="{{route('výzva')}}">Správa výziev</a>
+                            <a class="dropdown-item" href="{{route('spravy')}}" > Správy účastníkov mobility</a>
+                            <a class="dropdown-item" href="{{route('prid_unv')}}"> Pridánie partnerskéj univerzity</a>
 
                         @endif
                     @endguest
@@ -73,12 +73,13 @@ Kontakty                    </a>
                         @endif
                     @endguest
                     @if(Auth::user()->isAdmin())
-                        <a class="dropdown-item"  href="{{route('admin')}}">Admin</a>
+                            <a class="dropdown-item"  href="{{route('admin')}}">Admin rozranie</a>
                     @endif
                             <div class="dropdown-divider" ></div>
 
 
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span>  Odhlásiť</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();       document.getElementById('logout-form').submit();"> <div class="p-3 mb-2 bg-danger text-white">
+                                    <span class="glyphicon glyphicon-log-out"></span> Odhlásiť</div></a>
                             <form id="logout-form" class="navbar-brand" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>

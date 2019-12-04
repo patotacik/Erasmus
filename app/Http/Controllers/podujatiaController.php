@@ -8,7 +8,10 @@ use App\Podujatia;
 class podujatiaController extends Controller
 {
     public function getPodujatia(){
-        $podujatia = Podujatia::all();
-        return view('erasmus') -> with('podujatia', $podujatia);
+        $podujatia = Podujatia::latest()->paginate(2);
+        return view('erasmus') -> with('podujatia', $podujatia)
+        ->with('i', (request()->input('page', 1) - 1) * 2);
+
     }
+
 }

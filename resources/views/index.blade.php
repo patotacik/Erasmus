@@ -60,27 +60,37 @@
         </div>
     </section>
 
-    <section class="ftco-section">
+    <section class="ftco-section goto-here">
         <div class="container">
-            <div class="row align-items-start">
+            <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">Ponuka erazmus+</span>
-                    <h2 class="mb-2">Najžiadanejšie ponuky</h2>
+                    <span class="subheading">Erasmus+</span>
+                    <h2 class="mb-2">Top punuky</h2>
                 </div>
+            </div>
+            <div class="row">
                 @foreach($podujatia as $row)
-                    <div class="col">
+
+                    <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
-                            <a href='{{route('erasmus.details',$row->id)}}' method="post" class="img" style="background-image: url(images/work-1.jpg);"></a>
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
+                                <a href="{{route('erasmus.details',$row->id)}}" method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="ion-ios-link"></span>
+                                </a>
+                            </div>
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>
                                 <h3 class="location">Miesto: {{$row->Miesto}}</h3>
-                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
-                                    <span class="ion-ios-link"></span></a>
+
+                                <a class="d-flex align-items-center justify-content-center btn-custom">
+                                   <h3 class="display-2">{{$row->pocitadlo}} <span class="glyphicon glyphicon-eye-open"> </span></h3></a>
                             </div>
                         </div>
                     </div>
+
                 @endforeach
+
             </div>
         </div>
     </section>

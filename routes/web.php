@@ -44,6 +44,15 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
+Route::get('/výzva', 'AdminController@vyzva')
+    ->middleware('is_referent')
+    ->name('výzva');
+Route::get('/správy', 'AdminController@spravy_ucasnikov')
+    ->middleware('is_referent')
+    ->name('spravy');
+Route::get('/nove_univerzity', 'AdminController@prid_unv')
+    ->middleware('is_referent')
+    ->name('prid_unv');
 
 
 Route::get('/ucasnik', 'AdminController@ucasnik')
