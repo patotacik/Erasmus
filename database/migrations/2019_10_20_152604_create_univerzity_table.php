@@ -15,12 +15,14 @@ class CreateUniverzityTable extends Migration
     {
         Schema::create('univerzity', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('Nazov',45);
-            $table->date('zmluva-od');
-            $table->date('zmluva-do');
+            $table->string('nazov',45);
+            $table->date('zmluva_od');
+            $table->date('zmluva_do');
+            $table->integer('mesto_id')->unsigned();
+            $table->foreign('mesto_id') ->references('id')->on('mesto');
             $table->integer('krajiny_id')->unsigned();
             $table->foreign('krajiny_id') ->references('id')->on('krajiny');
+
         });
     }
 
