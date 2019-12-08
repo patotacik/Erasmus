@@ -1,13 +1,12 @@
 <?php
 
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class univerzity extends Model
+class Krajiny extends Model
 {
     protected $fillable = [
-        'Nazov', 'zaciatok', 'konec','krajiny_id',
+        'id', 'code','name','phonecode',
     ];
 }

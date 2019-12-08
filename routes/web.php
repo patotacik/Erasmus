@@ -33,8 +33,9 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
 
-Route::get('/erasmus', 'PodujatiaController@getPodujatia');
+Route::get('/erasmus', 'podujatiaController@getPodujatia');
 
+Route::post('/erasmus/filter', 'podujatiaController@filter');
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 
 Route::get('/admin', 'AdminController@admin')
