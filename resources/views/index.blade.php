@@ -84,7 +84,6 @@
                                 <h3>Dátum: {{$row->datum}}</h3>
                                 <h3 class="location">Miesto: {{$row->Miesto}}</h3>
 
-                                <a href="{{route('erasmus.details',$row->id)}}" method="post" class="d-flex align-items-center justify-content-center btn-custom">
                                    <h3 class="display-2">{{$row->pocitadlo}} <span class="fa fa-eye"> </span></h3></a>
                             </div>
                         </div>

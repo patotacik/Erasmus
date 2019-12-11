@@ -152,3 +152,7 @@ Route::get('password/reset/{token?}', 'Auth\ForgotPasswordController@showLinkReq
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
