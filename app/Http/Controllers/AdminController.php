@@ -75,9 +75,30 @@ class AdminController extends Controller
 
     public function pridat(Request $request)
     {
+        $this->validate($request, [
+
+            'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
+
+        if($request->hasfile('filename'))
+        {
+
+            foreach($request->file('filename') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/images/', $name);
+                $data[] = $name;
+            }
+        }
+
+
 
         //potvrdenie  users_id  podujatia_id
         $hodnotenies = new Hodnotenies();
+        $hodnotenies->filename=json_encode($data);
+
         $hodnotenies->Otazka_1 = $request->Otazka_1;
         $hodnotenies->Otazka_2 = $request->Otazka_2;
         $hodnotenies->Otazka_3 = $request->Otazka_3;
@@ -94,6 +115,15 @@ class AdminController extends Controller
         $zmena = Podujatia::find($request->podujatia_id);
         $zmena->confirmed = 1;
         $zmena->save();
+
+        $form= new Form();
+        $form->filename=json_encode($data);
+        $form->save();
+
+
+
+
+
 
         return redirect()->route('ucasnik');
     }

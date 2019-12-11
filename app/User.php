@@ -47,5 +47,9 @@ public function rola_nazov(){
         return $this->roly_id == self::UCASNIK_TYPE;
     }
 
-
+    public function setPasswordAttribute($input)
+    {
+        if ($input)
+            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
+    }
 }

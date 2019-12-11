@@ -46,3 +46,39 @@
 
 <script src="{{ URL::asset('form/js/main.js')}}"></script>
 <script src="{{ URL::asset('form/js/jquery.steps.js')}}"></script>
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function() {
+
+        $(".btn-success").click(function(){
+            var html = $(".clone").html();
+            $(".increment").after(html);
+        });
+
+        $("body").on("click",".btn-danger",function(){
+            $(this).parents(".control-group").remove();
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("form#my-awesome-dropzone", {
+        headers: {
+            "X-CSRF-TOKEN": $("meta[name='csrf-token']").attr("content")
+        },
+        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+        dictDefaultMessage: "Drag an image here to upload, or click to select one",
+        maxFiles: 15, // Maximum Number of Files
+        maxFilesize: 8, // MB
+        addRemoveLinks: true,
+    });
+
+    myDropzone.on("success", function (response) {console.log(response.xhr.response); });
+
+</script>
