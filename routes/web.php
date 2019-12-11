@@ -143,3 +143,12 @@ Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('contactus', 'ContactUsController@getContactus');
 Route::post('contactus', 'ContactUsController@postContactus')->name('contactus');
+Auth::routes();
+$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('password/reset/{token?}', 'Auth\ForgotPasswordController@showLinkRequestForm');
+
+
+Route::get('/home', 'HomeController@index')->name('home');

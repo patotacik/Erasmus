@@ -41,13 +41,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
 
 
-<script src="{{ URL::asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{ URL::asset('vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-<script src="{{ URL::asset('vendor/jquery-validation/dist/additional-methods.min.js')}}"></script>
-<script src="{{ URL::asset('vendor/jquery-steps/jquery.steps.min.js')}}"></script>
-<script src="{{ URL::asset('js/main.js')}}"></script>
 
 
-<script src="{{ URL::asset('form/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{ URL::asset('form/js/jquery.steps.js')}}"></script>
+
 <script src="{{ URL::asset('form/js/main.js')}}"></script>
+<script src="{{ URL::asset('form/js/jquery.steps.js')}}"></script>

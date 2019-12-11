@@ -11,7 +11,6 @@ $(function(){
         labels: {
             previous : 'Back Step',
             next : 'Next',
-            current : ''
         },
     })
 });

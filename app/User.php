@@ -20,6 +20,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password','roly_id',
     ];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 public function rola_nazov(){
     return $this->hasOne('App\Roly','id','roly_id');
 }
@@ -28,9 +31,7 @@ public function rola_nazov(){
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+
     const ADMIN_TYPE = '1';
     const REFERENT_TYPE = '2';
     const UCASNIK_TYPE = '3';

@@ -7,6 +7,8 @@
         <div class="wizard-form">
             <form class="form-register" action="{{route('formular.pridat')}}" method="post">
                 <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
+                <div class="wizard-form">
+
                 <div id="form-total">
                     <!-- SECTION 1 -->
                     <h2>
@@ -151,14 +153,16 @@
                         </div>
 
                     </section>
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
+                            Odoslať
+                        </button>
                 </div>
-                <div class="form-group ">
-                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
-                        Odoslať
-                    </button>
+
                 </div>
+                </div>
+
             </form>
-        </div>
     </div>
 </div>
 @endsection

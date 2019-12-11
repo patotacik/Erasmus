@@ -219,7 +219,7 @@ class AdminController extends Controller
     public function getPatvdeneId($id)
     {
         $data = Podujatia::where('users_id', 'like', '%' . $id . '%')
-           ->where('confirmed',0)->get();
+           ->where('confirmed',null)->get();
             return view('u_ziadosti', ['details' => $data]);
 
 

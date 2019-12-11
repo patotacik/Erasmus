@@ -1,68 +1,132 @@
 @extends('layout.mainlayout')
-@section('content')
 
+@section('content')
     <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/inf.jpg')}});"
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
     </section>
-    <section class="ftco-section contact-section">
+    <section class="ftco-section">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">Ponuka erazmus+</span>
-                    <h2 class="mb-2">Najžiadanejšie ponuky</h2>
+                    <span class="subheading">Kontakty</span>
+                    <h2 class="mb-2">Katedrový koordinátori</h2>
+                </div>
+                <div class="container">
+
+                    <h2 class="mb-2">Filozofická fakulta:</h2>
+
+                    <table class="table table-dark table-striped">
+                        <thead>
+                        <tr>
+                            <th>Meno</th>
+                            <th>Mobilný telefon</th>
+                            <th>Email</th>
+                            <th>Katedra:</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Mgr. PaedDr. Pavol Burcl, PhD.</td>
+                            <td>037/6408 372</td>
+                            <td>pburcl@ukf.sk</td>
+                            <td>Jazykové centrum</td>
+
+                        </tr>
+                        <tr>
+                            <td>Mgr. Alena Mikulášová, PhD.</td>
+                            <td>037/6408 397</td>
+                            <td>amikulasova@ukf.sk</td>
+                            <td>Katedra histórie</td>
+
+                        </tr>
+                        <tr>
+                            <td>Mgr. Eva Bútorová, PhD.</td>
+                            <td>037/6408 411 </td>
+                            <td>ebutorova@ukf.sk</td>
+                            <td>Katedra žurnalistiky</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="mb-2">Fakulta prírodných vied:</h2>
+
+                    <table class="table table-dark table-striped">
+                        <thead>
+                        <tr>
+                            <th>Meno</th>
+                            <th>Mobilný telefon</th>
+                            <th>Email</th>
+                            <th>Katedra:</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>PaedDr. Viera Michaličková, PhD.</td>
+                            <td>037/6408 674</td>
+                            <td>vmichalickova@ukf.sk</td>
+                            <td>Katedra informatiky</td>
+
+                        </tr>
+                        <tr>
+                            <td>PaedDr. Janka Medová, PhD.</td>
+                            <td>037/6408 691 </td>
+                            <td>jmedova@ukf.sk</td>
+                            <td>Katedra matematiky</td>
+
+                        </tr>
+                        <tr>
+                            <td>doc. Ing. Melánia Feszterová, PhD.</td>
+                            <td>037/6408 657</td>
+                            <td>mfeszterova@ukf.sk</td>
+                            <td>Katedra chémie</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="mb-2">Fakulta stredoeurópskych štúdií:</h2>
+
+                    <table class="table table-dark table-striped">
+                        <thead>
+                        <tr>
+                            <th>Meno</th>
+                            <th>Mobilný telefon</th>
+                            <th>Email</th>
+                            <th>Katedra:</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>PaedDr. Viera Michaličková, PhD.</td>
+                            <td>037/6408 674</td>
+                            <td>vmichalickova@ukf.sk</td>
+                            <td>Katedra informatiky</td>
+
+                        </tr>
+                        <tr>
+                            <td>PaedDr. Janka Medová, PhD.</td>
+                            <td>037/6408 691 </td>
+                            <td>jmedova@ukf.sk</td>
+                            <td>Katedra matematiky</td>
+
+                        </tr>
+                        <tr>
+                            <td>doc. Ing. Melánia Feszterová, PhD.</td>
+                            <td>037/6408 657</td>
+                            <td>mfeszterova@ukf.sk</td>
+                            <td>Katedra chémie</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
-
-            <div class="row d-flex mb-5 contact-info justify-content-center">
-                <div class="col-md-8">
-                    <div class="row mb-5">
-                        <div class="col-md-4 text-center py-4">
-                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
-                                <span class="icon-map-o"></span>
-                            </div>
-                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-                        </div>
-                        <div class="col-md-4 text-center border-height py-4">
-                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
-                                <span class="icon-mobile-phone"></span>
-                            </div>
-                            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-                        </div>
-                        <div class="col-md-4 text-center py-4">
-                            <div class="icon mb-3 d-flex align-items-center justify-content-center">
-                                <span class="icon-envelope-o"></span>
-                            </div>
-                            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row block-9 justify-content-center mb-5">
-                <div class="col-md-8 mb-md-5">
-                    <h2 class="text-center">If you got any questions <br>please do not hesitate to send us a message</h2>
-                    <form action="#" class="bg-light p-5 contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
         </div>
     </section>
-
 @endsection
