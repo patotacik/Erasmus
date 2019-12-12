@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Formular;
 use App\Hodnotenies;
 use App\Podujatia;
+use App\Roly;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -33,8 +34,10 @@ class AdminController extends Controller
     }
     public function table()
     {
+        $rolys = Roly::all();
+
         $users = User::latest()->paginate(5);
-        return view('admin/admin_table', ['users' => $users])
+        return view('admin/admin_table', ['users' => $users],['rolys' => $rolys])
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
@@ -140,8 +143,9 @@ class AdminController extends Controller
     public function edit($id)
     {
         //
+        $rolys = Roly::all();
         $user = User::find($id);
-        return view('admin/users/edit', ['user' => $user]);
+        return view('admin/users/edit', ['user' => $user],['rolys' => $rolys]);
     }
     public function update(Request $request, $id)
     {

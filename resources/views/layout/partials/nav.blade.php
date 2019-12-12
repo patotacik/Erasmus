@@ -73,7 +73,7 @@ Kontakty                    </a>
                         @endif
                     @endguest
                     @if(Auth::user()->isAdmin())
-                            <a class="dropdown-item"  href="{{route('admin')}}">Admin rozranie</a>
+                            <a class="dropdown-item"  href="{{route('AllUsers')}}">Admin rozranie</a>
                     @endif
                             <div class="dropdown-divider" ></div>
 
