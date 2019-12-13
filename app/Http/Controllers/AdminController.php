@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Formular;
+use App\Hodnotenie;
 use App\Hodnotenies;
 use App\univerzity;
 use App\Podujatia;
@@ -96,7 +97,7 @@ class AdminController extends Controller
         $form= new Form();
         $form->filename=json_encode($data);
         $form->save();
-        return redirect()->route('ucasnik');
+        return redirect()->route('blog');
     }
 
     public function Eventstable()
@@ -312,9 +313,13 @@ class AdminController extends Controller
     {
         return view('referent');
     }
-    public function ucasnik()
+
+
+    public function blog()
     {
-        return view('blog');
+        $blog = Hodnotenie::latest()->paginate(5);
+        return view('blog', ['blog' => $blog])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function ucasnik_inf_sem()
     {

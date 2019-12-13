@@ -37,6 +37,7 @@ Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 Route::post('/erasmus/filter', 'podujatiaController@filter');
 
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
+Route::get('/details_blogy/{id}', 'detailsController@getBlogId')->name('blogy.details');
 
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
@@ -59,9 +60,9 @@ Route::get('/správy', 'AdminController@spravy_ucasnikov')
 Route::get('/nove_univerzity', 'AdminController@prid_unv')
     ->middleware('is_referent')
     ->name('prid_unv');
-Route::get('/ucasnik', 'AdminController@ucasnik')
+Route::get('/blogy', 'AdminController@blog')
     ->middleware('is_ucasnik')
-    ->name('ucasnik');
+    ->name('blogy');
 
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
