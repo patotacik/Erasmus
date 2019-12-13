@@ -33,9 +33,9 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
 
-Route::get('/erasmus', 'podujatiaController@getPodujatia');
-
+Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 Route::post('/erasmus/filter', 'podujatiaController@filter');
+
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 
 Route::get('/admin', 'AdminController@admin')
@@ -49,6 +49,7 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
+
 Route::get('/výzva', 'AdminController@vyzva')
     ->middleware('is_referent')
     ->name('výzva');
@@ -58,7 +59,6 @@ Route::get('/správy', 'AdminController@spravy_ucasnikov')
 Route::get('/nove_univerzity', 'AdminController@prid_unv')
     ->middleware('is_referent')
     ->name('prid_unv');
-
 Route::get('/ucasnik', 'AdminController@ucasnik')
     ->middleware('is_ucasnik')
     ->name('ucasnik');
@@ -149,10 +149,6 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('password/reset/{token?}', 'Auth\ForgotPasswordController@showLinkRequestForm');
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
 $this->get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 $this->patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
