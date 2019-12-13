@@ -20,12 +20,12 @@ class CreateHodnoteniesTable extends Migration
             $table->text('Otazka_3');
             $table->text('Otazka_4');
             $table->tinyInteger('hodnotenie');
-            $table->integer('pocitadlo');
             $table->boolean('potvrdenie');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id') ->references('id')->on('users');
-            $table->integer('podujatia_id')->unsigned();
-            $table->foreign('podujatia_id') ->references('id')->on('podujatia');
+            $table->integer('podujatias_id')->unsigned();
+            $table->foreign('podujatias_id') ->references('id')->on('podujatias');
+            $table->integer('pocitadlo');
             $table->timestamps();
         });
     }

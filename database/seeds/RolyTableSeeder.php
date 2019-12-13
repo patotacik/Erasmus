@@ -14,11 +14,11 @@ class RolyTableSeeder extends Seeder
     public function run()
     {
         DB::table('rolies')->delete();
-        $roly = array(
-            array('rola' => 'Admin'),
-            array('rola' => 'Referent'),
-            array('rola' => 'Ucasnik'),
+        $rolies = array(
+            array('id' => 1,'rola' => 'Admin'),
+            array('id' => 2,'rola' => 'Referent'),
+            array('id' => 3,'rola' => 'Ucasnik'),
         );
-        DB::table('rolies')->insert($roly);
+        DB::table('rolies')->insert($rolies);
     }
 }

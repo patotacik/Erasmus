@@ -20,8 +20,8 @@ class CreateUniverzityTable extends Migration
             $table->date('zmluva_do');
             $table->integer('mesto_id')->unsigned();
             $table->foreign('mesto_id') ->references('id')->on('mesto');
-            $table->integer('krajiny_id')->unsigned();
-            $table->foreign('krajiny_id') ->references('id')->on('krajiny');
+            $table->integer('krajinys_id')->unsigned();
+            $table->foreign('krajinys_id') ->references('id')->on('krajinys');
 
         });
     }
