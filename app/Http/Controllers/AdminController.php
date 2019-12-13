@@ -1,21 +1,18 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Formular;
 use App\Hodnotenies;
+use App\univerzity;
 use App\Podujatia;
 use App\Roly;
 use Illuminate\Http\Request;
 use App\User;
-
 class AdminController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-
     public function admin()
     {
         return view('admin/admin');
@@ -35,14 +32,10 @@ class AdminController extends Controller
     public function table()
     {
         $rolys = Roly::all();
-
         $users = User::latest()->paginate(5);
         return view('admin/admin_table', ['users' => $users],['rolys' => $rolys])
             ->with('i', (request()->input('page', 1) - 1) * 5);
-
     }
-
-
     public function mySearch(Request $request)
     {
         if($request->has('search')){
@@ -50,14 +43,8 @@ class AdminController extends Controller
         }else{
             $users = User::get();
         }
-
-
         return view('admin/admin_table', compact('users'));
     }
-
-
-
-
     public function create()
     {
         //
@@ -72,22 +59,16 @@ class AdminController extends Controller
         $user->password = bcrypt($request['password']);
         $user->roly_id = $request->roly_id;
         $user->save();
-
         return redirect()->route('AllUsers');
     }
-
     public function pridat(Request $request)
     {
         $this->validate($request, [
-
             'filename' => 'required',
             'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-
         ]);
-
         if($request->hasfile('filename'))
         {
-
             foreach($request->file('filename') as $image)
             {
                 $name=$image->getClientOriginalName();
@@ -95,13 +76,9 @@ class AdminController extends Controller
                 $data[] = $name;
             }
         }
-
-
-
         //potvrdenie  users_id  podujatia_id
         $hodnotenies = new Hodnotenies();
         $hodnotenies->filename=json_encode($data);
-
         $hodnotenies->Otazka_1 = $request->Otazka_1;
         $hodnotenies->Otazka_2 = $request->Otazka_2;
         $hodnotenies->Otazka_3 = $request->Otazka_3;
@@ -113,25 +90,60 @@ class AdminController extends Controller
         $hodnotenies->users_id = $request->users_id;
         $hodnotenies->podujatia_id = $request->podujatia_id;
         $hodnotenies->save();
-
-
         $zmena = Podujatia::find($request->podujatia_id);
         $zmena->confirmed = 1;
         $zmena->save();
-
         $form= new Form();
         $form->filename=json_encode($data);
         $form->save();
-
-
-
-
-
-
         return redirect()->route('ucasnik');
     }
 
+    public function Eventstable()
+    {
+        $podujatia = podujatia::latest()->paginate(5);
+        return view('admin/admin_EventsTable', ['podujatia' => $podujatia])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
 
+    }
+
+    public function Univerzitytable()
+    {
+        $univerzity = univerzity::latest()->paginate(5);
+        return view('admin/admin_UniverzityTable', ['univerzity' => $univerzity])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+
+    public function EventStore(Request $request)
+    {
+        //
+        $podujatia = new Podujatia();
+        $podujatia->Nazov = $request->Nazov;
+        $podujatia->datum = $request->datum;
+        $podujatia->mesto_id = $request->mesto_id;
+        $podujatia->univerzity_id = $request->univerzity_id;
+        $podujatia->krajiny_id = $request->krajiny_id;
+        $podujatia->vyzvy_id = $request->vyzvy_id;
+        $podujatia->users_id = $request->users_id;
+        $podujatia->confirmed = $request->confirmed;
+        $podujatia->save();
+
+        return redirect()->route('AllEvents');
+    }
+
+    public function UniverzityStore(Request $request)
+    {
+        //
+        $univerzity = new univerzity();
+        $univerzity->Nazov = $request->Nazov;
+        $univerzity->zaciatok = $request->zaciatok;
+        $univerzity->konec = $request->konec;
+        $univerzity->krajiny_id = $request->krajiny_id;
+        $univerzity->save();
+
+        return redirect()->route('AllUniverzity');
+    }
 
     public function show($id)
     {
@@ -140,12 +152,38 @@ class AdminController extends Controller
         return view('admin/users/show', ['user' => $user]);
 
     }
+    public function EventShow($id)
+    {
+        //
+        $podujatia = podujatia::find($id);
+        return view('admin/podujatia/show', ['podujatie' => $podujatia]);
+
+    }
+    public function UniverzityShow($id)
+    {
+        //
+        $univerzity = univerzity::find($id);
+        return view('admin/univerzity/show', ['univerzity' => $univerzity]);
+
+    }
     public function edit($id)
     {
         //
         $rolys = Roly::all();
         $user = User::find($id);
         return view('admin/users/edit', ['user' => $user],['rolys' => $rolys]);
+    }
+    public function EventEdit($id)
+    {
+        //
+        $podujatia = podujatia::find($id);
+        return view('admin/podujatia/edit', ['podujatie' => $podujatia]);
+    }
+    public function UniverzityEdit($id)
+    {
+        //
+        $univerzity = univerzity::find($id);
+        return view('admin/univerzity/edit', ['univerzity' => $univerzity]);
     }
     public function update(Request $request, $id)
     {
@@ -157,6 +195,34 @@ class AdminController extends Controller
         $user->save();
         return redirect()->route('AllUsers');
     }
+    public function EventUpdate(Request $request, $id)
+    {
+        $podujatia = podujatia::find($id);
+        $podujatia->Nazov = $request->Nazov;
+        $podujatia->datum = $request->datum;
+        $podujatia->mesto_id = $request->mesto_id;
+        $podujatia->univerzity_id = $request->univerzity_id;
+        $podujatia->krajiny_id = $request->krajiny_id;
+        $podujatia->vyzvy_id = $request->vyzvy_id;
+        $podujatia->users_id = $request->users_id;
+        $podujatia->confirmed = $request->confirmed;
+
+        $podujatia->save();
+
+        return redirect()->route('AllEvents');
+    }
+    public function UniverzityUpdate(Request $request, $id)
+    {
+        $univerzity = univerzity::find($id);
+        $univerzity->Nazov = $request->Nazov;
+        $univerzity->zaciatok = $request->zaciatok;
+        $univerzity->konec = $request->konec;
+        $univerzity->krajiny_id = $request->krajiny_id;
+
+        $univerzity->save();
+
+        return redirect()->route('AllUniverzity');
+    }
     public function destroy($id)
     {
         //
@@ -164,52 +230,66 @@ class AdminController extends Controller
         $user->delete();
         return redirect()->route('AllUsers');
     }
-/*
-    public function showAction($id)
+    public function EventDestroy($id)
     {
-        $users = User::find($id);
-        return view("admin/edit", ['user' => $users]);
+        //
+        $podujatia = podujatia::find($id);
+        $podujatia->delete();
+        return redirect()->route('AllEvents');
     }
-
-    public function updateAction($id, Request $request)
+    public function UniverzityDestroy($id)
     {
-        $user = \App\Models\User::where("id", "=", $id)->first();
-        $user->update(['name' => $request->input('name'),
-            'email' => $request->input('Email')]);
-
-        //$user->update(['email' => $request->input('Email')]);
-
-        return redirect()->action('UserController@showAllAction');
+        //
+        $univerzity = univerzity::find($id);
+        $univerzity->delete();
+        return redirect()->route('AllUniverzity');
     }
+    /*
+        public function showAction($id)
+        {
+            $users = User::find($id);
+            return view("admin/edit", ['user' => $users]);
+        }
 
-    public function getAddUserForm()
-    {
-        return view('admin/admin_table');
-    }
+        public function updateAction($id, Request $request)
+        {
+            $user = \App\Models\User::where("id", "=", $id)->first();
+            $user->update(['name' => $request->input('name'),
+                'email' => $request->input('Email')]);
 
-    public function AllUsersAction()
-    {
-        $users = User::all();
-        return view("admin/admin_table", ['users' => $users]);
-    }
+            //$user->update(['email' => $request->input('Email')]);
 
-    public function insertAction(Request $request)
-    {
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
+            return redirect()->action('UserController@showAllAction');
+        }
 
-        $user = new User();
-        $user->name = $name;
-        $user->email = $email;
-        $user->password = $password;
-        $user->roly_id = 3;
+        public function getAddUserForm()
+        {
+            return view('admin/admin_table');
+        }
 
-        $user->save();
+        public function AllUsersAction()
+        {
+            $users = User::all();
+            return view("admin/admin_table", ['users' => $users]);
+        }
 
-        return response()->view('admin/admin_table');
-    }
-*/
+        public function insertAction(Request $request)
+        {
+            $name = $request->input('name');
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            $user = new User();
+            $user->name = $name;
+            $user->email = $email;
+            $user->password = $password;
+            $user->roly_id = 3;
+
+            $user->save();
+
+            return response()->view('admin/admin_table');
+        }
+    */
 
     public function insertAction(Request $request)
     {
@@ -249,14 +329,10 @@ class AdminController extends Controller
         $user = Podujatia::find($id);
         return view('formular', ['details' => $user]);
     }
-
     public function getPatvdeneId($id)
     {
         $data = Podujatia::where('users_id', 'like', '%' . $id . '%')
-           ->where('confirmed',null)->get();
-            return view('u_ziadosti', ['details' => $data]);
-
-
-
+            ->where('confirmed',null)->get();
+        return view('u_ziadosti', ['details' => $data]);
     }
 }
