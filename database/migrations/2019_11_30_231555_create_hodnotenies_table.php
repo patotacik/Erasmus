@@ -20,6 +20,7 @@ class CreateHodnoteniesTable extends Migration
             $table->text('Otazka_3');
             $table->text('Otazka_4');
             $table->tinyInteger('hodnotenie');
+            $table->integer('pocitadlo');
             $table->boolean('potvrdenie');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id') ->references('id')->on('users');
