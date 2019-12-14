@@ -3,12 +3,12 @@
 
 use Illuminate\Database\Seeder;
 
-class MestoTableSeeder extends Seeder
+class MestosTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('mesto')->delete();
-        $mesto = array(
+        DB::table('mestos')->delete();
+        $mestos = array(
             array('id' => 1,'name' => "London",'krajinys_id' => 230),
             array('id' => 2,'name' => "Munich",'krajinys_id' => 82),
             array('id' => 3,'name' => "Moscow",'krajinys_id' => 181),
@@ -24,6 +24,6 @@ class MestoTableSeeder extends Seeder
             array('id' => 13,'name' => "Amsterdam",'krajinys_id' => 155),
 
         );
-        DB::table('mesto')->insert($mesto);
+        DB::table('mestos')->insert($mestos);
     }
 }

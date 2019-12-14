@@ -3,12 +3,12 @@
 
 use Illuminate\Database\Seeder;
 
-class KrajinysTableSeeder extends Seeder
+class KrajiniesTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('krajinys')->delete();
-        $krajinys = array(
+        DB::table('krajinies')->delete();
+        $krajinies = array(
             array('id' => 1,'code' => 'AF' ,'name' => "Afghanistan",'phonecode' => 93),
             array('id' => 2,'code' => 'AL' ,'name' => "Albania",'phonecode' => 355),
             array('id' => 3,'code' => 'DZ' ,'name' => "Algeria",'phonecode' => 213),
@@ -256,6 +256,6 @@ class KrajinysTableSeeder extends Seeder
             array('id' => 245,'code' => 'ZM','name' => "Zambia",'phonecode' => 260),
             array('id' => 246,'code' => 'ZW','name' => "Zimbabwe",'phonecode' => 263),
         );
-        DB::table('krajinys')->insert($krajinys);
+        DB::table('krajinies')->insert($krajinies);
     }
 }

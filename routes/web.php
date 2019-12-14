@@ -33,6 +33,9 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
 
+Route::get('/erasmus', 'podujatiaController@getPodujatia');
+
+Route::get('/search', 'podujatiaController@search')->name('erasmus.search');
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
 Route::post('/erasmus/filter', 'podujatiaController@filter');
 
@@ -51,7 +54,6 @@ Route::get('/edit', 'AdminController@table')
 Route::get('/referent', 'AdminController@referent')
     ->middleware('is_admin')
     ->name('referent');
-
 Route::get('/výzva', 'AdminController@vyzva')
     ->middleware('is_referent')
     ->name('výzva');
@@ -61,9 +63,10 @@ Route::get('/správy', 'AdminController@spravy_ucasnikov')
 Route::get('/nove_univerzity', 'AdminController@prid_unv')
     ->middleware('is_referent')
     ->name('prid_unv');
-Route::get('/blogy', 'AdminController@blog')
+
+Route::get('/ucasnik', 'AdminController@ucasnik')
     ->middleware('is_ucasnik')
-    ->name('blogy');
+    ->name('ucasnik');
 
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
@@ -135,7 +138,6 @@ Route::get('faktultný_koordinatori', [
 Route::get('odd_medzin_vzt', [
     'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
 ]);
-Route::get('/seminare', 'PodujatiaController@getSeminar');
 
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
@@ -147,12 +149,3 @@ Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('contactus', 'ContactUsController@getContactus');
 Route::post('contactus', 'ContactUsController@postContactus')->name('contactus');
-Auth::routes();
-$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-$this->post('password/reset', 'Auth\ResetPasswordController@reset');
-Route::get('password/reset/{token?}', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::get('/home', 'HomeController@index')->name('home');
-$this->get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
-$this->patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');

@@ -7,80 +7,69 @@
 
     <section class="ftco-section ftco-no-pb">
         <div class="container">
+            <form action="{{ route('erasmus.search') }}" method="get">
+                <input type="text" name="q" class="form-control" placeholder="hladanie">
+                <button type="submit" class="btn btn-primary">Hľadaj</button>
+                <br><br>
+            </form>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-wrap-1 ftco-animate">
                         <form action="#" class="search-property-1">
                             <div class="row">
+
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Location</label>
-                                        <div class="form-field">
-                                            <div class="icon"><span class="ion-ios-search"></span></div>
-                                            <input type="text" class="form-control" placeholder="Zadajte miesto">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg align-items-end">
-                                    <div class="form-group">
-                                        <label for="#">Property Type</label>
+                                        <label for="#">Krajina</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="">Type</option>
-                                                    <option value="">Commercial</option>
-                                                    <option value="">- Office</option>
-                                                    <option value="">Residential</option>
-                                                    <option value="">Villa</option>
-                                                    <option value="">Condominium</option>
-                                                    <option value="">Apartment</option>
+                                                <select name="" class="form-control">
+                                                    <option>Vyberte krajinu</option>
+                                                    @foreach($podujatia as $row)
+
+                                                        <option value="">{{$row->podKraj->name}}</option>
+                                                    @endforeach>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Property Status</label>
+                                        <label for="#">Mesto</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="" id="" class="form-control">
-                                                    <option value="">Type</option>
-                                                    <option value="">Rent</option>
-                                                    <option value="">Sale</option>
+                                                    @foreach($podujatia as $row)
+                                                        <option value="">{{$row->podMes->name}}</option>
+                                                    @endforeach>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Price Limit</label>
+                                        <label for="#">Univerzita</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="" id="" class="form-control">
-                                                    <option value="">$5,000</option>
-                                                    <option value="">$10,000</option>
-                                                    <option value="">$50,000</option>
-                                                    <option value="">$100,000</option>
-                                                    <option value="">$200,000</option>
-                                                    <option value="">$300,000</option>
-                                                    <option value="">$400,000</option>
-                                                    <option value="">$500,000</option>
-                                                    <option value="">$600,000</option>
-                                                    <option value="">$700,000</option>
-                                                    <option value="">$800,000</option>
-                                                    <option value="">$900,000</option>
-                                                    <option value="">$1,000,000</option>
-                                                    <option value="">$2,000,000</option>
+                                                    @foreach($podujatia as $row)
+                                                        <option value="">{{$row->podUni->nazov}}</option>
+                                                    @endforeach>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
@@ -106,25 +95,25 @@
             </div>
             <div class="row">
                 @foreach($podujatia as $row)
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
-                            <a href='{{route('erasmus.details',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
-                                <span class="fa fa-eye"></span>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3>{{$row->Nazov}}</h3>
-                            <h3>Mesto: {{$row->podMes->name}}</h3>
-                            <h3>Univerzita: {{$row->podUni->nazov}}</h3>
-                            <h3 class="location">Krajina: {{$row->podKraj->name}}</h3>
-                            <h3 class="date">Dátum: {{$row->datum}}</h3>
-                            <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="fa fa-eye"></span></a>
+                    <div class="col-md-4">
+                        <div class="property-wrap ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
+                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </div>
+                            <div class="text">
+                                <h3>{{$row->Nazov}}</h3>
+                                <h3>Mesto: {{$row->podMes->name}}</h3>
+                                <h3>Univerzita: {{$row->podUni->nazov}}</h3>
+                                <h3 class="location">Krajina: {{$row->podKraj->name}}</h3>
+                                <h3 class="date">Dátum: {{$row->datum}}</h3>
+                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="fa fa-eye"></span></a>
+                                <h3 class="display-2">{{$row->pocitadlo}} <span class="fa fa-eye"> </span></h3></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
                 @endforeach
 
             </div>

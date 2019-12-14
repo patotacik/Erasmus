@@ -4,7 +4,7 @@
 use App\User;
 use Illuminate\Database\Seeder;
 
-class RolyTableSeeder extends Seeder
+class RoliesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

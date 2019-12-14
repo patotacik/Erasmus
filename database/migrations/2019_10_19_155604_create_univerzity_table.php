@@ -16,8 +16,8 @@ class CreateUniverzityTable extends Migration
         Schema::create('univerzity', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazov',45);
-            $table->date('zmluva_od');
-            $table->date('zmluva_do');
+            $table->date('zaciatok');
+            $table->date('koniec');
             $table->integer('mesto_id')->unsigned();
             $table->foreign('mesto_id') ->references('id')->on('mesto');
             $table->integer('krajinys_id')->unsigned();
