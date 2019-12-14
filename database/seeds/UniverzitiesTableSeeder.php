@@ -3,12 +3,12 @@
 
 use Illuminate\Database\Seeder;
 
-class UniverzityTableSeeder extends Seeder
+class UniverzitiesTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('univerzity')->delete();
-        $univerzity = array(
+        DB::table('univerzities')->delete();
+        $univerzities = array(
             array('id' => 1,'nazov' => "Queens college of London",'zaciatok' => "2015-10-10", 'koniec' => "2021-10-10", 'mesto_id' => 1,'krajinys_id' => 230),
             array('id' => 2,'nazov' => "University of Munich",'zaciatok' => "2018-10-12", 'koniec' => "2022-10-20", 'mesto_id' => 2,'krajinys_id' => 82),
             array('id' => 3,'nazov' => "Russian Institute of science",'zaciatok' => "2018-11-10", 'koniec' => "2022-10-19", 'mesto_id' => 3,'krajinys_id' => 181),
@@ -24,6 +24,6 @@ class UniverzityTableSeeder extends Seeder
             array('id' => 13,'nazov' => " Royal University",'zaciatok' => "2014-10-10", 'koniec' => "2021-12-10", 'mesto_id' => 13,'krajinys_id' => 155),
 
         );
-        DB::table('univerzity')->insert($univerzity);
+        DB::table('univerzities')->insert($univerzities);
     }
 }
