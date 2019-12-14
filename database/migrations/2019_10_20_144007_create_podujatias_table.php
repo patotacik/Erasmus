@@ -18,17 +18,17 @@ class CreatePodujatiasTable extends Migration
             $table->timestamps();
             $table->string('Nazov',45);
             $table->date('datum');
-            $table->integer('mesto_id')->unsigned();
-            $table->foreign('mesto_id') ->references('id')->on('mesto');
-            $table->integer('univerzity_id')->unsigned();
-            $table->foreign('univerzity_id') ->references('id')->on('univerzity');
-            $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinys');
-            $table->integer('vyzvy_id')->unsigned();
+            $table->integer('mestos_id')->unsigned();
+            $table->foreign('mestos_id') ->references('id')->on('mestos');
+            $table->integer('univerzities_id')->unsigned();
+            $table->foreign('univerzities_id') ->references('id')->on('univerzities');
+            $table->integer('krajinies_id')->unsigned();
+            $table->foreign('krajinies_id') ->references('id')->on('krajinies');
+            $table->integer('vyzvy_id')->unsigned()->nullable();
             $table->foreign('vyzvy_id') ->references('id')->on('vyzvies');
-            $table->integer('users_id')->unsigned();
+            $table->integer('users_id')->unsigned()->nullable();
             $table->foreign('users_id') ->references('id')->on('users');
-            $table->boolean('confirmed');
+            $table->boolean('confirmed')->nullable();
             $table->integer('pocitadlo');
 
 

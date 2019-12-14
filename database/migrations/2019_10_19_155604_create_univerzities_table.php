@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniverzityTable extends Migration
+class CreateUniverzitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateUniverzityTable extends Migration
      */
     public function up()
     {
-        Schema::create('univerzity', function (Blueprint $table) {
+        Schema::create('univerzities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazov',45);
             $table->date('zaciatok');
             $table->date('koniec');
-            $table->integer('mesto_id')->unsigned();
-            $table->foreign('mesto_id') ->references('id')->on('mesto');
-            $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinys');
+            $table->integer('mestos_id')->unsigned();
+            $table->foreign('mestos_id') ->references('id')->on('mestos');
+            $table->integer('krajinies_id')->unsigned();
+            $table->foreign('krajinies_id') ->references('id')->on('krajinies');
 
         });
     }
@@ -33,6 +33,6 @@ class CreateUniverzityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('univerzity');
+        Schema::dropIfExists('univerzities');
     }
 }

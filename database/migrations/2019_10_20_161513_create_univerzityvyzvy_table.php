@@ -18,8 +18,8 @@ class CreateUniverzityvyzvyTable extends Migration
             $table->integer('vyzvy_id')->unsigned();
             $table->foreign('vyzvy_id') ->references('id')->on('vyzvies');
             $table->string('Pocet-miest',45);
-            $table->integer('univerzity_id')->unsigned();
-            $table->foreign('univerzity_id') ->references('id')->on('univerzity');
+            $table->integer('univerzities_id')->unsigned();
+            $table->foreign('univerzities_id') ->references('id')->on('univerzities');
         });
     }
 

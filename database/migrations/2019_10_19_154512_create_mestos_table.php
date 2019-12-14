@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKrajinysTable extends Migration
+class CreateMestosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateKrajinysTable extends Migration
      */
     public function up()
     {
-        Schema::create('krajinys', function (Blueprint $table) {
+        Schema::create('mestos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code',45);
             $table->string('name',45);
-            $table->integer('phonecode');
+            $table->integer('krajinies_id')->unsigned();
+            $table->foreign('krajinies_id') ->references('id')->on('krajinies');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateKrajinysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('krajinys');
+        Schema::dropIfExists('mestos');
     }
 }
