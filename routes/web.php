@@ -64,9 +64,9 @@ Route::get('/nove_univerzity', 'AdminController@prid_unv')
     ->middleware('is_referent')
     ->name('prid_unv');
 
-Route::get('/ucasnik', 'AdminController@ucasnik')
+Route::get('/blogy', 'AdminController@blog')
     ->middleware('is_ucasnik')
-    ->name('ucasnik');
+    ->name('blogy');
 
 Route::get('/seminar', 'AdminController@ucasnik_inf_sem')
     ->middleware('is_ucasnik')
