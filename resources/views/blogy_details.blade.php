@@ -15,26 +15,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ftco-animate">
-                    <h2 class="mb-3">Aké si mal pocity pred vycestovaním?</h2>
+                    <h2 class="mb-3">#1: Aké si mal pocity pred vycestovaním?</h2>
                     <p>{{$blogy_details->Otazka_1}}</p>
 
-                    <h2 class="mb-3 mt-5">Aké si mal prvotné pocity z pobytu?</h2>
+                    <h2 class="mb-3 mt-5">#2: Aké si mal prvotné pocity z pobytu?</h2>
                     <p>{{$blogy_details->Otazka_2}}</p>
 
-                    <h2 class="mb-3 mt-5">Aké su tvoje rady pre druhích?</h2>
+                    <h2 class="mb-3 mt-5">#3: Aké su tvoje rady pre druhích?</h2>
                     <p>{{$blogy_details->Otazka_3}}</p>
 
-                    <h2 class="mb-3 mt-5">Napíš s akými problémami si sa stretol.</h2>
+                    <h2 class="mb-3 mt-5">#4: Napíš s akými problémami si sa stretol.</h2>
                     <p>{{$blogy_details->Otazka_4}}</p>
 
-                    <h2 class="mb-3 mt-5">Aké je tvoje celkové hodnotenie pobytu?</h2>
+                    <h2 class="mb-3 mt-5">#5: Aké je tvoje celkové hodnotenie pobytu?</h2>
                     <p>{{$blogy_details->Otazka_5}}</p>
 
 
 
                     <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-3.jpg);">
                             </div>
                         </div>
                     </div>
@@ -43,11 +43,11 @@
 
                     <div class="pt-5 mt-5">
                         <ul class="comment-list">
-
                             <li class="comment">
+                                @foreach($komentars as $row)
 
                                 <div class="comment-body">
-                                    <h3>John Doe</h3>
+                                    <h3>{{$row->users_id}}</h3>
                                     <div class="meta">October 17, 2019 at 2:21pm</div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
                                     <p><a href="#" class="reply">Reply</a></p>
@@ -55,31 +55,29 @@
                             </li>
                         </ul>
                         <!-- END comment-list -->
+                        @endforeach
 
                         <div class="comment-form-wrap pt-5">
-                            <h3 class="mb-5">Leave a comment</h3>
-                            <form action="#" class="p-5 bg-light">
+                            <h3 class="mb-5">Máš otázku ?</h3>
+                            <form class="contact100-form validate-form" action="{{route('komentar.pridat')}}" method="post">
+                                <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
+                                <input type="hidden" name="hodnotenies_id" value="{{$blogy_details->id}}" />
+                                <input type="hidden" name="users_id" value="{{ Auth::user()->id }}" />
                                 <div class="form-group">
-                                    <label for="name">Name *</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <label for="message">Sparáva</label>
+                                    <textarea name="koment" id="koment" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" class="form-control" id="email">
+                                <div class="container-contact100-form-btn">
+                                    <div class="wrap-contact100-form-btn">
+                                        <div class="contact100-form-bgbtn"></div>
+                                        <button class="contact100-form-btn">
+							<span>
+								Odovzdať
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="website">Website</label>
-                                    <input type="url" class="form-control" id="website">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
-                                </div>
-
                             </form>
                         </div>
                     </div>

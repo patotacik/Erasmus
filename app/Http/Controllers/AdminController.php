@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Formular;
 use App\Hodnotenie;
 use App\Hodnotenies;
+use App\Komentar;
 use App\univerzity;
 use App\Podujatia;
 use App\Roly;
@@ -64,22 +65,9 @@ class AdminController extends Controller
     }
     public function pridat(Request $request)
     {
-        $this->validate($request, [
-            'filename' => 'required',
-            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-        if($request->hasfile('filename'))
-        {
-            foreach($request->file('filename') as $image)
-            {
-                $name=$image->getClientOriginalName();
-                $image->move(public_path().'/images/', $name);
-                $data[] = $name;
-            }
-        }
+
         //potvrdenie  users_id  podujatia_id
-        $hodnotenies = new Hodnotenies();
-        $hodnotenies->filename=json_encode($data);
+        $hodnotenies = new Hodnotenie();
         $hodnotenies->Otazka_1 = $request->Otazka_1;
         $hodnotenies->Otazka_2 = $request->Otazka_2;
         $hodnotenies->Otazka_3 = $request->Otazka_3;
@@ -89,16 +77,30 @@ class AdminController extends Controller
         $hodnotenies->hodnotenie = $request->hodnotenie;
         $hodnotenies->potvrdenie = $request->potvrdenie;
         $hodnotenies->users_id = $request->users_id;
-        $hodnotenies->podujatia_id = $request->podujatia_id;
+        $hodnotenies->podujatias_id = $request->podujatias_id;
+        $hodnotenies->pocitadlo = $request->pocitadlo;
+
         $hodnotenies->save();
-        $zmena = Podujatia::find($request->podujatia_id);
+        $zmena = Podujatia::find($request->podujatias_id);
         $zmena->confirmed = 1;
         $zmena->save();
-        $form= new Form();
-        $form->filename=json_encode($data);
-        $form->save();
-        return redirect()->route('blog');
+        return redirect()->route('blogy');
     }
+
+
+    public function pridat_komentar(Request $request)
+    {
+
+        //potvrdenie  users_id  podujatia_id
+        $koment = new Komentar();
+        $koment->users_id = $request->users_id;
+        $koment->hodnotenies_id = $request->hodnotenies_id;
+        $koment->koment = $request->koment;
+        $koment->save();
+        return redirect()->route('blogy');
+    }
+
+
 
     public function Eventstable()
     {

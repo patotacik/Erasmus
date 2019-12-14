@@ -38,6 +38,7 @@ Route::post('/erasmus/filter', 'podujatiaController@filter');
 
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 Route::get('/details_blogy/{id}', 'detailsController@getBlogId')->name('blogy.details');
+Route::get('/details_seminar/{id}', 'detailsController@getSeminarId')->name('seminar.details');
 
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
@@ -77,6 +78,7 @@ Route::get('/formular/{id}', 'AdminController@formular')
     ->name('potvrdene.formular');
 
 Route::post('/pridat', 'AdminController@pridat')->name('formular.pridat');
+Route::post('/pridat_komentar', 'AdminController@pridat_komentar')->name('komentar.pridat');
 
 Route::get('/potvrdene/{users_id}', 'AdminController@getPatvdeneId')
     ->middleware('is_ucasnik')

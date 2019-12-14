@@ -23,16 +23,19 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
                     <textarea class="input100" name="Otazka_2" placeholder="Tvoja odpoveď..."></textarea>
                     <span class="focus-input100"></span>
                 </div>
+
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Aké su tvoje rady pre druhích?</span>
                     <textarea class="input100" name="Otazka_3" placeholder="Tvoja odpoveď..."></textarea>
                     <span class="focus-input100"></span>
                 </div>
+
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Napíš s akými problémami si sa stretol.</span>
                     <textarea class="input100" name="Otazka_4" placeholder="Tvoja odpoveď..."></textarea>
                     <span class="focus-input100"></span>
                 </div>
+
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Aké je tvoje celkové hodnotenie pobytu?</span>
                     <div class="form-row">
@@ -49,10 +52,11 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
                             <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                         </fieldset>
                     </div>
-                    <span class="focus-input100"></span>
                 </div>
+
                 <input type="hidden" name="users_id" value="{{$details->users_id}}" />
-                <input type="hidden" name="podujatia_id" value="{{$details->id}}" />
+                <input type="hidden" name="podujatias_id" value="{{$details->id}}" />
+                <input type="hidden" name="pocitadlo" value="0" />
 
 
                 <div class="wrap-input100 input100-select">
@@ -63,36 +67,7 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
                     </div>
                 </div>
 
-                <div class="wrap-input100 input100-select">
-                    <span class="label-input100">Budget</span>
-                    <div>
-                        <select class="selection-2" name="budget">
-                            <option>Select Budget</option>
-                            <option>1500 $</option>
-                            <option>2000 $</option>
-                            <option>2500 $</option>
-                        </select>
-                    </div>
-                    <span class="focus-input100"></span>
-                </div>
 
-                <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                    <div class="input-group control-group increment" >
-                        <input type="file" name="filename[]" class="form-control">
-                        <div class="input-group-btn">
-                            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
-                        </div>
-                    </div>
-                    <div class="clone hide">
-                        <div class="control-group input-group" style="margin-top:10px">
-                            <input type="file" name="filename[]" class="form-control">
-                            <div class="input-group-btn">
-                                <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="focus-input100"></span>
-                </div>
 
                 <div class="container-contact100-form-btn">
                     <div class="wrap-contact100-form-btn">
@@ -112,23 +87,6 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
 
 
     <div id="dropDownSelect1"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection
