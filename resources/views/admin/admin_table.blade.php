@@ -18,10 +18,10 @@
                                     <thead>
                                     <tr class="text-center">
                                         <th scope="col" class="">#</th>
-                                        <th scope="col" class="">Name</th>
+                                        <th scope="col" class="">Meno</th>
                                         <th scope="col" class="">Email</th>
-                                        <th scope="col" class="">Roly_id</th>
-                                        <th scope="col" class="">Action</th>
+                                        <th scope="col" class="">Typ uživatela</th>
+                                        <th scope="col" class="">Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -79,22 +79,16 @@
                                     <div class="row">
                                         <legend class="col-form-label col-sm-2 pt-0">Typ uživateľa</legend>
                                         <div class="col-sm-10">
+                                            @foreach($rolys as $row)
+
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" checked>
+                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="{{$row->id}}" checked>
                                                 <label class="form-check-label" for="roly_id">
-                                                    Účasník
+                                                    {{$row->rola}}
                                                 </label>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="2">
-                                                <label class="form-check-label" for="roly_id">
-Referent                                                </label>
-                                            </div>
-                                            <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" >
-                                                <label class="form-check-label" for="roly_id" >
-Admin                                                </label>
-                                            </div>
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 </div>

@@ -70,4 +70,5 @@ class RegisterController extends Controller
             'roly_id'    => '3',
         ]);
     }
+
 }

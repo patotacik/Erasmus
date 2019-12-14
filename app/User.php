@@ -18,7 +18,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','roly_id',
+        'name', 'email', 'password','roly_id', 'is_activated',
+    ];
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 public function rola_nazov(){
     return $this->hasOne('App\Roly','id','roly_id');
@@ -28,9 +31,7 @@ public function rola_nazov(){
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+
     const ADMIN_TYPE = '1';
     const REFERENT_TYPE = '2';
     const UCASNIK_TYPE = '3';
@@ -46,5 +47,9 @@ public function rola_nazov(){
         return $this->roly_id == self::UCASNIK_TYPE;
     }
 
-
+    public function setPasswordAttribute($input)
+    {
+        if ($input)
+            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
+    }
 }

@@ -35,4 +35,12 @@ class podujatiaController extends Controller
 
         return view('erasmusSearch', compact('search', 'finalResult'));
     }
+
+
+    public function getSeminar(){
+        $seminar = Vyzvy::latest()->paginate(6);
+        return view('seminar') -> with(compact('seminar', $seminar))
+            ->with('i', (request()->input('page', 1) - 1) * 2);
+    }
+
 }

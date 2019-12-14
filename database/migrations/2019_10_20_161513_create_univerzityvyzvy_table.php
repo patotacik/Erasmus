@@ -16,7 +16,7 @@ class CreateUniverzityvyzvyTable extends Migration
         Schema::create('univerzityvyzvy', function (Blueprint $table) {
             $table->timestamps();
             $table->integer('vyzvy_id')->unsigned();
-            $table->foreign('vyzvy_id') ->references('id')->on('vyzvy');
+            $table->foreign('vyzvy_id') ->references('id')->on('vyzvies');
             $table->string('Pocet-miest',45);
             $table->integer('univerzity_id')->unsigned();
             $table->foreign('univerzity_id') ->references('id')->on('univerzity');

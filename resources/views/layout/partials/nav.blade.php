@@ -20,6 +20,8 @@
                         <a class="dropdown-item" href="#">Prednáškový pobyt</a>
                         <a class="dropdown-item" href="#">Školenia</a>
                     </div></li>
+                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Semináre</a></li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Kontakty                    </a>
@@ -65,7 +67,7 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isUcasnik())
-                            <a class="dropdown-item" href="{{route('ucasnik')}}">Blog</a>
+                            <a class="dropdown-item" href="{{route('blogy')}}">Blog</a>
                             <a class="dropdown-item" href="{{route('seminar')}}" >Informačné semináre</a>
                             <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potvrdené žiadosti</a>
 
@@ -73,7 +75,7 @@ Kontakty                    </a>
                         @endif
                     @endguest
                     @if(Auth::user()->isAdmin())
-                            <a class="dropdown-item"  href="{{route('admin')}}">Admin rozranie</a>
+                            <a class="dropdown-item"  href="{{route('AllUsers')}}">Admin rozranie</a>
                     @endif
                             <div class="dropdown-divider" ></div>
 
@@ -124,7 +126,10 @@ Kontakty                    </a>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Prihlásiť</button>
                     </div>
+                    <a class="dropdown-item"  href="{{route('password.request')}}">Zabudol si heslo ?</a>
+
                 </form>
+
             </div>
         </div>
     </div>

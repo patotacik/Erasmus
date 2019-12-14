@@ -13,9 +13,12 @@
                     <h2 class="mb-2">Nezabudni na vyplnenie dotazníku</h2>
                 </div>
                 @foreach($details as $row)
-                    <div class="col">
+                    <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
-                            <a href='{{route('potvrdene.formular',$row->id)}}' method="post" class="img" style="background-image: url({{ URL::asset('images/hod.png')}});"></a>
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset('images/hod1.png')}});">
+                                <a href='{{route('potvrdene.formular',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="glyphicon glyphicon-heart"></span> </a>
+                            </div>
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>
@@ -23,6 +26,7 @@
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
         </div>

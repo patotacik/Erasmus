@@ -84,7 +84,6 @@
                                 <h3>Dátum: {{$row->datum}}</h3>
                                 <h3 class="location">Miesto: {{$row->Miesto}}</h3>
 
-                                <a href="{{route('erasmus.details',$row->id)}}" method="post" class="d-flex align-items-center justify-content-center btn-custom">
                                    <h3 class="display-2">{{$row->pocitadlo}} <span class="fa fa-eye"> </span></h3></a>
                             </div>
                         </div>
@@ -236,7 +235,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
+                                            <p class="name">Billy Scott</p>
                                             <span class="position">Marketing Manager</span>
                                         </div>
                                     </div>
@@ -250,7 +249,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
+                                            <p class="name">Dan Scott</p>
                                             <span class="position">Marketing Manager</span>
                                         </div>
                                     </div>
@@ -264,7 +263,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
+                                            <p class="name">Tony Scott</p>
                                             <span class="position">Marketing Manager</span>
                                         </div>
                                     </div>
@@ -278,7 +277,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
+                                            <p class="name">Jerry Scott</p>
                                             <span class="position">Marketing Manager</span>
                                         </div>
                                     </div>

@@ -29,22 +29,15 @@
                                 <div class="row">
                                     <legend class="col-form-label col-sm-2 pt-0">Typ uživateľa</legend>
                                     <div class="col-sm-10">
+                                        @foreach($rolys as $row)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="3" value="{{$user->roly_id}}">
+                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="{{$row->id}}" >
                                             <label class="form-check-label" for="roly_id">
-                                                Účasník
+                                                {{$row->rola}}
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="2" value="{{$user->roly_id}}">
-                                            <label class="form-check-label" for="roly_id">
-                                                Referent                                                </label>
-                                        </div>
-                                        <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="roly_id" id="roly_id" value="1" value="{{$user->roly_id}}">
-                                            <label class="form-check-label" for="roly_id" >
-                                                Admin                                                </label>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
