@@ -5,6 +5,15 @@
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
 
+
+    <div class="container">
+        <form action="{{ route('erasmus.search') }}" method="get">
+            <input type="text" name="q" class="form-control" placeholder="hladanie">
+            <button type="submit" class="btn btn-primary">Hľadaj</button>
+            <br><br>
+        </form>
+    </div>
+
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">

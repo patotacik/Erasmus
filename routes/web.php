@@ -35,7 +35,7 @@ Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerz
 
 Route::get('/erasmus', 'podujatiaController@getPodujatia');
 
-Route::post('/erasmus/filter', 'podujatiaController@filter');
+Route::get('/search', 'podujatiaController@search')->name('erasmus.search');
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 
 Route::get('/admin', 'AdminController@admin')
