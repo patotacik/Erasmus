@@ -13,7 +13,7 @@ class CreateUniverzityTable extends Migration
      */
     public function up()
     {
-        Schema::create('univerzity', function (Blueprint $table) {
+        Schema::create('univerzities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazov',45);
             $table->date('zaciatok');
@@ -21,7 +21,7 @@ class CreateUniverzityTable extends Migration
             $table->integer('mesto_id')->unsigned();
             $table->foreign('mesto_id') ->references('id')->on('mesto');
             $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinys');
+            $table->foreign('krajinys_id') ->references('id')->on('krajinies');
 
         });
     }
@@ -33,6 +33,6 @@ class CreateUniverzityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('univerzity');
+        Schema::dropIfExists('univerzities');
     }
 }

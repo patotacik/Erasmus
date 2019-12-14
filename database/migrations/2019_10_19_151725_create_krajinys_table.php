@@ -13,7 +13,7 @@ class CreateKrajinysTable extends Migration
      */
     public function up()
     {
-        Schema::create('krajinys', function (Blueprint $table) {
+        Schema::create('krajinies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code',45);
             $table->string('name',45);
@@ -28,6 +28,6 @@ class CreateKrajinysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('krajinys');
+        Schema::dropIfExists('krajinies');
     }
 }

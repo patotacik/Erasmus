@@ -13,11 +13,11 @@ class CreateMestoTable extends Migration
      */
     public function up()
     {
-        Schema::create('mesto', function (Blueprint $table) {
+        Schema::create('mestos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',45);
             $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinys');
+            $table->foreign('krajinys_id') ->references('id')->on('krajinies');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateMestoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mesto');
+        Schema::dropIfExists('mestos');
     }
 }
