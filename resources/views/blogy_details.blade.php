@@ -15,11 +15,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ftco-animate">
-                    <h2 class="mb-3">#1. Ako ....</h2>
-<p>{{$blogy_details->Otazka_1}}</p>
+                    <h2 class="mb-3">Aké si mal pocity pred vycestovaním?</h2>
+                    <p>{{$blogy_details->Otazka_1}}</p>
 
-                    <h2 class="mb-3 mt-5">#2. Ako ...</h2>
+                    <h2 class="mb-3 mt-5">Aké si mal prvotné pocity z pobytu?</h2>
                     <p>{{$blogy_details->Otazka_2}}</p>
+
+                    <h2 class="mb-3 mt-5">Aké su tvoje rady pre druhích?</h2>
+                    <p>{{$blogy_details->Otazka_3}}</p>
+
+                    <h2 class="mb-3 mt-5">Napíš s akými problémami si sa stretol.</h2>
+                    <p>{{$blogy_details->Otazka_4}}</p>
+
+                    <h2 class="mb-3 mt-5">Aké je tvoje celkové hodnotenie pobytu?</h2>
+                    <p>{{$blogy_details->Otazka_5}}</p>
+
+
 
                     <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
