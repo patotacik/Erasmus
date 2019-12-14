@@ -27,7 +27,6 @@ class podujatiaController extends Controller
         foreach ($podujatia as $podujatie) {
             if(strpos($podujatie->Nazov, $search) !== false || strpos($podujatie->podUni->nazov, $search) !== false
                         || strpos($podujatie->podKraj->name, $search) !== false || strpos($podujatie->podMes->name, $search) !== false) {
-
                             array_push($finalResult, $podujatie);
             }
 

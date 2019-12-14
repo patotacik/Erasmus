@@ -14,6 +14,7 @@
                     <h2 class="mb-2">Výsledky hľadania</h2>
                 </div>
             </div>
+
             <div class="row">
                 @foreach($finalResult as $row)
                     <div class="col-md-4">
@@ -34,15 +35,14 @@
                             </div>
                         </div>
                     </div>
-
                 @endforeach
-
             </div>
+
             <div class="row mt-5">
                 <div class="col text-center">
                     <div class="block-27">
                         <ul>
-                            <li class=""><span>{!! $finalResult->links() !!}</span></li>
+
                         </ul>
                     </div>
                 </div>
