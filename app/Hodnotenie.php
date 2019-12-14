@@ -14,4 +14,8 @@ class Hodnotenie extends Model
     public function user_name(){
         return $this->hasOne('App\User','id','users_id');
     }
+
+    public function hodKom(){
+        return $this->hasOne('App\Komentar', 'hodnotenies_id', 'id');
+    }
 }

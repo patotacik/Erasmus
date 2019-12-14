@@ -29,12 +29,9 @@ class podujatiaController extends Controller
                         || strpos($podujatie->podKraj->name, $search) !== false || strpos($podujatie->podMes->name, $search) !== false) {
                             array_push($finalResult, $podujatie);
             }
-
         }
-
         return view('erasmusSearch', compact('search', 'finalResult'));
     }
-
 
     public function getSeminar(){
         $seminar = Vyzvy::latest()->paginate(6);

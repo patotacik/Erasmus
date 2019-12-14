@@ -7,11 +7,17 @@
 
     <section class="ftco-section ftco-no-pb">
         <div class="container">
-            <form action="{{ route('erasmus.search') }}" method="get">
-                <input type="text" name="q" class="form-control" placeholder="hladanie">
-                <button type="submit" class="btn btn-primary">Hľadaj</button>
-                <br><br>
-            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap-1 ftco-animate">
+                        <form action="{{ route('erasmus.search') }}" method="get">
+                            <input type="text" name="q" class="form-control" placeholder="hladanie">
+                            <button type="submit" class="form btn btn-primary">Hľadaj</button>
+                            <br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -27,7 +33,6 @@
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="" class="form-control">
-                                                    <option>Vyberte krajinu</option>
                                                     @foreach($podujatia as $row)
 
                                                         <option value="">{{$row->podKraj->name}}</option>
@@ -60,7 +65,7 @@
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="" id="" class="form-control">
+                                                <select name=""class="form-control">
                                                     @foreach($podujatia as $row)
                                                         <option value="">{{$row->podUni->nazov}}</option>
                                                     @endforeach>
@@ -73,7 +78,7 @@
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <input type="submit" value="Search Property" class="form-control btn btn-primary">
+                                            <input type="submit" value="Search Property" class="btn btn-primary">
                                         </div>
                                     </div>
                                 </div>
