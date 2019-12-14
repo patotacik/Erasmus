@@ -5,20 +5,41 @@
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
 
+    {{-- search --}}
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-wrap-1 ftco-animate">
-                        <form action="{{ route('erasmus.search') }}" method="get">
-                            <input type="text" name="q" class="form-control" placeholder="hladanie">
-                            <button type="submit" class="form btn btn-primary">Hľadaj</button>
-                            <br><br>
+                        <form action="{{ route('erasmus.search') }}" class="search-property-1" method="get">
+                            <div class="row">
+
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label>Hľadanie</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <input type="text" name="q" class="form-control" placeholder="zadajte kľúčové slovo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg align-self-end">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <input type="submit" value="Hľadaj" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        {{-- filter --}}
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -78,7 +99,7 @@
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <input type="submit" value="Search Property" class="btn btn-primary">
+                                            <input type="submit" value="Filter" class="btn btn-primary">
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +110,7 @@
             </div>
         </div>
     </section>
-
+    {{-- zobrazenie všetkého --}}
     <section class="ftco-section goto-here">
         <div class="container">
             <div class="row justify-content-center">

@@ -7,6 +7,7 @@ class KrajiniesTableSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('krajinies')->delete();
         $krajinies = array(
             array('id' => 1,'code' => 'AF' ,'name' => "Afghanistan",'phonecode' => 93),
             array('id' => 2,'code' => 'AL' ,'name' => "Albania",'phonecode' => 355),

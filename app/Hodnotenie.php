@@ -16,6 +16,6 @@ class Hodnotenie extends Model
     }
 
     public function hodKom(){
-        return $this->hasOne('App\Komentar', 'hodnotenies_id', 'id');
+        return $this->belongsTo('App\Komentar', 'komentar_id', 'id');
     }
 }

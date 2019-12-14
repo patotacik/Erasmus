@@ -9,7 +9,6 @@
             </div>
         </div>
     </div>
-    </section>
 
     <section class="ftco-section">
         <div class="container">
@@ -19,8 +18,7 @@
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end">
                         <div class="text">
-                            <a href={{route('blogy.details',$row->id)}}" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-                            </a>
+                            <a href='{{route('blogy.details',$row->id)}}' class="block-20 img" style="background-image: url('images/image_3.jpg')"> </a>
                             <h3 class="heading"><a href="#">{{$row->user_name->name}}</a></h3>
                             <div class="meta mb-3">
                                 <div><a href="#">October 17, 2019</a></div>

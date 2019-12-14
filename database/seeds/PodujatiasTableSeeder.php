@@ -21,6 +21,5 @@ class PodujatiasTableSeeder extends Seeder
             array('id' => 6,'Nazov' => 'Blyatiful', 'datum' => '2019-08-24', 'mestos_id' => '3', 'univerzietis_id' => '3', 'krajinies_id' => '181', 'pocitadlo' => '38'),
         );
         DB::table('podujatias')->insert($podujatias);
-
     }
 }
