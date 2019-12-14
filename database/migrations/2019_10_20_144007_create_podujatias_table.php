@@ -24,11 +24,11 @@ class CreatePodujatiasTable extends Migration
             $table->foreign('univerzities_id') ->references('id')->on('univerzities');
             $table->integer('krajinies_id')->unsigned();
             $table->foreign('krajinies_id') ->references('id')->on('krajinies');
-            $table->integer('vyzvy_id')->unsigned();
+            $table->integer('vyzvy_id')->unsigned()->nullable();
             $table->foreign('vyzvy_id') ->references('id')->on('vyzvies');
-            $table->integer('users_id')->unsigned();
+            $table->integer('users_id')->unsigned()->nullable();
             $table->foreign('users_id') ->references('id')->on('users');
-            $table->boolean('confirmed');
+            $table->boolean('confirmed')->nullable();
             $table->integer('pocitadlo');
 
 
