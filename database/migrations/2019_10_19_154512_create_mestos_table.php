@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMestoTable extends Migration
+class CreateMestosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,8 +16,8 @@ class CreateMestoTable extends Migration
         Schema::create('mestos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',45);
-            $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinies');
+            $table->integer('krajinies_id')->unsigned();
+            $table->foreign('krajinies_id') ->references('id')->on('krajinies');
         });
     }
 

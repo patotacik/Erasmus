@@ -11,12 +11,12 @@ class Podujatia extends Model
     ];
 
     public function podKraj(){
-        return $this->belongsTo('App\Krajiny', 'krajinys_id', 'id');
+        return $this->belongsTo('App\Krajiny', 'krajinies_id', 'id');
     }
     public function podUni(){
-        return $this->belongsTo('App\Univerzity', 'univerzity_id', 'id');
+        return $this->belongsTo('App\Univerzity', 'univerzities_id', 'id');
     }
     public function podMes(){
-        return $this->belongsTo('App\Mesto', 'mesto_id', 'id');
+        return $this->belongsTo('App\Mesto', 'mestos_id', 'id');
     }
 }

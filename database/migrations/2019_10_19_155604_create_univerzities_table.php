@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniverzityTable extends Migration
+class CreateUniverzitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,10 +18,10 @@ class CreateUniverzityTable extends Migration
             $table->string('nazov',45);
             $table->date('zaciatok');
             $table->date('koniec');
-            $table->integer('mesto_id')->unsigned();
-            $table->foreign('mesto_id') ->references('id')->on('mesto');
-            $table->integer('krajinys_id')->unsigned();
-            $table->foreign('krajinys_id') ->references('id')->on('krajinies');
+            $table->integer('mestos_id')->unsigned();
+            $table->foreign('mestos_id') ->references('id')->on('mestos');
+            $table->integer('krajinies_id')->unsigned();
+            $table->foreign('krajinies_id') ->references('id')->on('krajinies');
 
         });
     }
