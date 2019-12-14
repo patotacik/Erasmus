@@ -20,6 +20,8 @@
                         <a class="dropdown-item" href="#">Prednáškový pobyt</a>
                         <a class="dropdown-item" href="#">Školenia</a>
                     </div></li>
+                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Semináre</a></li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Kontakty                    </a>

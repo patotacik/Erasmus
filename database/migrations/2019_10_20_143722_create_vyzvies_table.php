@@ -13,11 +13,15 @@ class CreateVyzvyTable extends Migration
      */
     public function up()
     {
-        Schema::create('vyzvy', function (Blueprint $table) {
+        Schema::create('vyzvies', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('Typ',45);
-            });
+            $table->string('nazov_seminara',80);
+            $table->string('miesto_konania',80);
+            $table->time('cas_konanie');
+            $table->date('datum_konania');
+        });
     }
 
     /**
