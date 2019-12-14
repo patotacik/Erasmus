@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Vyzvy;
 use Illuminate\Http\Request;
 use App\Podujatia;
 use App\Krajiny;
@@ -15,4 +16,12 @@ class podujatiaController extends Controller
         return view('erasmus') -> with(compact('podujatia', $podujatia))
         ->with('i', (request()->input('page', 1) - 1) * 2);
     }
+
+
+    public function getSeminar(){
+        $seminar = Vyzvy::latest()->paginate(6);
+        return view('seminar') -> with(compact('seminar', $seminar))
+            ->with('i', (request()->input('page', 1) - 1) * 2);
+    }
+
 }

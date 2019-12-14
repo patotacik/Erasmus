@@ -133,6 +133,7 @@ Route::get('faktultný_koordinatori', [
 Route::get('odd_medzin_vzt', [
     'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
 ]);
+Route::get('/seminare', 'PodujatiaController@getSeminar');
 
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
