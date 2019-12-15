@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Univerzity extends Model
 {
     protected $fillable = [
-        'Nazov', 'zaciatok', 'konec','krajiny_id',
+        'nazov', 'zaciatok', 'koniec','krajinies_id',
     ];
+
+    public function podKraj(){
+        return $this->belongsTo('App\Krajiny', 'krajinies_id', 'id');
+    }
 }

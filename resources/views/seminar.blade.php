@@ -7,36 +7,155 @@
 
         </div>
     </div>
-    </section>
 
-    <div class="container">
+    {{-- search --}}
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap-1 ftco-animate">
+                        <form action="{{ route('seminar.search') }}" class="search-property-1" method="get">
+                            <div class="row">
 
-                    <div class="row">
-                        @foreach($seminar as $row)
-
-                        <div class="col-md-12">
-                                <div class="property-wrap ftco-animate">
-
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/sem.jpg);">
-
-                                        <a href='{{route('seminar.details',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
-                                            <span class="fa fa-eye"></span>
-                                        </a>
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label>Hľadanie</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <input type="text" name="q" class="form-control" placeholder="zadajte kľúčové slovo">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row">
+                                </div>
 
-                                    <div class="text">
-                                        <h3>{{$row->Typ}} - {{$row->nazov_seminara}}</h3>
-                                        <h3>Dátum konania: {{$row->datum_konania}} </h3>
-                                        <h3>Čas konania: {{$row->cas_konanie}}</h3>
-                                        <h3 class="location">Miesto konania: {{$row->miesto_konania}} </h3>
+                                <div class="col-lg align-self-end">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <input type="submit" value="Hľadaj" class="btn btn-primary">
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
-                        @endforeach
+                        </form>
                     </div>
+                </div>
+            </div>
+        </div>
+        <br>
 
-    </div>
-    </div>
+        {{-- filter --}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap-1 ftco-animate">
+                        <form action="{{ route('seminar.filter') }}" class="search-property-1" method="get">
+                            <div class="row">
+
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label for="#">Typ</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                                <select name="t" class="form-control">
+                                                    <option value=" "> </option>
+                                                    @foreach($seminar as $row)
+                                                        <option value="{{$row->Typ}}">{{$row->Typ}}</option>
+                                                    @endforeach>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label for="#">Názov</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                                <select name="n" class="form-control">
+                                                    <option value=" "> </option>
+                                                    @foreach($seminar as $row)
+                                                        <option value="{{$row->nazov_seminara}}">{{$row->nazov_seminara}}</option>
+                                                    @endforeach>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label for="#">Miesto konania</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                                <select name="m" class="form-control">
+                                                    <option value=" "> </option>
+                                                    @foreach($seminar as $row)
+                                                        <option value="{{$row->miesto_konania}}">{{$row->miesto_konania}}</option>
+                                                    @endforeach>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg align-self-end">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <input type="submit" value="Filter" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ftco-section goto-here">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+                    <span class="subheading">erasmus+</span>
+                    <h2 class="mb-2">Aktuálna ponuka</h2>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($seminar as $row)
+                    <div class="col-md-4">
+                        <div class="property-wrap ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/sem.jpg);">
+                                <a href='{{route('seminar.details',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="fa fa-eye"></span></a>
+                            </div>
+                            <div class="row">
+                                <div class="text">
+                                    <h3>{{$row->Typ}} - {{$row->nazov_seminara}}</h3>
+                                    <h3>Dátum konania: {{$row->datum_konania}} </h3>
+                                    <h3>Čas konania: {{$row->cas_konanie}}</h3>
+                                    <h3 class="location">Miesto konania: {{$row->miesto_konania}} </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <div class="block-27">
+                        <ul>
+                            <li class=""><span>{!! $seminar->links() !!}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

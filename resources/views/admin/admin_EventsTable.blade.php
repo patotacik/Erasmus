@@ -20,14 +20,11 @@
                                         <th scope="col" class="">#</th>
                                         <th scope="col" class="">Nazov</th>
                                         <th scope="col" class="">datum</th>
-                                        <th scope="col" class="">Miesto</th>
-                                        <th scope="col" class="">mesto_id</th>
-                                        <th scope="col" class="">univerzity_id</th>
-                                        <th scope="col" class="">krajiny_id</th>
-                                        <th scope="col" class="">vyzvy_id</th>
+                                        <th scope="col" class="">Mesto</th>
+                                        <th scope="col" class="">univerzities_id</th>
+                                        <th scope="col" class="">krajinies_id</th>
                                         <th scope="col" class="">users_id</th>
                                         <th scope="col" class="">confirmed</th>
-                                        <th scope="col" class="">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -36,13 +33,9 @@
                                             <th scope="row">{{$podujatie->id}}</th>
                                             <td>{{$podujatie->Nazov}}</td>
                                             <td>{{$podujatie->datum}}</td>
-                                            <td>{{$podujatie->Miesto}}</td>
-                                            <td>{{$podujatie->vyzvy_id}}</td>
-                                            <td>{{$podujatie->users_id}}</td>
-                                            <td>{{$podujatie->mesto_id}}</td>
-                                            <td>{{$podujatie->univerzity_id}}</td>
-                                            <td>{{$podujatie->krajiny_id}}</td>
-                                            <td>{{$podujatie->vyzvy_id}}</td>
+                                            <td>{{$podujatie->podMes->name}}</td>
+                                            <td>{{$podujatie->podUni->nazov}}</td>
+                                            <td>{{$podujatie->podKraj->name}}</td>
                                             <td>{{$podujatie->users_id}}</td>
                                             <td>{{$podujatie->confirmed}}</td>
                                             <td class="d-flex align-items-center justify-content-around">
@@ -84,26 +77,28 @@
                                     <input type="date" class="form-control rounded-0" id="datum" placeholder="Datum" name="datum">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="Miesto">Miesto</label>
-                                    <input type="text" class="form-control rounded-0" id="Miesto" placeholder="Miesto" name="Miesto">
-                                    <label class="text-uppercase font-weight-bold" for="mesto_id">mesto_id</label>
-                                    <input type="number" class="form-control rounded-0" id="mesto_id" placeholder="mesto_id" name="mesto_id">
+                                    <label class="text-uppercase font-weight-bold" for="mestos_id">mestos_id</label>
+                                    <input type="number" class="form-control rounded-0" id="mestos_id" placeholder="mestos_id" name="mestos_id">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="univerzity_id">univerzity_id</label>
-                                    <input type="number" class="form-control rounded-0" id="univerzity_id" placeholder="univerzity_id" name="univerzity_id">
+                                    <label class="text-uppercase font-weight-bold" for="univerzities_id">univerzities_id</label>
+                                    <input type="number" class="form-control rounded-0" id="univerzities_id" placeholder="univerzities_id" name="univerzities_id">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="krajiny_id">krajiny_id</label>
-                                    <input type="number" class="form-control rounded-0" id="krajiny_id" placeholder="krajiny_id" name="krajiny_id">
-                                </div>
-                                <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="vyzvy_id">vyzvy_id</label>
-                                    <input type="number" class="form-control rounded-0" id="vyzvy_id" placeholder="vyzvy_id" name="vyzvy_id">
+                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
+                                    <input type="number" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id">
                                 </div>
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="users_id">users_id</label>
                                     <input type="number" class="form-control rounded-0" id="users_id" placeholder="users_id" name="users_id">
+                                </div>
+                                <div class="form-group ">
+                                    <label class="text-uppercase font-weight-bold" for="popis">popis</label>
+                                    <input type="text" class="form-control rounded-0" id="popis" placeholder="popis" name="popis">
+                                </div>
+                                <div class="form-group ">
+                                    <label class="text-uppercase font-weight-bold" for="Obrazok">Obrazok</label>
+                                    <input type="text" class="form-control rounded-0" id="Obrazok" placeholder="Obrazok" name="Obrazok">
                                 </div>
                                 <div class="form-group ">
                                     <input type="hidden" value="0" class="form-control rounded-0" id="confirmed" placeholder="confirmed" name="confirmed">

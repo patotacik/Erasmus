@@ -124,11 +124,12 @@ class AdminController extends Controller
         $podujatia = new Podujatia();
         $podujatia->Nazov = $request->Nazov;
         $podujatia->datum = $request->datum;
-        $podujatia->mesto_id = $request->mesto_id;
-        $podujatia->univerzity_id = $request->univerzity_id;
-        $podujatia->krajiny_id = $request->krajiny_id;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
+        $podujatia->mestos_id = $request->mestos_id;
+        $podujatia->univerzities_id = $request->univerzities_id;
+        $podujatia->krajinies_id = $request->krajinies_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->popis = $request->popis;
+        $podujatia->Obrazok = $request->Obrazok;
         $podujatia->confirmed = $request->confirmed;
         $podujatia->save();
 
@@ -139,10 +140,10 @@ class AdminController extends Controller
     {
         //
         $univerzity = new univerzity();
-        $univerzity->Nazov = $request->Nazov;
+        $univerzity->nazov = $request->nazov;
         $univerzity->zaciatok = $request->zaciatok;
-        $univerzity->konec = $request->konec;
-        $univerzity->krajiny_id = $request->krajiny_id;
+        $univerzity->koniec = $request->koniec;
+        $univerzity->krajinies_id = $request->krajinies_id;
         $univerzity->save();
 
         return redirect()->route('AllUniverzity');
@@ -203,11 +204,12 @@ class AdminController extends Controller
         $podujatia = podujatia::find($id);
         $podujatia->Nazov = $request->Nazov;
         $podujatia->datum = $request->datum;
-        $podujatia->mesto_id = $request->mesto_id;
-        $podujatia->univerzity_id = $request->univerzity_id;
-        $podujatia->krajiny_id = $request->krajiny_id;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
+        $podujatia->mestos_id = $request->mestos_id;
+        $podujatia->univerzities_id = $request->univerzities_id;
+        $podujatia->krajinies_id = $request->krajinies_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->popis = $request->popis;
+        $podujatia->Obrazok = $request->Obrazok;
         $podujatia->confirmed = $request->confirmed;
 
         $podujatia->save();
@@ -217,10 +219,10 @@ class AdminController extends Controller
     public function UniverzityUpdate(Request $request, $id)
     {
         $univerzity = univerzity::find($id);
-        $univerzity->Nazov = $request->Nazov;
+        $univerzity->nazov = $request->nazov;
         $univerzity->zaciatok = $request->zaciatok;
-        $univerzity->konec = $request->konec;
-        $univerzity->krajiny_id = $request->krajiny_id;
+        $univerzity->koniec = $request->koniec;
+        $univerzity->krajinies_id = $request->krajinies_id;
 
         $univerzity->save();
 

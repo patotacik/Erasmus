@@ -17,7 +17,7 @@ class podujatiaController extends Controller
         ->with('i', (request()->input('page', 1) - 1) * 2);
     }
 
-    public function search(Request $request){
+    public function searchE(Request $request){
         $search = $request->get('q');
 
        /* $result = Podujatia::where('Nazov', 'like', '%' .$search. '%')->paginate(6);
@@ -34,7 +34,7 @@ class podujatiaController extends Controller
         return view('erasmusSearch', compact('search', 'finalResult'));
     }
 
-    public function filter(Request $request){
+    public function filterE(Request $request){
         $kraj = $request->get('k');
         $mesto = $request->get('m');
         $uni = $request->get('u');
@@ -50,9 +50,43 @@ class podujatiaController extends Controller
     }
 
     public function getSeminar(){
-        $seminar = Vyzvi::latest()->paginate(20);
+        $seminar = Vyzvi::latest()->paginate(6);
         return view('seminar') -> with(compact('seminar', $seminar))
             ->with('i', (request()->input('page', 1) - 1) * 2);
+    }
+
+
+    public function searchS(Request $request){
+        $search = $request->get('q');
+
+        /* $result = Podujatia::where('Nazov', 'like', '%' .$search. '%')->paginate(6);
+         */
+
+        $seminare = Vyzvi::paginate(9)->all();
+        $finalResult = [];
+        foreach ($seminare as $seminar) {
+            if(strpos($seminar->Typ, $search) !== false || strpos($seminar->detail, $search) !== false
+                || strpos($seminar->nazov_seminara, $search) !== false || strpos($seminar->miesto_konania, $search) !== false
+                || strpos($seminar->cas_konanie, $search) !== false || strpos($seminar->datum_konania, $search) !== false) {
+                array_push($finalResult, $seminar);
+            }
+        }
+        return view('seminarSearch', compact('search', 'finalResult'));
+    }
+
+    public function filterS(Request $request){
+        $typ = $request->get('t');
+        $miesto = $request->get('m');
+        $nazov = $request->get('n');
+
+        $seminare = Vyzvi::paginate(9)->all();
+        $finalResult = [];
+        foreach ($seminare as $seminar) {
+            if(strpos($seminar->Typ, $typ) !== false || strpos($seminar->nazov_seminara, $nazov) !== false || strpos($seminar->miesto_konania, $miesto) !== false) {
+                array_push($finalResult, $seminar);
+            }
+        }
+        return view('seminarSearch', compact('search', 'finalResult'));
     }
 
 }

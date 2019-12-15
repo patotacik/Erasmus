@@ -66,7 +66,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                     <span class="subheading">erasmus+</span>
-                    <h2 class="mb-2">Aktuálna ponuka</h2>
+                    <h2 class="mb-2">Naj...zobrazovanejšie ponuky</h2>
                 </div>
             </div>
             <div class="row">
