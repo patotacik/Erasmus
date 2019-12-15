@@ -84,6 +84,16 @@
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
+                <li>
+                    <a class="navbar-brand">
+                        <a class="btn btn-primary" href="{{route('add')}}" role="button">Pridat Uzivatela</a>
+                    </a>
+                </li>
+                <li>
+                    <a class="navbar-brand">
+                        <a class="btn btn-primary" href="{{route('AllUsers')}}" role="button">Ukazat vsetkych uzivatelov</a>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

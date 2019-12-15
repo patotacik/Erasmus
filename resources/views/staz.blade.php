@@ -1,15 +1,11 @@
 @extends('layout.mainlayout')
 
 @section('content')
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/uvod.png');"
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/staz.png')}});"
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread"><br><br>Ponuka pobytov v zahraničí</h1>
-                </div>
-            </div>
+
         </div>
     </div>
     </section>
@@ -21,67 +17,6 @@
                     <div class="property-wrap ftco-animate">
                         <a href="properties-single.html" class="img" style="background-image: url(images/work-1.jpg);"></a>
                         <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
-                            <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                            <span class="location">Oakland</span>
-                            <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="ion-ios-link"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <a href="properties-single.html" class="img" style="background-image: url(images/work-2.jpg);"></a>
-                        <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
-                            <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                            <span class="location">Oakland</span>
-                            <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="ion-ios-link"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <a href="properties-single.html" class="img" style="background-image: url(images/work-3.jpg);"></a>
-                        <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
-                            <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                            <span class="location">Oakland</span>
-                            <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="ion-ios-link"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <a href="properties-single.html" class="img" style="background-image: url(images/work-4.jpg);"></a>
-                        <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
                             <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
                             <span class="location">Oakland</span>
                             <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
@@ -145,41 +80,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <a href="properties-single.html" class="img" style="background-image: url(images/work-5.jpg);"></a>
-                        <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
-                            <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                            <span class="location">Oakland</span>
-                            <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="ion-ios-link"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="property-wrap ftco-animate">
-                        <a href="properties-single.html" class="img" style="background-image: url(images/work-6.jpg);"></a>
-                        <div class="text">
-                            <p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small>/mo</small></span></p>
-                            <ul class="property_list">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-                            </ul>
-                            <h3><a href="properties-single.html">The Blue Sky Home</a></h3>
-                            <span class="location">Oakland</span>
-                            <a href="properties-single.html" class="d-flex align-items-center justify-content-center btn-custom">
-                                <span class="ion-ios-link"></span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row mt-5">

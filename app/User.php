@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Authenticatable
 {
 
     use Notifiable;
+
 
     /**
      * The attributes that are mass assignable.
@@ -16,20 +18,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','roly_id',
+        'name', 'email', 'password','roly_id', 'is_activated',
     ];
-
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+public function rola_nazov(){
+    return $this->hasOne('App\Roly','id','roly_id');
+}
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-    const ADMIN_TYPE = '3';
+
+    const ADMIN_TYPE = '1';
     const REFERENT_TYPE = '2';
-    const UCASNIK_TYPE = '1';
+    const UCASNIK_TYPE = '3';
 
     const DEFAULT_TYPE = 'default';
     public function isAdmin()    {
@@ -40,5 +45,11 @@ class User extends Authenticatable
     }
     public function isUcasnik()    {
         return $this->roly_id == self::UCASNIK_TYPE;
+    }
+
+    public function setPasswordAttribute($input)
+    {
+        if ($input)
+            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
     }
 }
