@@ -15,7 +15,6 @@ class CreateVyzviesTable extends Migration
     {
         Schema::create('vyzvies', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('Typ',45);
             $table->string('nazov_seminara',80);
             $table->string('miesto_konania',80);

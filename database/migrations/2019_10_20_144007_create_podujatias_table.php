@@ -30,7 +30,8 @@ class CreatePodujatiasTable extends Migration
             $table->foreign('users_id') ->references('id')->on('users');
             $table->boolean('confirmed')->nullable();
             $table->integer('pocitadlo');
-
+            $table->text('popis');
+            $table->string('Obrazok');
 
 
         });
