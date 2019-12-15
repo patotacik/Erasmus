@@ -6,7 +6,7 @@
 
     <div class="container-contact100">
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form" action="{{route('formular.pridat')}}" method="post">
+            <form class="contact100-form validate-form" action="{{route('formular.pridat')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
 
                 <span class="contact100-form-title">
@@ -36,6 +36,36 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
                     <span class="focus-input100"></span>
                 </div>
 
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Uploadni nám fotku :)(nepovinné)</span>
+                    <input type="file" class="form-control" name="obrazok" placeholder="vyber obrázok" multiple>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Uploadni nám fotku :) (nepovinné)</span>
+                    <input type="file" class="form-control" name="obrazok2" placeholder="vyber obrázok" multiple>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Uploadni nám fotku :)(nepovinné)</span>
+                    <input type="file" class="form-control" name="obrazok3" placeholder="vyber obrázok" multiple>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Uploadni prezentáciu :)(nepovinné)</span>
+                    <input type="file" class="form-control" name="ppt" placeholder="vyber obrázok" multiple>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Uploadni dokument :)(nepovinné)</span>
+                    <input type="file" class="form-control" name="dokument" placeholder="vyber obrázok" multiple>
+                    <span class="focus-input100"></span>
+                </div>
+
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Aké je tvoje celkové hodnotenie pobytu?</span>
                     <div class="form-row">
@@ -53,6 +83,7 @@ Ahoj {{ Auth::user()->name }} odpovedz nám na pár otázok:</span>
                         </fieldset>
                     </div>
                 </div>
+
 
                 <input type="hidden" name="users_id" value="{{$details->users_id}}" />
                 <input type="hidden" name="podujatias_id" value="{{$details->id}}" />

@@ -72,15 +72,45 @@ class AdminController extends Controller
         $hodnotenies->Otazka_2 = $request->Otazka_2;
         $hodnotenies->Otazka_3 = $request->Otazka_3;
         $hodnotenies->Otazka_4 = $request->Otazka_4;
-        $hodnotenies->Otazka_4 = $request->Otazka_4;
-        $hodnotenies->Otazka_4 = $request->Otazka_4;
         $hodnotenies->hodnotenie = $request->hodnotenie;
         $hodnotenies->potvrdenie = $request->potvrdenie;
         $hodnotenies->users_id = $request->users_id;
         $hodnotenies->podujatias_id = $request->podujatias_id;
         $hodnotenies->pocitadlo = $request->pocitadlo;
 
+        $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('obrazok')->getClientOriginalExtension();
+        $request->file('obrazok')->move(
+            base_path() . '/public/images/', $obrazokNazov
+        );
+        $hodnotenies->obrazok = base_path() . '/public/images/' . $obrazokNazov;
+
+        $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '2.' . $request->file('obrazok2')->getClientOriginalExtension();
+        $request->file('obrazok2')->move(
+            base_path() . '/public/images/', $obrazokNazov2
+        );
+        $hodnotenies->obrazok2 = base_path() . '/public/images/' . $obrazokNazov2;
+
+        $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '3.' . $request->file('obrazok3')->getClientOriginalExtension();
+        $request->file('obrazok3')->move(
+            base_path() . '/public/images/', $obrazokNazov3
+        );
+        $hodnotenies->obrazok3 = base_path() . '/public/images/' . $obrazokNazov3;
+
+        $ppt =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('ppt')->getClientOriginalExtension();
+        $request->file('ppt')->move(
+            base_path() . '/public/images/ppt/', $ppt
+        );
+        $hodnotenies->ppt = base_path() . '/public/images/ppt/' . $ppt;
+
+        $dokument =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('dokument')->getClientOriginalExtension();
+        $request->file('dokument')->move(
+            base_path() . '/public/images/dokument/', $dokument
+        );
+        $hodnotenies->dokument = base_path() . '/public/images/dokument/' . $dokument;
+
         $hodnotenies->save();
+
+
         $zmena = Podujatia::find($request->podujatias_id);
         $zmena->confirmed = 1;
         $zmena->save();
