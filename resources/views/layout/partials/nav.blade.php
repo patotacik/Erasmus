@@ -64,7 +64,7 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isUcasnik())
-                            <a class="dropdown-item" href="{{route('ucasnik')}}">Blog</a>
+                            <a class="dropdown-item" href="{{route('blogy')}}">Blog</a>
                             <a class="dropdown-item" href="{{route('seminar')}}" >Informačné semináre</a>
                             <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potvrdené žiadosti</a>
 
