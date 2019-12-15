@@ -127,8 +127,9 @@ class AdminController extends Controller
         $podujatia->mestos_id = $request->mestos_id;
         $podujatia->univerzities_id = $request->univerzities_id;
         $podujatia->krajinies_id = $request->krajinies_id;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->popis = $request->popis;
+        $podujatia->Obrazok = $request->Obrazok;
         $podujatia->confirmed = $request->confirmed;
         $podujatia->save();
 
@@ -208,8 +209,9 @@ class AdminController extends Controller
         $podujatia->mestos_id = $request->mestos_id;
         $podujatia->univerzities_id = $request->univerzities_id;
         $podujatia->krajinies_id = $request->krajinies_id;
-        $podujatia->vyzvy_id = $request->vyzvy_id;
         $podujatia->users_id = $request->users_id;
+        $podujatia->popis = $request->popis;
+        $podujatia->Obrazok = $request->Obrazok;
         $podujatia->confirmed = $request->confirmed;
 
         $podujatia->save();
