@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" type="image/png" href="{{ URL::asset('images/ukf.png')}}"/>
+
 <head>
-    <title>Login V3</title>
+    <title>Formulár</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->

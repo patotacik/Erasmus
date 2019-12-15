@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 @section('content')
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/detail.png')}});"
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url({{ URL::asset('images/blog_1.png')}});"
          data-stellar-background-ratio="0.5" xmlns:color="http://www.w3.org/1999/xhtml">
     </div>
 
@@ -33,11 +33,32 @@
 
                     <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-3.jpg);">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok)}});">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="property-wrap ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok)}});">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="property-wrap ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok2)}});">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="property-wrap ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok3)}});">
                             </div>
                         </div>
                     </div>
 
+                    <div class="center" style="padding-left:15%; padding-right: 15%">
+                        <img src="{{ URL::asset($blogy_details->Obrazok)}}"alt="nananana" style="width: 100%" height="80%" >
+                    </div>
 
                     @foreach($komentars as $row)
 

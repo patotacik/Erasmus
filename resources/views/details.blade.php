@@ -116,7 +116,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
 
-    <span class="subheading">Granty</span>
+    <sipan class="subheading">Granty</sipan>
     <h2>SKUPINY KRAJÍN</h2>
 <p>výška grantu študenta SR na mobilitu Erasmus+ KA103 v
     zahraničí na každý mesiac pobytu v EUR na akad. rok 2019/2020:
