@@ -23,7 +23,7 @@
 
                 </div>
                 <div class="center" style="padding-left:15%; padding-right: 15%">
-                    <img src="{{ URL::asset($details->Obrazok)}}"alt="nananana" style="width: 100%" height="80%" >
+                    <img src="{{$details->Obrazok}}""alt="nananana" style="width: 100%" height="80%" >
                 </div>
 
         </section>
