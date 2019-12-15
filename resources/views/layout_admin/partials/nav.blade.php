@@ -26,6 +26,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{route('AllVyzvi')}}">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Vyzvy</p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{route('AllUniverzity')}}">
                             <i class="now-ui-icons location_world"></i>
                             <p>Univerzity</p>
@@ -43,6 +49,12 @@
                         <a href="{{route('AllEvents')}}">
                             <i class="now-ui-icons ui-1_bell-53"></i>
                             <p>Podujatia</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('AllVyzvi')}}">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Vyzvy</p>
                         </a>
                     </li>
                     <li>
