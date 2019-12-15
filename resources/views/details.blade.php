@@ -110,4 +110,59 @@
             </div>
         </div>
     </section>
+
+    <section class="ftco-section goto-here">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+
+    <span class="subheading">Granty</span>
+    <h2>SKUPINY KRAJÍN</h2>
+<p>výška grantu študenta SR na mobilitu Erasmus+ KA103 v
+    zahraničí na každý mesiac pobytu v EUR na akad. rok 2019/2020:
+</p>
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+            <th>Skupina</th>
+            <th>Štát</th>
+            <th>Suma</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Skupina 1 – Krajiny programu
+                s vyššími životnými nákladmi
+            </td>
+            <td>Dánsko, Fínsko, Island, Írsko, Luxembursko,
+                Švédsko, Spojené kráľovstvo, Lichtenštajnsko,
+                Nórsko</td>
+            <td>520€</td>
+        </tr>
+        <tr>
+            <td>Skupina 2 – Krajiny programu
+                so strednými životnými
+                nákladmi
+            </td>
+            <td>Rakúsko, Belgicko, Nemecko, Francúzsko,
+                Taliansko, Grécko, Španielsko, Cyprus,
+                Holandsko, Malta, Portugalsko</td>
+            <td>470€</td>
+        </tr>
+        <tr>
+            <td>Skupina 3 – Krajiny programu
+                s nižšími životnými nákladmi</td>
+            <td>Bulharsko, Chorvátsko, Česká republika,
+                Estónsko, Litva, Lotyšsko, Maďarsko,
+                Slovensko, Slovinsko, Poľsko, Rumunsko,
+                Bývalá Juhoslovanská republika Macedónsko,
+                Turecko, Srbsko</td>
+            <td>420€</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+            </div>
+        </div>
+    </section>
 @endsection

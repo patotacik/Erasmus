@@ -126,7 +126,7 @@ Route::get('index', [
     'as' => 'show', 'uses' =>'PagesController@getIndex',
 ]);
 
-Route::get('seminare', [
+Route::get('ine_pobyty', [
     'as' => 'show', 'uses' =>'podujatiaController@getSeminar',
 ]);
 
