@@ -50,7 +50,7 @@ class podujatiaController extends Controller
     }
 
     public function getSeminar(){
-        $seminar = Vyzvi::latest()->paginate(20);
+        $seminar = Vyzvi::latest()->paginate(6);
         return view('seminar') -> with(compact('seminar', $seminar))
             ->with('i', (request()->input('page', 1) - 1) * 2);
     }
@@ -82,7 +82,7 @@ class podujatiaController extends Controller
         $seminare = Vyzvi::paginate(9)->all();
         $finalResult = [];
         foreach ($seminare as $seminar) {
-            if(strpos($seminar->typ, $typ) !== false || strpos($seminar->nazov_seminara, $nazov) !== false || strpos($seminar->miesto_seminara, $miesto) !== false) {
+            if(strpos($seminar->Typ, $typ) !== false || strpos($seminar->nazov_seminara, $nazov) !== false || strpos($seminar->miesto_konania, $miesto) !== false) {
                 array_push($finalResult, $seminar);
             }
         }

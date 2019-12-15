@@ -33,7 +33,6 @@ Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
 
-Route::get('/erasmus', 'podujatiaController@getPodujatia');
 
 Route::get('/searchE', 'podujatiaController@searchE')->name('erasmus.search');
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
