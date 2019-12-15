@@ -35,9 +35,13 @@ Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerz
 
 Route::get('/erasmus', 'podujatiaController@getPodujatia');
 
-Route::get('/search', 'podujatiaController@search')->name('erasmus.search');
+Route::get('/searchE', 'podujatiaController@searchE')->name('erasmus.search');
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
-Route::get('/filter', 'podujatiaController@filter')->name('erasmus.filter');
+Route::get('/filterE', 'podujatiaController@filterE')->name('erasmus.filter');
+
+Route::get('/searchS', 'podujatiaController@searchS')->name('seminar.search');
+Route::get('/seminar', 'PodujatiaController@getSeminar');
+Route::get('/filterS', 'podujatiaController@filterS')->name('seminar.filter');
 
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 Route::get('/details_blogy/{id}', 'detailsController@getBlogId')->name('blogy.details');
