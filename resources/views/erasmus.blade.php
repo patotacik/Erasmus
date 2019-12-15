@@ -125,17 +125,14 @@
                 @foreach($podujatia as $row)
                     <div class="col-md-4">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/work-1.jpg);">
-                                <a href='{{route('erasmus.details',$row->id)}}' method="post" class="icon d-flex align-items-center justify-content-center btn-custom">
-                                    <span class="fa fa-eye"></span>
-                                </a>
-                            </div>
+                                <img src="{{$row->Obrazok}}" class="img d-flex align-items-center justify-content-center">
                             <div class="text">
                                 <h3>{{$row->Nazov}}</h3>
                                 <h3>Mesto: {{$row->podMes->name}}</h3>
                                 <h3>Univerzita: {{$row->podUni->nazov}}</h3>
                                 <h3 class="location">Krajina: {{$row->podKraj->name}}</h3>
                                 <h3 class="date">Dátum: {{$row->datum}}</h3>
+                                <h3 class="date">Popis: {{str_limit($row->popis, 40)}}</h3>
                                 <a href='{{route('erasmus.details',$row->id)}}' method="post" class="d-flex align-items-center justify-content-center btn-custom">
                                     <span class="fa fa-eye"></span></a>
                                 <h3 class="display-2">{{$row->pocitadlo}} <span class="fa fa-eye"> </span></h3></a>

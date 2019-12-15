@@ -39,9 +39,6 @@ class podujatiaController extends Controller
         $mesto = $request->get('m');
         $uni = $request->get('u');
 
-        /* $result = Podujatia::where('Nazov', 'like', '%' .$search. '%')->paginate(6);
-         */
-
         $podujatia = Podujatia::paginate(9)->all();
         $finalResult = [];
         foreach ($podujatia as $podujatie) {
