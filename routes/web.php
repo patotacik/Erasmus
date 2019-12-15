@@ -19,18 +19,22 @@ Route::get('/showa/{id}', [
 
 Route::delete('/users/{id}', 'AdminController@destroy')->name('users.destroy');
 Route::delete('/events/{id}', 'AdminController@EventDestroy')->name('events.destroy');
+Route::delete('/vyzvi/{id}', 'AdminController@VyzvaDestroy')->name('vyzvi.destroy');
 Route::delete('/univerzity/{id}', 'AdminController@UniverzityDestroy')->name('univerzity.destroy');
 
 Route::post('/users', 'AdminController@store')->name('users.store');
 Route::post('/events', 'AdminController@EventStore')->name('events.store');
+Route::post('/vyzvi', 'AdminController@VyzvaStore')->name('vyzvi.store');
 Route::post('/univerzity', 'AdminController@UniverzityStore')->name('univerzity.store');
 
 Route::get('/users/{id}/edit', 'AdminController@edit')->name('users.edit');
 Route::get('/events/{id}/edit', 'AdminController@EventEdit')->name('events.edit');
+Route::get('/vyzvi/{id}/edit', 'AdminController@VyzvaEdit')->name('vyzvi.edit');
 Route::get('/univerzity/{id}/edit', 'AdminController@UniverzityEdit')->name('univerzity.edit');
 
 Route::put('users/{id}', 'AdminController@update')->name('users.update');
 Route::put('events/{id}', 'AdminController@EventUpdate')->name('events.update');
+Route::put('vyzvi/{id}', 'AdminController@VyzvaUpdate')->name('vyzvi.update');
 Route::put('univerzity/{id}', 'AdminController@UniverzityUpdate')->name('univerzity.update');
 
 
@@ -108,6 +112,10 @@ Route::get('/AllUsers', [
 
 Route::get('/AllEvents', [
     'as' => 'AllEvents', 'uses' => 'AdminController@EventsTable'
+]);
+
+Route::get('/AllVyzvi', [
+    'as' => 'AllVyzvi', 'uses' => 'AdminController@VyzviTable'
 ]);
 
 Route::get('/AllUniverzity', [
