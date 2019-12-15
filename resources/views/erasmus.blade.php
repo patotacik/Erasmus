@@ -39,6 +39,7 @@
             </div>
         </div>
         <br>
+
         {{-- filter --}}
         <div class="container">
             <div class="row">
@@ -54,8 +55,8 @@
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="k" class="form-control">
+                                                    <option value=" "> </option>
                                                     @foreach($podujatia as $row)
-
                                                         <option value="{{$row->podKraj->name}}">{{$row->podKraj->name}}</option>
                                                     @endforeach>
 
@@ -72,6 +73,7 @@
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="m" class="form-control">
+                                                    <option value=" "> </option>
                                                     @foreach($podujatia as $row)
                                                         <option value="{{$row->podMes->name}}">{{$row->podMes->name}}</option>
                                                     @endforeach>
@@ -88,6 +90,7 @@
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="u" class="form-control">
+                                                    <option value=" "> </option>
                                                     @foreach($podujatia as $row)
                                                         <option value="{{$row->podUni->nazov}}">{{$row->podUni->nazov}}</option>
                                                     @endforeach>

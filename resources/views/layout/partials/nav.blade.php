@@ -47,10 +47,9 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isReferent())
-                            <a class="dropdown-item"href="{{route('výzva')}}">Správa výziev</a>
+                            <a class="dropdown-item"href="{{route('AllEvents')}}">Správa výziev</a>
                             <a class="dropdown-item" href="{{route('spravy')}}" > Správy účastníkov mobility</a>
-                            <a class="dropdown-item" href="{{route('prid_unv')}}"> Pridánie partnerskéj univerzity</a>
-
+                            <a class="dropdown-item" href="{{route('AllUniverzity')}}"> Pridánie partnerskéj univerzity</a>
                         @endif
                     @endguest
 

@@ -20,8 +20,8 @@
                                         <th scope="col" class="">#</th>
                                         <th scope="col" class="">Nazov</th>
                                         <th scope="col" class="">zaciatok</th>
-                                        <th scope="col" class="">konec</th>
-                                        <th scope="col" class="">krajiny_id</th>
+                                        <th scope="col" class="">koniec</th>
+                                        <th scope="col" class="">krajinies_id</th>
                                         <th scope="col" class="">Action</th>
                                     </tr>
                                     </thead>
@@ -29,10 +29,10 @@
                                     @foreach($univerzity as $univerzita)
                                         <tr class="text-center">
                                             <th scope="row">{{$univerzita->id}}</th>
-                                            <td>{{$univerzita->Nazov}}</td>
+                                            <td>{{$univerzita->nazov}}</td>
                                             <td>{{$univerzita->zaciatok}}</td>
-                                            <td>{{$univerzita->konec}}</td>
-                                            <td>{{$univerzita->krajiny_id}}</td>
+                                            <td>{{$univerzita->koniec}}</td>
+                                            <td>{{$univerzita->podKraj->name}}</td>
                                             <td class="d-flex align-items-center justify-content-around">
                                                 <form action="{{route('univerzity.edit',$univerzita->id)}}" method="get">
                                                     <button class="btn btn-sm btn-warning   rounded-0">
@@ -74,12 +74,12 @@
                                     <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="zaciatok" name="zaciatok">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="konec">konec</label>
-                                    <input type="date" class="form-control rounded-0" id="konec" placeholder="konec" name="konec">
+                                    <label class="text-uppercase font-weight-bold" for="koniec">koniec</label>
+                                    <input type="date" class="form-control rounded-0" id="koniec" placeholder="koniec" name="koniec">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="krajiny_id">krajiny_id</label>
-                                    <input type="number" class="form-control rounded-0" id="krajiny_id" placeholder="krajiny_id" name="krajiny_id">
+                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
+                                    <input type="number" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id">
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">

@@ -14,12 +14,12 @@
           <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="zaciatok" name="zaciatok">
         </div>
         <div class="form-group ">
-          <label class="text-uppercase font-weight-bold" for="konec">konec</label>
-          <input type="date" class="form-control rounded-0" id="konec" placeholder="konec" name="konec">
+          <label class="text-uppercase font-weight-bold" for="koniec">koniec</label>
+          <input type="date" class="form-control rounded-0" id="koniec" placeholder="koniec" name="koniec">
         </div>
         <div class="form-group ">
-          <label class="text-uppercase font-weight-bold" for="krajiny_id">krajiny_id</label>
-          <input type="number" class="form-control rounded-0" id="krajiny_id" placeholder="krajiny_id" name="krajiny_id">
+          <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
+          <input type="number" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id">
         </div>
         <div class="form-group ">
           <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
