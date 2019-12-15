@@ -13,8 +13,7 @@
 
                     <div class="row">
                         @foreach($seminar as $row)
-
-                        <div class="col-md-12">
+                        <div class="col-md-4">
                                 <div class="property-wrap ftco-animate">
 
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/sem.jpg);">
@@ -34,8 +33,8 @@
 
                                 </div>
                             </div>
-                        @endforeach
                     </div>
+                        @endforeach
 
     </div>
     </div>
