@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-wrap-1 ftco-animate">
-                        <form action="#" class="search-property-1">
+                        <form action="{{ route('erasmus.filter') }}" class="search-property-1" method="get">
                             <div class="row">
 
                                 <div class="col-lg align-items-end">
@@ -53,11 +53,12 @@
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="" class="form-control">
+                                                <select name="k" class="form-control">
                                                     @foreach($podujatia as $row)
 
-                                                        <option value="">{{$row->podKraj->name}}</option>
+                                                        <option value="{{$row->podKraj->name}}">{{$row->podKraj->name}}</option>
                                                     @endforeach>
+
                                                 </select>
                                             </div>
                                         </div>
@@ -70,9 +71,9 @@
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="" id="" class="form-control">
+                                                <select name="m" class="form-control">
                                                     @foreach($podujatia as $row)
-                                                        <option value="">{{$row->podMes->name}}</option>
+                                                        <option value="{{$row->podMes->name}}">{{$row->podMes->name}}</option>
                                                     @endforeach>
                                                 </select>
                                             </div>
@@ -86,9 +87,9 @@
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name=""class="form-control">
+                                                <select name="u" class="form-control">
                                                     @foreach($podujatia as $row)
-                                                        <option value="">{{$row->podUni->nazov}}</option>
+                                                        <option value="{{$row->podUni->nazov}}">{{$row->podUni->nazov}}</option>
                                                     @endforeach>
                                                 </select>
                                             </div>
@@ -110,6 +111,7 @@
             </div>
         </div>
     </section>
+
     {{-- zobrazenie všetkého --}}
     <section class="ftco-section goto-here">
         <div class="container">
