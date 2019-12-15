@@ -30,7 +30,6 @@
                                         <h3>Dátum konania: {{$row->datum_konania}} </h3>
                                         <h3>Čas konania: {{$row->cas_konanie}}</h3>
                                         <h3 class="location">Miesto konania: {{$row->miesto_konania}} </h3>
-                                            <span class="fa fa-eye"></span></a>
                                     </div>
 
                                 </div>
@@ -38,5 +37,6 @@
                         @endforeach
                     </div>
 
+    </div>
     </div>
 @endsection

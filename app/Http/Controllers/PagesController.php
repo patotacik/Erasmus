@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Hodnotenie;
 use Illuminate\Http\Request;
 use App\Podujatia;
 
@@ -16,8 +17,10 @@ class PagesController extends Controller
        /* $podujatia = Podujatia::all()->random(4);
         return view('index') -> with('podujatia', $podujatia);
    */
-        $podujatia = Podujatia::orderBy('pocitadlo', 'DESC')->limit(4)->get();
-        return view('index') -> with('podujatia', $podujatia);
+        $hodnotenie = Hodnotenie::all()->random(3);
+        $podujatia = Podujatia::orderBy('pocitadlo', 'DESC')->limit(3)->get();
+        return view('index',['podujatia' => $podujatia],['hodnotenie' => $hodnotenie]);
+
 
     }
     public function getErasmus() {

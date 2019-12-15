@@ -3,46 +3,15 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Uptown</h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <h2 class="ftco-heading-2">Nazabudni nás sledovať aj na:</h2>
                     <ul class="ftco-footer-social list-unstyled mt-5">
                         <li class="ftco-animate"><a href="https://www.facebook.com/EUErasmusPlusProgramme/"><span class="icon-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="https://www.instagram.com/explore/tags/erasmus/"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-4">
-                    <h2 class="ftco-heading-2">Community</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Search Properties</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>For Agents</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Reviews</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>FAQs</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-4">
-                    <h2 class="ftco-heading-2">About Us</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Our Story</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Meet the team</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Company</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About Us</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Press</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-                        <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
-                    </ul>
-                </div>
-            </div>
+
+
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Vieš kde nás nájdeš?</h2>

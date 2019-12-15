@@ -28,9 +28,14 @@
                     <p>{{$blogy_details->Otazka_4}}</p>
 
                     <h2 class="mb-3 mt-5">#5: Aké je tvoje celkové hodnotenie pobytu?</h2>
-                    <p>{{$blogy_details->Otazka_5}}</p>
 
-
+                    <div class="card-columns">
+                        <div class="card bg-primary">
+                            <div class="card-body text-center">
+                                <p class="card-text"><h1 class="display-1">{{$blogy_details->hodnotenie}}/5</h1></p>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="col-md-3">
                         <div class="property-wrap ftco-animate">
@@ -40,18 +45,19 @@
                     </div>
 
 
+                    @foreach($komentars as $row)
 
-                    <div class="pt-5 mt-5">
 
                         <ul class="comment-list">
-                            @foreach($komentars as $row)
 
                             <li class="comment">
-
+                                <div class="vcard bio">
+                                    <img src="{{ URL::asset('images/user.png')}}" alt="Image placeholder">
+                                </div>
                                 <div class="comment-body">
-                                    <h3>{{$row->users_id}}</h3>
-                                    <div class="meta">October 17, 2019 at 2:21pm</div>
-<p>{{$row->koment}}</p>                                    <p><a href="#" class="reply">Reply</a></p>
+                                    <h3>{{$row->user_nazov->name}}</h3>
+                                    <div class="meta">{{$row->created_at}}</div>
+                                    <p>{{$row->koment}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -60,7 +66,7 @@
 
                         <div class="comment-form-wrap pt-5">
                             <h3 class="mb-5">Máš otázku ?</h3>
-                            <form class="contact100-form validate-form" action="{{route('komentar.pridat')}}" method="post">
+                            <form class="p-5 bg-light" action="{{route('komentar.pridat',$blogy_details->id)}}" method="post">
                                 <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
                                 <input type="hidden" name="hodnotenies_id" value="{{$blogy_details->id}}" />
                                 <input type="hidden" name="users_id" value="{{ Auth::user()->id }}" />
@@ -68,16 +74,8 @@
                                     <label for="message">Sparáva</label>
                                     <textarea name="koment" id="koment" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
-                                <div class="container-contact100-form-btn">
-                                    <div class="wrap-contact100-form-btn">
-                                        <div class="contact100-form-bgbtn"></div>
-                                        <button class="contact100-form-btn">
-							<span>
-								Odovzdať
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-                                        </button>
-                                    </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Pridať komentár" class="btn py-3 px-4 btn-primary">
                                 </div>
                             </form>
                         </div>

@@ -2,12 +2,11 @@
 
 use Illuminate\Database\Seeder;
 
-class VyzviesTableSeeder extends Seeder
+class VyzvisTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('vyzvies')->delete();
-        $vyzvies = array(
+        $vyzvis = array(
             array('id' => 1,'typ' => "Študjiný pobyt",'nazov_seminara' => "Študjiný pobyt",'miesto_konania' => "Londyn",'cas_konanie' => "15:00:00", 'datum_konania' => "2021-10-10"),
             array('id' => 2,'typ' => "Študjiný pobyt",'nazov_seminara' => "Študjiný pobyt",'miesto_konania' => "Mnichov",'cas_konanie' => "15:00:00", 'datum_konania' => "2022-10-20"),
             array('id' => 3,'typ' => "Študjiný pobyt",'nazov_seminara' => "Študjiný pobyt",'miesto_konania' => "Moskva",'cas_konanie' => "15:00:00", 'datum_konania' => "2022-10-19"),
@@ -23,6 +22,6 @@ class VyzviesTableSeeder extends Seeder
             array('id' => 13,'typ' => "Školenie",'nazov_seminara' => "Školenie",'miesto_konania' => "Amsterdam",'cas_konanie' => "15:00:00", 'datum_konania' => "2021-12-10"),
 
         );
-        DB::table('vyzvies')->insert($vyzvies);
+        DB::table('vyzvis')->insert($vyzvis);
     }
 }

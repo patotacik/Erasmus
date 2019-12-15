@@ -19,10 +19,11 @@
                     <div class="blog-entry justify-content-end">
                         <div class="text">
                             <a href='{{route('blogy.details',$row->id)}}' class="block-20 img" style="background-image: url('images/image_3.jpg')"> </a>
-                            <h3 class="heading"><a href="#">{{$row->user_name->name}}</a></h3>
+                            <h3 class="heading"></h3>
                             <div class="meta mb-3">
-                                <div><a href="#">October 17, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
+                                <div><a>{{$row->created_at}}</a></div>
+                                <div><a>{{$row->user_nazov->name}}</a></div>
+                              <div><a>Počet zobrazení: {{$row->pocitadlo}} <span class="fa fa-eye"> </span></a></div>
                             </div>
                         </div>
                     </div>

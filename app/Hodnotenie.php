@@ -15,6 +15,8 @@ class Hodnotenie extends Model
     {
         return $this->belongsTo('App\Komentar', 'foreign_key');
     }
+    public function user_nazov(){
+        return $this->hasOne('App\User','id','users_id');
 
-
+}
 }

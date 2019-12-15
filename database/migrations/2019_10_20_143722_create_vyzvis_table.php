@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVyzviesTable extends Migration
+class CreateVyzvisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateVyzviesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vyzvies', function (Blueprint $table) {
+        Schema::create('vyzvis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Typ',45);
+            $table->text('detail');
+            $table->timestamps();
             $table->string('nazov_seminara',80);
             $table->string('miesto_konania',80);
             $table->time('cas_konanie');
@@ -30,6 +32,6 @@ class CreateVyzviesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vyzvy');
+        Schema::dropIfExists('vyzvis');
     }
 }

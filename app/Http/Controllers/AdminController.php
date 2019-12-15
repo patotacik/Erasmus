@@ -88,7 +88,7 @@ class AdminController extends Controller
     }
 
 
-    public function pridat_komentar(Request $request)
+    public function pridat_komentar(Request $request, $id)
     {
 
         //potvrdenie  users_id  podujatia_id
@@ -97,7 +97,7 @@ class AdminController extends Controller
         $koment->hodnotenies_id = $request->hodnotenies_id;
         $koment->koment = $request->koment;
         $koment->save();
-        return redirect()->route('blogy');
+        return redirect()->route('blogy.details',$id);
     }
 
 

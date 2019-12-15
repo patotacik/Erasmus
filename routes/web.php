@@ -81,7 +81,7 @@ Route::get('/formular/{id}', 'AdminController@formular')
     ->name('potvrdene.formular');
 
 Route::post('/pridat', 'AdminController@pridat')->name('formular.pridat');
-Route::post('/pridat_komentar', 'AdminController@pridat_komentar')->name('komentar.pridat');
+Route::post('/pridat_komentar/{id}', 'AdminController@pridat_komentar')->name('komentar.pridat');
 
 Route::get('/potvrdene/{users_id}', 'AdminController@getPatvdeneId')
     ->middleware('is_ucasnik')
@@ -121,6 +121,10 @@ Route::get('kontakt', [
 
 Route::get('index', [
     'as' => 'show', 'uses' =>'PagesController@getIndex',
+]);
+
+Route::get('seminare', [
+    'as' => 'show', 'uses' =>'podujatiaController@getSeminar',
 ]);
 
 Route::get('login', [

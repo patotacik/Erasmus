@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hodnotenie;
 use App\Komentar;
+use App\Vyzvi;
 use App\Vyzvy;
 use Illuminate\Http\Request;
 use App\Podujatia;
@@ -32,7 +33,7 @@ class detailsController extends Controller
     }
 
     public function getSeminarId($id){
-        $seminar_details = Vyzvy::find($id);
+        $seminar_details = Vyzvi::find($id);
         return view('seminar_details') -> with(compact('seminar_details', $seminar_details));
     }
 }

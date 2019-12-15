@@ -14,4 +14,7 @@ class Komentar extends Model
     public function hodKom(){
         return $this->hasMany('App\Hodnotenie', 'hodnotenies_id', 'id');
     }
+    public function user_nazov(){
+        return $this->hasOne('App\User','id','users_id');
+    }
 }
