@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Podujatia extends Model
 {
     protected $fillable = [
-        'datum', 'Nazov', 'mestos_id','univerzities_id', 'krajinies_id', 'vyzvy_id', 'users_id','confirmed','pocitadlo',
+        'datum', 'Nazov', 'mestos_id','univerzities_id', 'krajinies_id', 'vyzvy_id', 'users_id','confirmed','pocitadlo', 'popis', 'Obrazok',
     ];
 
     public function podKraj(){
