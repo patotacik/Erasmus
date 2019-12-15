@@ -50,7 +50,7 @@ class podujatiaController extends Controller
     }
 
     public function getSeminar(){
-        $seminar = Vyzvi::latest()->paginate(6);
+        $seminar = Vyzvi::latest()->paginate(20);
         return view('seminar') -> with(compact('seminar', $seminar))
             ->with('i', (request()->input('page', 1) - 1) * 2);
     }

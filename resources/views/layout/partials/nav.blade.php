@@ -20,8 +20,6 @@
                         <a class="dropdown-item" href="#">Prednáškový pobyt</a>
                         <a class="dropdown-item" href="#">Školenia</a>
                     </div></li>
-                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Semináre</a></li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Kontakty                    </a>
@@ -56,10 +54,9 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isReferent())
-                            <a class="dropdown-item"href="{{route('výzva')}}">Správa výziev</a>
+                            <a class="dropdown-item"href="{{route('AllEvents')}}">Správa výziev</a>
                             <a class="dropdown-item" href="{{route('spravy')}}" > Správy účastníkov mobility</a>
-                            <a class="dropdown-item" href="{{route('prid_unv')}}"> Pridánie partnerskéj univerzity</a>
-
+                            <a class="dropdown-item" href="{{route('AllUniverzity')}}"> Pridánie partnerskéj univerzity</a>
                         @endif
                     @endguest
 
@@ -67,7 +64,7 @@ Kontakty                    </a>
                     @guest
                     @else
                         @if(Auth::user()->isUcasnik())
-                            <a class="dropdown-item" href="{{route('blogy')}}">Blog</a>
+                            <a class="dropdown-item" href="{{route('ucasnik')}}">Blog</a>
                             <a class="dropdown-item" href="{{route('seminar')}}" >Informačné semináre</a>
                             <a class="dropdown-item" href="{{route('potvrdenie.details', Auth::user()->id)}}">Potvrdené žiadosti</a>
 
