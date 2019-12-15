@@ -18,6 +18,7 @@ class CreateMestosTable extends Migration
             $table->string('name',45);
             $table->integer('krajinies_id')->unsigned();
             $table->foreign('krajinies_id') ->references('id')->on('krajinies');
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateKrajiniesTable extends Migration
             $table->string('code',45);
             $table->string('name',45);
             $table->integer('phonecode');
+            $table->timestamps();
         });
     }
 

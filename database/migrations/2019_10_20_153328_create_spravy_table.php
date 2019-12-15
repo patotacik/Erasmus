@@ -17,7 +17,7 @@ class CreateSpravyTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('vyzvy_id')->unsigned();
-            $table->foreign('vyzvy_id') ->references('id')->on('vyzvies');
+            $table->foreign('vyzvy_id') ->references('id')->on('vyzvis');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id') ->references('id')->on('users');
         });

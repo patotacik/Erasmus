@@ -22,6 +22,7 @@ class CreateUniverzitiesTable extends Migration
             $table->foreign('mestos_id') ->references('id')->on('mestos');
             $table->integer('krajinies_id')->unsigned();
             $table->foreign('krajinies_id') ->references('id')->on('krajinies');
+            $table->timestamps();
 
         });
     }
