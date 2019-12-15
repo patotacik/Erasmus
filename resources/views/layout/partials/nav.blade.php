@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{ URL::asset('erasmus')}}" class="nav-link">Erasmus+</a></li>
-                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Iné pobyty</a></li>
+                <li class="nav-item"><a href="{{ URL::asset('ine_pobyty')}}" class="nav-link">Iné pobyty</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

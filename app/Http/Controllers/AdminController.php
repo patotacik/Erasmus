@@ -7,6 +7,7 @@ use App\Komentar;
 use App\univerzity;
 use App\Podujatia;
 use App\Roly;
+use App\Vyzvi;
 use Illuminate\Http\Request;
 use App\User;
 class AdminController extends Controller
@@ -140,6 +141,14 @@ class AdminController extends Controller
 
     }
 
+    public function Vyzvitable()
+    {
+        $vyzvi = vyzvi::latest()->paginate(5);
+        return view('admin/admin_VyzviTable', ['vyzvi' => $vyzvi])
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+
     public function Univerzitytable()
     {
         $univerzity = univerzity::latest()->paginate(5);
@@ -164,6 +173,21 @@ class AdminController extends Controller
         $podujatia->save();
 
         return redirect()->route('AllEvents');
+    }
+
+    public function VyzvaStore(Request $request)
+    {
+        //
+        $vyzvi = new Vyzvi();
+        $vyzvi->Typ = $request->Typ;
+        $vyzvi->detail = $request->detail;
+        $vyzvi->nazov_seminara = $request->nazov_seminara;
+        $vyzvi->miesto_konania = $request->miesto_konania;
+        $vyzvi->cas_konanie = $request->cas_konanie;
+        $vyzvi->datum_konania = $request->datum_konania;
+        $vyzvi->save();
+
+        return redirect()->route('AllVyzvi');
     }
 
     public function UniverzityStore(Request $request)
@@ -193,6 +217,15 @@ class AdminController extends Controller
         return view('admin/podujatia/show', ['podujatie' => $podujatia]);
 
     }
+
+    public function VyzvaShow($id)
+    {
+        //
+        $vyzvi = podujatia::find($id);
+        return view('admin/vyzvi/show', ['vyzva' => $vyzvi]);
+
+    }
+
     public function UniverzityShow($id)
     {
         //
@@ -210,8 +243,17 @@ class AdminController extends Controller
     public function EventEdit($id)
     {
         //
-        $podujatia = podujatia::find($id);
-        return view('admin/podujatia/edit', ['podujatie' => $podujatia]);
+        $podujatia = Podujatia::find($id);
+        $sel = Podujatia::all();
+
+        return view('admin/podujatia/edit', ['podujatie' => $podujatia],['sel' => $sel]);
+    }
+
+    public function VyzvaEdit($id)
+    {
+        //
+        $vyzvi = vyzvi::find($id);
+        return view('admin/vyzvi/edit', ['vyzva' => $vyzvi]);
     }
     public function UniverzityEdit($id)
     {
@@ -246,6 +288,19 @@ class AdminController extends Controller
 
         return redirect()->route('AllEvents');
     }
+    public function VyzvaUpdate(Request $request, $id)
+    {
+        $vyzvi = vyzvi::find($id);
+        $vyzvi->Typ = $request->Typ;
+        $vyzvi->detail = $request->detail;
+        $vyzvi->nazov_seminara = $request->nazov_seminara;
+        $vyzvi->miesto_konania = $request->miesto_konania;
+        $vyzvi->cas_konanie = $request->cas_konanie;
+        $vyzvi->datum_konania = $request->datum_konania;
+        $vyzvi->save();
+
+        return redirect()->route('AllVyzvi');
+    }
     public function UniverzityUpdate(Request $request, $id)
     {
         $univerzity = univerzity::find($id);
@@ -271,6 +326,13 @@ class AdminController extends Controller
         $podujatia = podujatia::find($id);
         $podujatia->delete();
         return redirect()->route('AllEvents');
+    }
+    public function VyzvaDestroy($id)
+    {
+        //
+        $vyzvi = vyzvi::find($id);
+        $vyzvi->delete();
+        return redirect()->route('AllVyzvi');
     }
     public function UniverzityDestroy($id)
     {
