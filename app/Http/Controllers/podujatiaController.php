@@ -34,6 +34,24 @@ class podujatiaController extends Controller
         return view('erasmusSearch', compact('search', 'finalResult'));
     }
 
+    public function filter(Request $request){
+        $kraj = $request->get('k');
+        $mesto = $request->get('m');
+        $uni = $request->get('u');
+
+        /* $result = Podujatia::where('Nazov', 'like', '%' .$search. '%')->paginate(6);
+         */
+
+        $podujatia = Podujatia::paginate(9)->all();
+        $finalResult = [];
+        foreach ($podujatia as $podujatie) {
+            if(strpos($podujatie->podUni->nazov, $uni) !== false || strpos($podujatie->podKraj->name, $kraj) !== false || strpos($podujatie->podMes->name, $mesto) !== false) {
+                array_push($finalResult, $podujatie);
+            }
+        }
+        return view('erasmusSearch', compact('search', 'finalResult'));
+    }
+
     public function getSeminar(){
         $seminar = Vyzvi::latest()->paginate(6);
         return view('seminar') -> with(compact('seminar', $seminar))

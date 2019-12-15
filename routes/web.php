@@ -37,7 +37,7 @@ Route::get('/erasmus', 'podujatiaController@getPodujatia');
 
 Route::get('/search', 'podujatiaController@search')->name('erasmus.search');
 Route::get('/erasmus', 'PodujatiaController@getPodujatia');
-Route::post('/erasmus/filter', 'podujatiaController@filter');
+Route::get('/filter', 'podujatiaController@filter')->name('erasmus.filter');
 
 Route::get('/details/{id}', 'detailsController@getErasmusId')->name('erasmus.details');
 Route::get('/details_blogy/{id}', 'detailsController@getBlogId')->name('blogy.details');
