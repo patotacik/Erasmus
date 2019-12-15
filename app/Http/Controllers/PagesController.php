@@ -17,7 +17,7 @@ class PagesController extends Controller
        /* $podujatia = Podujatia::all()->random(4);
         return view('index') -> with('podujatia', $podujatia);
    */
-        $hodnotenie = Hodnotenie::all()->random(3);
+        $hodnotenie = Hodnotenie::all()->random()->limit(3)->get();
         $podujatia = Podujatia::orderBy('pocitadlo', 'DESC')->limit(3)->get();
         return view('index',['podujatia' => $podujatia],['hodnotenie' => $hodnotenie]);
 

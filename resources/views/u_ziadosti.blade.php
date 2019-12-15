@@ -20,9 +20,10 @@
                                     <span class="glyphicon glyphicon-heart"></span> </a>
                             </div>
                             <div class="text">
-                                <h3>{{$row->Nazov}}</h3>
+                                <h3 class="location">Univerzita:{{$row->podUni->nazov}}</h3>
+                                <h3 class="location">Mesto: {{$row->podMes->name}}</h3>
                                 <h3>Dátum: {{$row->datum}}</h3>
-                                <h3 class="location">Miesto: {{$row->Miesto}}</h3>
+
                             </div>
                         </div>
                     </div>
