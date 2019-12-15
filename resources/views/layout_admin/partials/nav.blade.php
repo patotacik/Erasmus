@@ -10,28 +10,51 @@
                 Hlavna stránka
             </a>
         </div>
-        <div class="sidebar-wrapper" id="sidebar-wrapper">
-            <ul class="nav">
-                <li class="active ">
-                    <a href="{{route('AllUsers')}}">
-                        <i class="now-ui-icons users_single-02"></i>
-                        <p>Uživatelia</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('AllEvents')}}">
-                        <i class="now-ui-icons ui-1_bell-53"></i>
-                        <p>Podujatia</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('AllUniverzity')}}">
-                        <i class="now-ui-icons location_world"></i>
-                        <p>Univerzity</p>
-                    </a>
-                </li>
+        @if(Auth::user()->isAdmin())
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active ">
+                        <a href="{{route('AllUsers')}}">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>Uživatelia</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('AllEvents')}}">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Podujatia</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('AllUniverzity')}}">
+                            <i class="now-ui-icons location_world"></i>
+                            <p>Univerzity</p>
+                        </a>
+                    </li>
 
 
-            </ul>
-        </div>
+                </ul>
+            </div>
+        @endif
+        @if(Auth::user()->isReferent())
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="{{route('AllEvents')}}">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Podujatia</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('AllUniverzity')}}">
+                            <i class="now-ui-icons location_world"></i>
+                            <p>Univerzity</p>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        @endif
+
     </div>

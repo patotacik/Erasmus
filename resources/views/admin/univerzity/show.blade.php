@@ -11,17 +11,17 @@
             <th scope="col" class="">#</th>
             <th scope="col" class="">Nazov</th>
             <th scope="col" class="">zaciatok</th>
-            <th scope="col" class="">konec</th>
-            <th scope="col" class="">krajiny_id</th>
+            <th scope="col" class="">koniec</th>
+            <th scope="col" class="">krajinies_id</th>
           </tr>
         </thead>
         <tbody>
           <tr class="text-center">
             <th scope="row">{{$univerzity->id}}</th>
-            <td>{{$univerzity->Nazov}}</td>
+            <td>{{$univerzity->nazov}}</td>
             <td>{{$univerzity->zaciatok}}</td>
-            <td>{{$univerzity->konec}}</td>
-            <td>{{$univerzity->krajiny_id}}</td>
+            <td>{{$univerzity->koniec}}</td>
+            <td>{{$univerzity->krajinies_id}}</td>
             <td class="d-flex border-0 align-items-center">
               <form action="{{route('univerzity.edit',$univerzita->id)}}" method="get">
                 <button class="btn btn-sm btn-warning mx-2 rounded-0">
