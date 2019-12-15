@@ -80,22 +80,16 @@ class AdminController extends Controller
         $hodnotenies->pocitadlo = $request->pocitadlo;
 
         $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('obrazok')->getClientOriginalExtension();
-        $request->file('obrazok')->move(
-            base_path() . '/public/images/', $obrazokNazov
-        );
-        $hodnotenies->obrazok = base_path() . '/public/images/' . $obrazokNazov;
+        $request->file('obrazok')->move( '/images/', $obrazokNazov);
+        $hodnotenies->obrazok = '/images/' . $obrazokNazov;
 
         $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '2.' . $request->file('obrazok2')->getClientOriginalExtension();
-        $request->file('obrazok2')->move(
-            base_path() . '/public/images/', $obrazokNazov2
-        );
-        $hodnotenies->obrazok2 = base_path() . '/public/images/' . $obrazokNazov2;
+        $request->file('obrazok2')->move('/images/', $obrazokNazov2);
+        $hodnotenies->obrazok2 = '/images/' . $obrazokNazov2;
 
         $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '3.' . $request->file('obrazok3')->getClientOriginalExtension();
-        $request->file('obrazok3')->move(
-            base_path() . '/public/images/', $obrazokNazov3
-        );
-        $hodnotenies->obrazok3 = base_path() . '/public/images/' . $obrazokNazov3;
+        $request->file('obrazok3')->move('/images/', $obrazokNazov3);
+        $hodnotenies->obrazok3 ='/images/' . $obrazokNazov3;
 
         $ppt =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('ppt')->getClientOriginalExtension();
         $request->file('ppt')->move(

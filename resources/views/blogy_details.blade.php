@@ -31,34 +31,28 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="row">
+
+                    <div class="col-md-4">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok)}});">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->obrazok)}});">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok)}});">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->obrazok2)}});">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok2)}});">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->obrazok3)}});">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="property-wrap ftco-animate">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ URL::asset($blogy_details->Obrazok3)}});">
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="center" style="padding-left:15%; padding-right: 15%">
-                        <img src="{{ URL::asset($blogy_details->Obrazok)}}"alt="nananana" style="width: 100%" height="80%" >
-                    </div>
 
                     @foreach($komentars as $row)
 
