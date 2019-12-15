@@ -11,16 +11,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{ URL::asset('erasmus')}}" class="nav-link">Erasmus+</a></li>
-                <li class="nav-item"><a href="{{ URL::asset('staz')}}" class="nav-link">Stáž</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Iné pobyty
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Prednáškový pobyt</a>
-                        <a class="dropdown-item" href="#">Školenia</a>
-                    </div></li>
-                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Semináre</a></li>
+                <li class="nav-item"><a href="{{ URL::asset('seminare')}}" class="nav-link">Iné pobyty</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
