@@ -23,10 +23,23 @@
                                     <label class="text-uppercase font-weight-bold" for="datum">datum</label>
                                     <input type="date" class="form-control rounded-0" id="datum" placeholder="Datum" name="datum" value="{{$podujatie->datum}}">
                                 </div>
-                                <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="mestos_id">mestos_id</label>
-                                    <input type="text" class="form-control rounded-0" id="mestos_id" placeholder="mestos_id" name="mestos_id" value="{{$podujatie->mestos_id}}">
+
+
+
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="mestos_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($sel as $row)
+                                                <option value="{{$row->mestos_id}}">{{$row->podMes->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
+
+
+
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="univerzities_id">univerzities_id</label>
                                     <input type="text" class="form-control rounded-0" id="univerzities_id" placeholder="univerzities_id" name="univerzities_id" value="{{$podujatie->univerzities_id}}">

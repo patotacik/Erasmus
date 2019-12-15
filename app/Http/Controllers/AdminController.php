@@ -179,8 +179,10 @@ class AdminController extends Controller
     public function EventEdit($id)
     {
         //
-        $podujatia = podujatia::find($id);
-        return view('admin/podujatia/edit', ['podujatie' => $podujatia]);
+        $podujatia = Podujatia::find($id);
+        $sel = Podujatia::all();
+
+        return view('admin/podujatia/edit', ['podujatie' => $podujatia],['sel' => $sel]);
     }
     public function UniverzityEdit($id)
     {
