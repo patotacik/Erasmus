@@ -10,7 +10,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tabulka Vyziev</h4>
+                            <h4 class="card-title">Výzvy</h4>
+                            <a href="{{ url('dynamic_pdf/pdfVyzva') }}" class="btn btn-danger">Generovať report</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -19,11 +20,11 @@
                                     <tr class="text-center">
                                         <th scope="col" class="">#</th>
                                         <th scope="col" class="">Typ</th>
-                                        <th scope="col" class="">detail</th>
-                                        <th scope="col" class="">nazov</th>
-                                        <th scope="col" class="">miesto konania</th>
-                                        <th scope="col" class="">cas konania</th>
-                                        <th scope="col" class="">datum konania</th>
+                                        <th scope="col" class="">Detail</th>
+                                        <th scope="col" class="">Názov</th>
+                                        <th scope="col" class="">Miesto konania</th>
+                                        <th scope="col" class="">Čas konania</th>
+                                        <th scope="col" class="">Dátum konania</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -61,7 +62,7 @@
                 <div class="col-md-12">
                     <div class="card card-plain">
                         <div class="card-header">
-                            <h2 class="card-title"> Pridať nové podujatie:</h2>
+                            <h2 class="card-title"> Pridať novú výzvu:</h2>
                         </div>
                         <div class="card-body">
                             <form action="{{route('vyzvi.store')}}" method="post">
@@ -71,28 +72,28 @@
                                     <input type="text" class="form-control rounded-0" id="Typ" placeholder="Typ" name="Typ">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="detail">detail</label>
-                                    <input type="text" class="form-control rounded-0" id="detail" placeholder="detail" name="detail">
+                                    <label class="text-uppercase font-weight-bold" for="detail">Detail</label>
+                                    <input type="text" class="form-control rounded-0" id="detail" placeholder="Detail" name="detail">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="nazov_seminara">nazov_seminara</label>
-                                    <input type="text" class="form-control rounded-0" id="nazov_seminara" placeholder="nazov_seminara" name="nazov_seminara">
+                                    <label class="text-uppercase font-weight-bold" for="nazov_seminara">Názov</label>
+                                    <input type="text" class="form-control rounded-0" id="nazov_seminara" placeholder="Názov" name="nazov_seminara">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="miesto_konania">miesto_konania</label>
-                                    <input type="text" class="form-control rounded-0" id="miesto_konania" placeholder="miesto_konania" name="miesto_konania">
+                                    <label class="text-uppercase font-weight-bold" for="miesto_konania">Miesto</label>
+                                    <input type="text" class="form-control rounded-0" id="miesto_konania" placeholder="Miesto" name="miesto_konania">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="cas_konanie">cas_konanie</label>
-                                    <input type="time" class="form-control rounded-0" id="cas_konanie" placeholder="cas_konanie" name="cas_konanie">
+                                    <label class="text-uppercase font-weight-bold" for="cas_konanie">Čas</label>
+                                    <input type="time" class="form-control rounded-0" id="cas_konanie" placeholder="Čas" name="cas_konanie">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="datum_konania">datum_konania</label>
-                                    <input type="date" class="form-control rounded-0" id="datum_konania" placeholder="datum_konania" name="datum_konania">
+                                    <label class="text-uppercase font-weight-bold" for="datum_konania">Dátum</label>
+                                    <input type="date" class="form-control rounded-0" id="datum_konania" placeholder="Dátum" name="datum_konania">
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
-                                        confirm
+                                        Potvrdiť
                                     </button>
                                 </div>
                             </form>
