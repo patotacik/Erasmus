@@ -69,12 +69,39 @@ class AdminController extends Controller
 
         //potvrdenie  users_id  podujatia_id
         $hodnotenies = new Hodnotenie();
-        $hodnotenies->Otazka_1 = $request->Otazka_1;
-        $hodnotenies->Otazka_2 = $request->Otazka_2;
-        $hodnotenies->Otazka_3 = $request->Otazka_3;
-        $hodnotenies->Otazka_4 = $request->Otazka_4;
-        $hodnotenies->hodnotenie = $request->hodnotenie;
-        $hodnotenies->potvrdenie = $request->potvrdenie;
+
+        if($request->Otazka_1){
+            $hodnotenies->Otazka_1 = $request->Otazka_1;
+        } else{
+            $hodnotenies->Otazka_1 = "nezodpovedané";
+        }
+        if($request->Otazka_2){
+            $hodnotenies->Otazka_2 = $request->Otazka_2;
+        } else{
+            $hodnotenies->Otazka_2 = "nezodpovedané";
+        }
+        if($request->Otazka_3){
+            $hodnotenies->Otazka_3 = $request->Otazka_3;
+        } else{
+            $hodnotenies->Otazka_3 = "nezodpovedané";
+        }
+        if($request->Otazka_4){
+            $hodnotenies->Otazka_4 = $request->Otazka_4;
+        } else{
+            $hodnotenies->Otazka_4 = "nezodpovedané";
+        }
+        if($request->hodnotenie){
+            $hodnotenies->hodnotenie = $request->hodnotenie;
+        } else{
+            $hodnotenies->hodnotenie = "0";
+        }
+        if($request->potvrdenie){
+            $hodnotenies->potvrdenie = $request->potvrdenie;
+        } else{
+            $hodnotenies->potvrdenie = "0";
+        }
+
+
         $hodnotenies->users_id = $request->users_id;
         $hodnotenies->podujatias_id = $request->podujatias_id;
         $hodnotenies->pocitadlo = $request->pocitadlo;
