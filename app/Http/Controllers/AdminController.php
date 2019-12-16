@@ -70,18 +70,45 @@ class AdminController extends Controller
 
         //potvrdenie  users_id  podujatia_id
         $hodnotenies = new Hodnotenie();
-        $hodnotenies->Otazka_1 = $request->Otazka_1;
-        $hodnotenies->Otazka_2 = $request->Otazka_2;
-        $hodnotenies->Otazka_3 = $request->Otazka_3;
-        $hodnotenies->Otazka_4 = $request->Otazka_4;
-        $hodnotenies->hodnotenie = $request->hodnotenie;
-        $hodnotenies->potvrdenie = $request->potvrdenie;
+
+        if($request->Otazka_1){
+            $hodnotenies->Otazka_1 = $request->Otazka_1;
+        } else{
+            $hodnotenies->Otazka_1 = "nezodpovedané";
+        }
+        if($request->Otazka_2){
+            $hodnotenies->Otazka_2 = $request->Otazka_2;
+        } else{
+            $hodnotenies->Otazka_2 = "nezodpovedané";
+        }
+        if($request->Otazka_3){
+            $hodnotenies->Otazka_3 = $request->Otazka_3;
+        } else{
+            $hodnotenies->Otazka_3 = "nezodpovedané";
+        }
+        if($request->Otazka_4){
+            $hodnotenies->Otazka_4 = $request->Otazka_4;
+        } else{
+            $hodnotenies->Otazka_4 = "nezodpovedané";
+        }
+        if($request->hodnotenie){
+            $hodnotenies->hodnotenie = $request->hodnotenie;
+        } else{
+            $hodnotenies->hodnotenie = "0";
+        }
+        if($request->potvrdenie){
+            $hodnotenies->potvrdenie = $request->potvrdenie;
+        } else{
+            $hodnotenies->potvrdenie = "0";
+        }
+
+
         $hodnotenies->users_id = $request->users_id;
         $hodnotenies->podujatias_id = $request->podujatias_id;
         $hodnotenies->pocitadlo = $request->pocitadlo;
 
         if($request->obrazok !== null){
-            $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c1.' . $request->file('obrazok')->getClientOriginalExtension();
+            $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('obrazok')->getClientOriginalExtension();
             $request->file('obrazok')->move( base_path() . '/public/images/', $obrazokNazov);
             $hodnotenies->obrazok = '/images/' . $obrazokNazov;
         } else {
@@ -89,7 +116,7 @@ class AdminController extends Controller
         }
 
         if($request->obrazok2 !== null){
-        $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c2.' . $request->file('obrazok2')->getClientOriginalExtension();
+        $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '2.' . $request->file('obrazok2')->getClientOriginalExtension();
         $request->file('obrazok2')->move(base_path() . '/public/images/', $obrazokNazov2);
         $hodnotenies->obrazok2 = '/images/' . $obrazokNazov2;
         } else {
@@ -97,7 +124,7 @@ class AdminController extends Controller
         }
 
         if($request->obrazok3 !== null){
-        $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c3.' . $request->file('obrazok3')->getClientOriginalExtension();
+        $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '3.' . $request->file('obrazok3')->getClientOriginalExtension();
         $request->file('obrazok3')->move(base_path() . '/public/images/', $obrazokNazov3);
         $hodnotenies->obrazok3 ='/images/' . $obrazokNazov3;
         } else {

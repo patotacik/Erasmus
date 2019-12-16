@@ -80,7 +80,7 @@
                                 <input type="hidden" name="hodnotenies_id" value="{{$blogy_details->id}}" />
                                 <input type="hidden" name="users_id" value="{{ Auth::user()->id }}" />
                                 <div class="form-group">
-                                    <label for="message">Sparáva</label>
+                                    <label for="message">Správa</label>
                                     <textarea name="koment" id="koment" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
