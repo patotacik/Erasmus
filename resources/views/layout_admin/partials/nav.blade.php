@@ -13,7 +13,7 @@
         @if(Auth::user()->isAdmin())
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active ">
+                    <li>
                         <a href="{{route('AllUsers')}}">
                             <i class="now-ui-icons users_single-02"></i>
                             <p>Uživatelia</p>
@@ -28,7 +28,7 @@
                     <li>
                         <a href="{{route('AllVyzvi')}}">
                             <i class="now-ui-icons ui-1_bell-53"></i>
-                            <p>Vyzvy</p>
+                            <p>Výzvy</p>
                         </a>
                     </li>
                     <li>
@@ -54,7 +54,7 @@
                     <li>
                         <a href="{{route('AllVyzvi')}}">
                             <i class="now-ui-icons ui-1_bell-53"></i>
-                            <p>Vyzvy</p>
+                            <p>Výzvy</p>
                         </a>
                     </li>
                     <li>
