@@ -80,26 +80,24 @@ class AdminController extends Controller
         $hodnotenies->pocitadlo = $request->pocitadlo;
 
         $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('obrazok')->getClientOriginalExtension();
-        $request->file('obrazok')->move( '/images/', $obrazokNazov);
+        $request->file('obrazok')->move( base_path() . '/public/images/', $obrazokNazov);
         $hodnotenies->obrazok = '/images/' . $obrazokNazov;
 
         $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '2.' . $request->file('obrazok2')->getClientOriginalExtension();
-        $request->file('obrazok2')->move('/images/', $obrazokNazov2);
+        $request->file('obrazok2')->move(base_path() . '/public/images/', $obrazokNazov2);
         $hodnotenies->obrazok2 = '/images/' . $obrazokNazov2;
 
         $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '3.' . $request->file('obrazok3')->getClientOriginalExtension();
-        $request->file('obrazok3')->move('/images/', $obrazokNazov3);
+        $request->file('obrazok3')->move(base_path() . '/public/images/', $obrazokNazov3);
         $hodnotenies->obrazok3 ='/images/' . $obrazokNazov3;
 
         $ppt =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('ppt')->getClientOriginalExtension();
-        $request->file('ppt')->move(
-            base_path() . '/public/images/ppt/', $ppt
+        $request->file('ppt')->move(base_path() . '/public/images/ppt/', $ppt
         );
         $hodnotenies->ppt = base_path() . '/public/images/ppt/' . $ppt;
 
         $dokument =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('dokument')->getClientOriginalExtension();
-        $request->file('dokument')->move(
-            base_path() . '/public/images/dokument/', $dokument
+        $request->file('dokument')->move(base_path() . '/public/images/dokument/', $dokument
         );
         $hodnotenies->dokument = base_path() . '/public/images/dokument/' . $dokument;
 
