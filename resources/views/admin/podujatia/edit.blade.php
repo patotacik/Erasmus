@@ -16,16 +16,16 @@
                             <form action="{{route('events.update',$podujatie->id)}}" method="post">
                                 <input type="hidden" name="_method" value="put" /> {{csrf_field()}}
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="Nazov">Nazov</label>
-                                    <input type="text" class="form-control rounded-0" id="Nazov" placeholder="Nazov" name="Nazov" value="{{$podujatie->Nazov}}">
+                                    <label class="text-uppercase font-weight-bold" for="Nazov">Názov</label>
+                                    <input type="text" class="form-control rounded-0" id="Nazov" placeholder="Názov" name="Nazov" value="{{$podujatie->Nazov}}">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="datum">datum</label>
-                                    <input type="date" class="form-control rounded-0" id="datum" placeholder="Datum" name="datum" value="{{$podujatie->datum}}">
+                                    <label class="text-uppercase font-weight-bold" for="datum">Dátum</label>
+                                    <input type="date" class="form-control rounded-0" id="datum" placeholder="Dátum" name="datum" value="{{$podujatie->datum}}">
                                 </div>
 
                                 <div class="form-field">
-                                    <label class="text-uppercase font-weight-bold" for="mestos_id">mestos_id</label>
+                                    <label class="text-uppercase font-weight-bold" for="mestos_id">Mesto</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="mestos_id" class="form-control">
@@ -39,7 +39,7 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="univerzities_id">univerzities_id</label>
+                                    <label class="text-uppercase font-weight-bold" for="univerzities_id">Univerzita</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="univerzities_id" class="form-control">
@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
+                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">Krajina</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="krajinies_id" class="form-control">
@@ -65,7 +65,7 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="users_id">users_id</label>
+                                    <label class="text-uppercase font-weight-bold" for="users_id">Uživateľ</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="users_id" class="form-control">
@@ -77,8 +77,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="popis">popis</label>
-                                    <input type="text" class="form-control rounded-0" id="popis" placeholder="popis" name="popis" value="{{$podujatie->popis}}">
+                                    <label class="text-uppercase font-weight-bold" for="popis">Popis</label>
+                                    <input type="text" class="form-control rounded-0" id="popis" placeholder="Popis" name="popis" value="{{$podujatie->popis}}">
                                 </div>
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="Obrazok">Obrazok</label>
@@ -86,12 +86,12 @@
                                 </div>
                                 <div class="form-group ">
                                     <input type="hidden" value="0" id="confirmed" placeholder="confirmed" name="confirmed">
-                                    <label class="text-uppercase font-weight-bold" for="confirmed">confirmed</label>
+                                    <label class="text-uppercase font-weight-bold" for="confirmed">Potvrdene</label>
                                     <input type="checkbox"  value="1" id="confirmed" placeholder="confirmed" name="confirmed">
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-warning text-uppercase rounded-0 font-weight-bold">
-                                        save
+                                        Uložit
                                     </button>
                                 </div>
                             </form>
