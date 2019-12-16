@@ -79,27 +79,45 @@ class AdminController extends Controller
         $hodnotenies->podujatias_id = $request->podujatias_id;
         $hodnotenies->pocitadlo = $request->pocitadlo;
 
-        $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('obrazok')->getClientOriginalExtension();
-        $request->file('obrazok')->move( base_path() . '/public/images/', $obrazokNazov);
-        $hodnotenies->obrazok = '/images/' . $obrazokNazov;
+        if($request->obrazok !== null){
+            $obrazokNazov =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c1.' . $request->file('obrazok')->getClientOriginalExtension();
+            $request->file('obrazok')->move( base_path() . '/public/images/', $obrazokNazov);
+            $hodnotenies->obrazok = '/images/' . $obrazokNazov;
+        } else {
+            $hodnotenies->obrazok = " ";
+        }
 
-        $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '2.' . $request->file('obrazok2')->getClientOriginalExtension();
+        if($request->obrazok2 !== null){
+        $obrazokNazov2 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c2.' . $request->file('obrazok2')->getClientOriginalExtension();
         $request->file('obrazok2')->move(base_path() . '/public/images/', $obrazokNazov2);
         $hodnotenies->obrazok2 = '/images/' . $obrazokNazov2;
+        } else {
+            $hodnotenies->obrazok2 = " ";
+        }
 
-        $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '3.' . $request->file('obrazok3')->getClientOriginalExtension();
+        if($request->obrazok3 !== null){
+        $obrazokNazov3 =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. ' obr-c3.' . $request->file('obrazok3')->getClientOriginalExtension();
         $request->file('obrazok3')->move(base_path() . '/public/images/', $obrazokNazov3);
         $hodnotenies->obrazok3 ='/images/' . $obrazokNazov3;
+        } else {
+            $hodnotenies->obrazok3 = " ";
+        }
 
+        if($request->ppt !== null){
         $ppt =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('ppt')->getClientOriginalExtension();
-        $request->file('ppt')->move(base_path() . '/public/images/ppt/', $ppt
-        );
+        $request->file('ppt')->move(base_path() . '/public/images/ppt/', $ppt);
         $hodnotenies->ppt = base_path() . '/public/images/ppt/' . $ppt;
+        } else {
+            $hodnotenies->ppt = " ";
+        }
 
+        if($request->dokument !== null){
         $dokument =$hodnotenies->users_id . '.' .$hodnotenies->podujatias_id. '.' . $request->file('dokument')->getClientOriginalExtension();
-        $request->file('dokument')->move(base_path() . '/public/images/dokument/', $dokument
-        );
+        $request->file('dokument')->move(base_path() . '/public/images/dokument/', $dokument);
         $hodnotenies->dokument = base_path() . '/public/images/dokument/' . $dokument;
+        } else {
+            $hodnotenies->dokument = " ";
+        }
 
         $hodnotenies->save();
 
