@@ -154,6 +154,14 @@ Route::get('odd_medzin_vzt', [
     'as' => 'show', 'uses' =>'PagesController@getodd_medzin_vzt'
 ]);
 
+Route::get('/dynamic_pdf', 'AdminController@index');
+Route::get('/dynamic_pdf/pdfUser', 'AdminController@pdfUser');
+
+Route::get('/dynamic_pdf/pdfEvent', 'AdminController@pdfEvent');
+Route::get('/dynamic_pdf/pdfVyzva', 'AdminController@pdfVyzva');
+Route::get('/dynamic_pdf/pdfUni', 'AdminController@pdfUni');
+
+
 Auth::routes();
 Route::get('/home', 'PagesController@getIndex')->name('home');
 Route::get('/uploadfile', 'UploadfileController@index');
