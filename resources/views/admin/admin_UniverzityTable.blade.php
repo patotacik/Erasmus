@@ -10,7 +10,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tabulka Univerzit</h4>
+                            <h4 class="card-title">Univerzity</h4>
+                            <a href="{{ url('dynamic_pdf/pdfUni') }}" class="btn btn-danger">Generovať report</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -18,11 +19,11 @@
                                     <thead>
                                     <tr class="text-center">
                                         <th scope="col" class="">#</th>
-                                        <th scope="col" class="">Nazov</th>
-                                        <th scope="col" class="">zaciatok</th>
-                                        <th scope="col" class="">koniec</th>
-                                        <th scope="col" class="">krajinies_id</th>
-                                        <th scope="col" class="">Action</th>
+                                        <th scope="col" class="">Názov</th>
+                                        <th scope="col" class="">Začiatok spolupráce</th>
+                                        <th scope="col" class="">Koniec spolupráce</th>
+                                        <th scope="col" class="">Mesto</th>
+                                        <th scope="col" class="">Krajina</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -32,6 +33,7 @@
                                             <td>{{$univerzita->nazov}}</td>
                                             <td>{{$univerzita->zaciatok}}</td>
                                             <td>{{$univerzita->koniec}}</td>
+                                            <td>{{$univerzita->podMes->name}}</td>
                                             <td>{{$univerzita->podKraj->name}}</td>
                                             <td class="d-flex align-items-center justify-content-around">
                                                 <form action="{{route('univerzity.edit',$univerzita->id)}}" method="get">
@@ -60,30 +62,51 @@
                 <div class="col-md-12">
                     <div class="card card-plain">
                         <div class="card-header">
-                            <h2 class="card-title"> Pridať novu univerzitu:</h2>
+                            <h2 class="card-title"> Pridať novú univerzitu:</h2>
                         </div>
                         <div class="card-body">
                             <form action="{{route('univerzity.store')}}" method="post">
                                 <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="Nazov">Nazov</label>
-                                    <input type="text" class="form-control rounded-0" id="Nazov" placeholder="Nazov" name="Nazov">
+                                    <label class="text-uppercase font-weight-bold" for="nazov">Názov</label>
+                                    <input type="text" class="form-control rounded-0" id="nazov" placeholder="Názov" name="nazov">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="zaciatok">zaciatok</label>
-                                    <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="zaciatok" name="zaciatok">
+                                    <label class="text-uppercase font-weight-bold" for="zaciatok">Začiatok spolupráce</label>
+                                    <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="Začiatok spolupráce" name="zaciatok">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="koniec">koniec</label>
-                                    <input type="date" class="form-control rounded-0" id="koniec" placeholder="koniec" name="koniec">
+                                    <label class="text-uppercase font-weight-bold" for="koniec">Koniec spolupráce</label>
+                                    <input type="date" class="form-control rounded-0" id="koniec" placeholder="Koniec spolupráce" name="koniec">
+                                </div>
+                                <div class="form-field">
+                                    <label class="text-uppercase font-weight-bold" for="mestos_id">Mesto</label>
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="mestos_id" class="form-control">
+
+                                            <option value=" "> </option>
+                                            @foreach($Euni as $row)
+                                                <option value="{{$row->mestos_id}}">{{$row->podMes->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
-                                    <input type="number" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id">
+                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">Krajina</label>
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="krajinies_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($Euni as $row)
+                                                <option value="{{$row->krajinies_id}}">{{$row->podKraj->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
-                                        confirm
+                                        Potvrdiť
                                     </button>
                                 </div>
                             </form>
