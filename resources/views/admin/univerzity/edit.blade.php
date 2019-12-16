@@ -16,24 +16,45 @@
                             <form action="{{route('univerzity.update',$univerzity->id)}}" method="post">
                                 <input type="hidden" name="_method" value="put" /> {{csrf_field()}}
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="Nazov">Nazov</label>
-                                    <input type="text" class="form-control rounded-0" id="Nazov" placeholder="Nazov" name="Nazov" value="{{$univerzity->Nazov}}">
+                                    <label class="text-uppercase font-weight-bold" for="nazov">Názov</label>
+                                    <input type="text" class="form-control rounded-0" id="nazov" placeholder="Názov" name="nazov" value="{{$univerzity->nazov}}">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="zaciatok">zaciatok</label>
-                                    <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="zaciatok" name="zaciatok" value="{{$univerzity->zaciatok}}">
+                                    <label class="text-uppercase font-weight-bold" for="zaciatok">Začiatok spolupráce</label>
+                                    <input type="date" class="form-control rounded-0" id="zaciatok" placeholder="Začiatok spolupráce" name="zaciatok" value="{{$univerzity->zaciatok}}">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="koniec">koniec</label>
-                                    <input type="date" class="form-control rounded-0" id="koniec" placeholder="koniec" name="koniec" value="{{$univerzity->koniec}}">
+                                    <label class="text-uppercase font-weight-bold" for="koniec">Koniec spolupráce</label>
+                                    <input type="date" class="form-control rounded-0" id="koniec" placeholder="Koniec spolupráce" name="koniec" value="{{$univerzity->koniec}}">
+                                </div>
+                                <div class="form-field">
+                                    <label class="text-uppercase font-weight-bold" for="mestos_id">Mesto</label>
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="mestos_id" class="form-control">
+
+                                            <option value=" "> </option>
+                                            @foreach($Euni as $row)
+                                                <option value="{{$row->mestos_id}}">{{$row->podMes->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
-                                    <input type="number" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id" value="{{$univerzity->krajinies_id}}">
+                                    <label class="text-uppercase font-weight-bold" for="krajinies_id">Krajina</label>
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="krajinies_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($Euni as $row)
+                                                <option value="{{$row->krajinies_id}}">{{$row->podKraj->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-warning text-uppercase rounded-0 font-weight-bold">
-                                        save
+                                        Uložit
                                     </button>
                                 </div>
                             </form>
