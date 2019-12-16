@@ -14,4 +14,8 @@ class Univerzity extends Model
     public function podKraj(){
         return $this->belongsTo('App\Krajiny', 'krajinies_id', 'id');
     }
+
+    public function podMes(){
+        return $this->belongsTo('App\Mesto', 'mestos_id', 'id');
+    }
 }
