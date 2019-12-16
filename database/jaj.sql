@@ -574,7 +574,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- --------------------------------------------------------
 
 --
--- Štruktúra tabuľky pre tabuľku `vyzvy`
+-- Štruktúra tabuľky pre tabuľku `vyzvi`
 --
 
 CREATE TABLE `vyzvy` (
@@ -675,7 +675,7 @@ ALTER TABLE `users`
   ADD KEY `users_roly_id_foreign` (`roly_id`);
 
 --
--- Indexy pre tabuľku `vyzvy`
+-- Indexy pre tabuľku `vyzvi`
 --
 ALTER TABLE `vyzvy`
   ADD PRIMARY KEY (`id`);
@@ -751,7 +751,7 @@ ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT pre tabuľku `vyzvy`
+-- AUTO_INCREMENT pre tabuľku `vyzvi`
 --
 ALTER TABLE `vyzvy`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
