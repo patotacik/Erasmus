@@ -10,7 +10,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"> Simple Table</h4>
+                            <h4 class="card-title">Uživatelia</h4>
+                            <a href="{{ url('dynamic_pdf/pdfUser') }}" class="btn btn-danger">Generovať report</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -21,7 +22,7 @@
                                         <th scope="col" class="">Meno</th>
                                         <th scope="col" class="">Email</th>
                                         <th scope="col" class="">Typ uživatela</th>
-                                        <th scope="col" class="">Edit</th>
+                                        <th scope="col" class=""></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -64,16 +65,16 @@
                             <form action="{{route('users.store')}}" method="post">
                                 <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="name">name</label>
-                                    <input type="text" class="form-control rounded-0" id="name" placeholder="Name" name="name">
+                                    <label class="text-uppercase font-weight-bold" for="name">Meno</label>
+                                    <input type="text" class="form-control rounded-0" id="name" placeholder="Meno" name="name">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="email">email</label>
+                                    <label class="text-uppercase font-weight-bold" for="email">Email</label>
                                     <input type="email" class="form-control rounded-0" id="email" placeholder="Email" name="email">
                                 </div>
                                 <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="password">password</label>
-                                    <input type="password" class="form-control rounded-0" id="password" placeholder="Password" name="password">
+                                    <label class="text-uppercase font-weight-bold" for="password">Heslo</label>
+                                    <input type="password" class="form-control rounded-0" id="password" placeholder="Heslo" name="password">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
@@ -94,7 +95,7 @@
                                 </div>
                                 <div class="form-group ">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
-                                        confirm
+                                        Potvrdiť
                                     </button>
                                 </div>
                             </form>
