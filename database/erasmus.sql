@@ -301,7 +301,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- --------------------------------------------------------
 
 --
--- Štruktúra tabuľky pre tabuľku `vyzvy`
+-- Štruktúra tabuľky pre tabuľku `vyzvi`
 --
 
 CREATE TABLE `vyzvy` (
@@ -313,7 +313,7 @@ CREATE TABLE `vyzvy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Sťahujem dáta pre tabuľku `vyzvy`
+-- Sťahujem dáta pre tabuľku `vyzvi`
 --
 
 INSERT INTO `vyzvy` (`id`, `created_at`, `updated_at`, `Nazov`, `typvyzvy_id`) VALUES
@@ -401,7 +401,7 @@ ALTER TABLE `users`
   ADD KEY `users_roly_id_foreign` (`roly_id`);
 
 --
--- Indexy pre tabuľku `vyzvy`
+-- Indexy pre tabuľku `vyzvi`
 --
 ALTER TABLE `vyzvy`
   ADD PRIMARY KEY (`id`),
@@ -472,7 +472,7 @@ ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pre tabuľku `vyzvy`
+-- AUTO_INCREMENT pre tabuľku `vyzvi`
 --
 ALTER TABLE `vyzvy`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
@@ -520,7 +520,7 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_roly_id_foreign` FOREIGN KEY (`roly_id`) REFERENCES `roly` (`id`);
 
 --
--- Obmedzenie pre tabuľku `vyzvy`
+-- Obmedzenie pre tabuľku `vyzvi`
 --
 ALTER TABLE `vyzvy`
   ADD CONSTRAINT `vyzvy_typvyzvy_id_foreign` FOREIGN KEY (`typvyzvy_id`) REFERENCES `typvyzvy` (`id`);
