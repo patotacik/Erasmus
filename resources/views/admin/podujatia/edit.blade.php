@@ -24,37 +24,65 @@
                                     <input type="date" class="form-control rounded-0" id="datum" placeholder="Datum" name="datum" value="{{$podujatie->datum}}">
                                 </div>
 
-
-
                                 <div class="form-field">
+                                    <label class="text-uppercase font-weight-bold" for="mestos_id">mestos_id</label>
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="mestos_id" class="form-control">
+
                                             <option value=" "> </option>
-                                            @foreach($sel as $row)
+                                            @foreach($Epod as $row)
                                                 <option value="{{$row->mestos_id}}">{{$row->podMes->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
 
-
-
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="univerzities_id">univerzities_id</label>
-                                    <input type="text" class="form-control rounded-0" id="univerzities_id" placeholder="univerzities_id" name="univerzities_id" value="{{$podujatie->univerzities_id}}">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="univerzities_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($Epod as $row)
+                                                <option value="{{$row->univerzities_id}}">{{$row->podUni->nazov}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
+
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="krajinies_id">krajinies_id</label>
-                                    <input type="text" class="form-control rounded-0" id="krajinies_id" placeholder="krajinies_id" name="krajinies_id" value="{{$podujatie->krajinies_id}}">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="krajinies_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($Epod as $row)
+                                                <option value="{{$row->krajinies_id}}">{{$row->podKraj->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label class="text-uppercase font-weight-bold" for="vyzvy_id">vyzvy_id</label>
-                                    <input type="number" class="form-control rounded-0" id="vyzvy_id" placeholder="vyzvy_id" name="vyzvy_id" value="{{$podujatie->vyzvy_id}}">
-                                </div>
+
                                 <div class="form-group ">
                                     <label class="text-uppercase font-weight-bold" for="users_id">users_id</label>
-                                    <input type="number" class="form-control rounded-0" id="users_id" placeholder="users_id" name="users_id" value="{{$podujatie->users_id}}">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="users_id" class="form-control">
+                                            <option value=" "> </option>
+                                            @foreach($Epod as $row)
+                                                <option value="{{$row->users_id}}">{{$row->podUser->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="text-uppercase font-weight-bold" for="popis">popis</label>
+                                    <input type="text" class="form-control rounded-0" id="popis" placeholder="popis" name="popis" value="{{$podujatie->popis}}">
+                                </div>
+                                <div class="form-group ">
+                                    <label class="text-uppercase font-weight-bold" for="Obrazok">Obrazok</label>
+                                    <input type="text" class="form-control rounded-0" id="Obrazok" placeholder="Obrazok" name="Obrazok" value="{{$podujatie->Obrazok}}">
                                 </div>
                                 <div class="form-group ">
                                     <input type="hidden" value="0" id="confirmed" placeholder="confirmed" name="confirmed">
